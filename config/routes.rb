@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  get 'idea/show'
+
+  get 'idea/create'
+
+  get 'idea/new'
+
+  get 'idea/update'
+
+  get 'idea/edit'
+
   get 'box/index'
 
   get 'box/show'

@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'votes/create'
+
+  get 'votes/new'
+
+  get 'votes/update'
+
+  get 'votes/edit'
+
   get 'comment/show'
 
   get 'comment/create'

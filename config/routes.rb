@@ -1,4 +1,18 @@
 Rails.application.routes.draw do
+  get 'box/index'
+
+  get 'box/show'
+
+  get 'box/create'
+
+  get 'box/new'
+
+  get 'box/update'
+
+  get 'box/edit'
+
+  get 'homepage/index'
+
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

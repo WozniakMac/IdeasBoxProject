@@ -1,4 +1,4 @@
 class Box < ActiveRecord::Base
   belongs_to :user
-  has_meny :ideas
+  has_many :ideas
 end

@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  get 'comment/show'
+
+  get 'comment/create'
+
+  get 'comment/new'
+
+  get 'comment/update'
+
+  get 'comment/edit'
+
   get 'idea/show'
 
   get 'idea/create'

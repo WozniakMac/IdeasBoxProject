@@ -1,5 +1,6 @@
 class BoxController < ApplicationController
   before_action :set_box, only: [:show, :edit, :update]
+  before_action :authenticate_user!
   def index
     @box = Box.all
   end

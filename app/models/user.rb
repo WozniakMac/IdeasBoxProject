@@ -7,4 +7,13 @@ class User < ActiveRecord::Base
   has_many :ideas
   has_many :votes
   has_many :comments
+
+  def is_owner?(model_item)
+  	model_item.user == self
+  end
+
+  def is_admin?
+  	self.role == 1
+  end
+
 end

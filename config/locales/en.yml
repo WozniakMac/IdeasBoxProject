@@ -21,3 +21,8 @@
 
 en:
   hello: "Hello world"
+  box:
+  	created: "Your ideasBox was successfully created :)"
+		updated: "Your ideasBox was successfully updated :)"
+	permissions:
+		denied: "Permissions denied :("

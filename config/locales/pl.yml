@@ -1,7 +1,8 @@
 pl:
-	hello: "Witaj świecie"
-	box:
-  	created: "Twoje pudełko pomysłów zostało pomyślnie założone :)"
-		updated: "Twoje pudełko pomysłów zostało pomyślnie zaktualizowane :)"
-	permissions:
-		denied: "Brak uprawnień :("
+  hello: "Witaj świecie"
+  websitename: "IdeasBox"
+  box:
+    created: "Twoje pudełko pomysłów zostało pomyślnie założone :)"
+    updated: "Twoje pudełko pomysłów zostało pomyślnie zaktualizowane :)"
+  permissions:
+    denied: "Brak uprawnień :("

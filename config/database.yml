@@ -17,4 +17,4 @@ production:
   <<: *default
   database: ideasbox_production
   username: ideasbox
-  password: <%= ENV['CHALLENGE_DATABASE_PASSWORD'] %>
+  password: <%= ENV['IDEASBOX_DATABASE_PASSWORD'] %>

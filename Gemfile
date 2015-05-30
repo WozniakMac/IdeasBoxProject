@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 # core
 gem 'rails', '4.2.1'
-gem 'sqlite3'
+gem 'pg'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 

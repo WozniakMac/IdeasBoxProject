@@ -11,7 +11,7 @@ development:
 
 test:
   <<: *default
-  database: ideasbox_development
+  database: ideasbox_tests
 
 production:
   <<: *default

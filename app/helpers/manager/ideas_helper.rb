@@ -1,0 +1,2 @@
+module Manager::IdeasHelper
+end

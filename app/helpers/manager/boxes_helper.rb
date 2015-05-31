@@ -1,0 +1,2 @@
+module Manager::BoxesHelper
+end

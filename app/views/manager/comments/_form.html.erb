@@ -1,0 +1,17 @@
+<%= form_for(@manager_comment) do |f| %>
+  <% if @manager_comment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@manager_comment.errors.count, "error") %> prohibited this manager_comment from being saved:</h2>
+
+      <ul>
+      <% @manager_comment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

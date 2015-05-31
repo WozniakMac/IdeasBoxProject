@@ -3,8 +3,26 @@ Rails.application.routes.draw do
   # public
   root 'homepage#index'
   devise_for :users
+  resources :boxes
+  resources :comments
+  resources :ideas
+  resources :votes
 
-  # administration box (admin)
+  # admin
+  namespace :admin do
+    get '', to: 'box#index', as: '/'
+    resources :boxes
+    resources :comments
+    resources :ideas
+    resources :votes
+  end
 
-  # administrations webpage (superadmin)
+  # manager
+  namespace :manager do
+    get '', to: 'box#index', as: '/'
+    resources :boxes
+    resources :comments
+    resources :ideas
+    resources :votes
+  end
 end

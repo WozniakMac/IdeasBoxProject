@@ -12,14 +12,15 @@
   <tbody>
     <% @boxes.each do |box| %>
       <tr>
+        <td>
+          <h1><%= box.name %></h1>
+          <p><%= box.description %></p>
+          <p><%= box.user.email %></p>
+        </td>
         <td><%= link_to 'Show', box %></td>
-        <td><%= link_to 'Edit', edit_box_path(box) %></td>
-        <td><%= link_to 'Destroy', box, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Box', new_box_path %>

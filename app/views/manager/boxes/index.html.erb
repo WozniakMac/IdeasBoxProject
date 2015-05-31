@@ -12,9 +12,14 @@
   <tbody>
     <% @manager_boxes.each do |manager_box| %>
       <tr>
-        <td><%= link_to 'Show', manager_box %></td>
+        <td>
+          <h1><%= manager_box.name %></h1>
+          <p><%= manager_box.description %></p>
+          <p><%= manager_box.user.email %></p>
+        </td>
+        <td><%= link_to 'Show', [:manager,manager_box] %></td>
         <td><%= link_to 'Edit', edit_manager_box_path(manager_box) %></td>
-        <td><%= link_to 'Destroy', manager_box, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', [:manager,manager_box], method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

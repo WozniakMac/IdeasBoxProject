@@ -1,12 +1,12 @@
 class Manager::BoxesController < ApplicationController
   before_action :set_manager_box, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
-  before_action :check_owner
+  before_action :check_owner, only: [:show, :edit, :update, :destroy]
 
   # GET /manager/boxes
   # GET /manager/boxes.json
   def index
-    @manager_boxes = Box.all
+    @manager_boxes = current_user.boxes
   end
 
   # GET /manager/boxes/1
@@ -27,10 +27,11 @@ class Manager::BoxesController < ApplicationController
   # POST /manager/boxes.json
   def create
     @manager_box = Box.new(manager_box_params)
+    @manager_box.user = current_user
 
     respond_to do |format|
       if @manager_box.save
-        format.html { redirect_to @manager_box, notice: I18n.t 'box.created' }
+        format.html { redirect_to [:manager,@manager_box], notice: 'Box created' }
         format.json { render :show, status: :created, location: @manager_box }
       else
         format.html { render :new }
@@ -44,7 +45,7 @@ class Manager::BoxesController < ApplicationController
   def update
     respond_to do |format|
       if @manager_box.update(manager_box_params)
-        format.html { redirect_to @manager_box, notice: I18n.t 'box.updated' }
+        format.html { redirect_to [:manager,@manager_box], notice: 'Box updated' }
         format.json { render :show, status: :ok, location: @manager_box }
       else
         format.html { render :edit }
@@ -75,7 +76,8 @@ class Manager::BoxesController < ApplicationController
     end
 
     def check_owner
-      unless current_user.is_owner?(@box)
-        format.html {redirect_to root_path, notice: I18n.t 'permissions.denied' }
+      if !current_user.is_owner?(@manager_box)
+        format.html {redirect_to root_path, notice: 'You have not permissions' }
+      end
     end
 end

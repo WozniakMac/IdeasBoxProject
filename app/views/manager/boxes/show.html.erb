@@ -1,4 +1,7 @@
 <p id="notice"><%= notice %></p>
+<h1><%= @manager_box.name %></h1>
+<p><%= @manager_box.description %></p>
+<p><%= @manager_box.user.email %></p>
 
 <%= link_to 'Edit', edit_manager_box_path(@manager_box) %> |
 <%= link_to 'Back', manager_boxes_path %>

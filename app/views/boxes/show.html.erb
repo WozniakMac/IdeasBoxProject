@@ -1,4 +1,5 @@
 <p id="notice"><%= notice %></p>
-
-<%= link_to 'Edit', edit_box_path(@box) %> |
+<h1><%= @box.name %></h1>
+<p><%= @box.description %></p>
+<p><%= @box.user.email %></p>
 <%= link_to 'Back', boxes_path %>

@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # public
   root 'homepage#index'
   devise_for :users
-  resources :boxes do
+  resources :boxes, only: [:index, :show] do
     resources :ideas do
       resources :comments
       resources :votes
@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   # admin
   namespace :admin do
-    get '', to: 'box#index', as: '/'
+    get '', to: 'boxes#index', as: '/'
     resources :boxes do
       resources :ideas do
         resources :comments
@@ -23,7 +23,7 @@ Rails.application.routes.draw do
 
   # manager
   namespace :manager do
-    get '', to: 'box#index', as: '/'
+    get '', to: 'boxes#index', as: '/'
     resources :boxes do
       resources :ideas do
         resources :comments

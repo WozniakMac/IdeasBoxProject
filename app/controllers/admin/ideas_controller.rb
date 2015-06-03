@@ -1,4 +1,4 @@
-class Admin::IdeasController < ApplicationController
+class Admin::IdeasController < Admin::BaseController
   before_action :set_admin_idea, only: [:show, :edit, :update, :destroy]
 
   # GET /admin/ideas

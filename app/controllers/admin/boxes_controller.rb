@@ -1,7 +1,5 @@
-class Admin::BoxesController < ApplicationController
+class Admin::BoxesController < Admin::BaseController
   before_action :set_admin_box, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
-  before_action :check_admin
 
   # GET /admin/boxes
   # GET /admin/boxes.json
@@ -75,12 +73,4 @@ class Admin::BoxesController < ApplicationController
       params.require(:box).permit(:name, :description)
     end
 
-    def check_admin
-      if !current_user.is_admin?
-        respond_to do |format|
-          format.html { redirect_to root_path, notice: 'You have not permissions' }
-          format.json { render json: @admin_box.errors, status: :unprocessable_entity }
-        end
-      end
-    end
 end

@@ -1,4 +1,4 @@
-class Admin::VotesController < ApplicationController
+class Admin::VotesController < Admin::BaseController
   before_action :set_admin_vote, only: [:show, :edit, :update, :destroy]
 
   # GET /admin/votes

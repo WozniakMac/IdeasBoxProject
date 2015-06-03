@@ -1,4 +1,4 @@
-class Manager::VotesController < ApplicationController
+class Manager::VotesController < Manager::BaseController
   before_action :set_manager_vote, only: [:show, :edit, :update, :destroy]
 
   # GET /manager/votes

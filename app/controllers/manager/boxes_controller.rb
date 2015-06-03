@@ -1,6 +1,5 @@
-class Manager::BoxesController < ApplicationController
+class Manager::BoxesController < Manager::BaseController
   before_action :set_manager_box, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
   before_action :check_owner, only: [:show, :edit, :update, :destroy]
 
   # GET /manager/boxes

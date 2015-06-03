@@ -1,4 +1,4 @@
-class Manager::CommentsController < ApplicationController
+class Manager::CommentsController < Manager::BaseController
   before_action :set_manager_comment, only: [:show, :edit, :update, :destroy]
 
   # GET /manager/comments

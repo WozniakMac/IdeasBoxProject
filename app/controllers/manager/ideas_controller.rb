@@ -1,4 +1,4 @@
-class Manager::IdeasController < ApplicationController
+class Manager::IdeasController < Manager::BaseController
   before_action :set_manager_idea, only: [:show, :edit, :update, :destroy]
 
   # GET /manager/ideas

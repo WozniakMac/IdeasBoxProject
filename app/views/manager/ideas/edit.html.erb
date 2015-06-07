@@ -2,5 +2,5 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @manager_idea %> |
-<%= link_to 'Back', manager_ideas_path %>
+<%= link_to 'Show', [:manager,@manager_box,@manager_idea] %> |
+<%= link_to 'Back', manager_box_path(@manager_box) %>

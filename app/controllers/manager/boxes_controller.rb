@@ -11,6 +11,7 @@ class Manager::BoxesController < Manager::BaseController
   # GET /manager/boxes/1
   # GET /manager/boxes/1.json
   def show
+    @manager_idea = Idea.new
   end
 
   # GET /manager/boxes/new

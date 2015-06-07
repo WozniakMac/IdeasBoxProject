@@ -10,6 +10,7 @@ class Admin::BoxesController < Admin::BaseController
   # GET /admin/boxes/1
   # GET /admin/boxes/1.json
   def show
+    @admin_idea = Idea.new
   end
 
   # GET /admin/boxes/new

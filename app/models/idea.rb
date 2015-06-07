@@ -11,4 +11,5 @@ class Idea < ActiveRecord::Base
 	  	when :inprogress then 3
 	  	when :complited then 4
   	end
+  end
 end

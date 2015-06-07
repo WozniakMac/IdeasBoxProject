@@ -2,4 +2,15 @@
 <h1><%= @box.name %></h1>
 <p><%= @box.description %></p>
 <p><%= @box.user.email %></p>
+
+<div class="ideas">
+  <% if !@box.ideas.nil? %>
+    <%= render @box.ideas %>
+  <% end %>
+</div>
+<div class="idea-form">
+  <% if !current_user.nil? %>
+    <%= render "ideas/form" %>
+  <% end %>
+</div>
 <%= link_to 'Back', boxes_path %>

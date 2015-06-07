@@ -1,4 +1,4 @@
 <p id="notice"><%= notice %></p>
-
-<%= link_to 'Edit', edit_manager_idea_path(@manager_idea) %> |
-<%= link_to 'Back', manager_ideas_path %>
+<%= render @manager_idea %>
+<%= link_to 'Edit', edit_manager_box_idea_path(@manager_box,@manager_idea) %> |
+<%= link_to 'Back', manager_box_path(@manager_box) %>

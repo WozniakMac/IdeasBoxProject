@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root 'homepage#index'
   devise_for :users
   resources :boxes, only: [:index, :show] do
-    resources :ideas do
+    resources :ideas, only: [:show, :edit, :create, :update] do
       resources :comments
       resources :votes
     end
@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   namespace :admin do
     get '', to: 'boxes#index', as: '/'
     resources :boxes do
-      resources :ideas do
+      resources :ideas, only: [:create, :show, :edit, :update, :destroy] do
         resources :comments
         resources :votes
       end
@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   namespace :manager do
     get '', to: 'boxes#index', as: '/'
     resources :boxes do
-      resources :ideas do
+      resources :ideas, only: [:create, :show, :edit, :update, :destroy] do
         resources :comments
         resources :votes
       end

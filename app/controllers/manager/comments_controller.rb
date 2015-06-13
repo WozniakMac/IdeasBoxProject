@@ -1,21 +1,7 @@
 class Manager::CommentsController < Manager::BaseController
   before_action :set_manager_comment, only: [:show, :edit, :update, :destroy]
-
-  # GET /manager/comments
-  # GET /manager/comments.json
-  def index
-    @manager_comments = Manager::Comment.all
-  end
-
-  # GET /manager/comments/1
-  # GET /manager/comments/1.json
-  def show
-  end
-
-  # GET /manager/comments/new
-  def new
-    @manager_comment = Manager::Comment.new
-  end
+  before_action :set_manager_box
+  before_action :set_manager_idea
 
   # GET /manager/comments/1/edit
   def edit
@@ -24,11 +10,13 @@ class Manager::CommentsController < Manager::BaseController
   # POST /manager/comments
   # POST /manager/comments.json
   def create
-    @manager_comment = Manager::Comment.new(manager_comment_params)
+    @manager_comment = Comment.new(manager_comment_params)
+    @manager_comment.idea = @manager_idea
+    @manager_comment.user = current_user
 
     respond_to do |format|
       if @manager_comment.save
-        format.html { redirect_to @manager_comment, notice: 'Comment was successfully created.' }
+        format.html { redirect_to [:manager, @manager_box, @manager_idea], notice: 'Comment was successfully created.' }
         format.json { render :show, status: :created, location: @manager_comment }
       else
         format.html { render :new }
@@ -42,7 +30,7 @@ class Manager::CommentsController < Manager::BaseController
   def update
     respond_to do |format|
       if @manager_comment.update(manager_comment_params)
-        format.html { redirect_to @manager_comment, notice: 'Comment was successfully updated.' }
+        format.html { redirect_to [:manager, @manager_box, @manager_idea], notice: 'Comment was successfully updated.' }
         format.json { render :show, status: :ok, location: @manager_comment }
       else
         format.html { render :edit }
@@ -64,11 +52,19 @@ class Manager::CommentsController < Manager::BaseController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_manager_comment
-      @manager_comment = Manager::Comment.find(params[:id])
+      @manager_comment = Comment.find(params[:id])
+    end
+
+    def set_manager_box
+      @manager_box = Box.find(params[:box_id])
+    end
+
+    def set_manager_idea
+      @manager_idea = Idea.find(params[:idea_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def manager_comment_params
-      params[:manager_comment]
+      params.require(:comment).permit(:comment)
     end
 end

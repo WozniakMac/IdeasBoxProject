@@ -6,6 +6,7 @@ class Manager::IdeasController < Manager::BaseController
   # GET /manager/ideas/1
   # GET /manager/ideas/1.json
   def show
+    @manager_comment = Comment.new
   end
 
   # GET /manager/ideas/1/edit

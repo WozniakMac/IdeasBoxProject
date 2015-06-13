@@ -5,6 +5,7 @@ class IdeasController < ApplicationController
 
 
   def show
+    @comment = Comment.new
   end
 
   def edit

@@ -5,6 +5,7 @@ class Admin::IdeasController < Admin::BaseController
   # GET /admin/ideas/1
   # GET /admin/ideas/1.json
   def show
+    @admin_comment = Comment.new
   end
 
   # GET /admin/ideas/1/edit

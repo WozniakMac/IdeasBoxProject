@@ -2,3 +2,14 @@
 <%= render @manager_idea %>
 <%= link_to 'Edit', edit_manager_box_idea_path(@manager_box,@manager_idea) %> |
 <%= link_to 'Back', manager_box_path(@manager_box) %>
+
+<div class="comments">
+  <% if !@manager_idea.comments.nil? %>
+    <%= render @manager_idea.comments %>
+  <% end %>
+</div>
+<div class="comment-form">
+  <% if !current_user.nil? %>
+    <%= render "manager/comments/form" %>
+  <% end %>
+</div>

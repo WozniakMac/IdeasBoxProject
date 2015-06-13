@@ -1,4 +1,5 @@
 <p id="notice"><%= notice %></p>
+<%= render @manager_comment %>
 
-<%= link_to 'Edit', edit_manager_comment_path(@manager_comment) %> |
-<%= link_to 'Back', manager_comments_path %>
+<%= link_to 'Edit', edit_manager_box_idea_comment_path(@manager_box,@manager_idea,@manager_comment) %> |
+<%= link_to 'Back', [:manager,@manager_box,@manager_idea] %>

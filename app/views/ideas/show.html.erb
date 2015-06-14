@@ -3,6 +3,9 @@
 <%= link_to 'Edit', edit_box_idea_path(@box,@idea) %> |
 <%= link_to 'Back', box_path(@box) %>
 
+<%= render "votes/form" %>
+<%= render "votes/votes" %>
+
 <div class="comments">
   <% if !@idea.comments.nil? %>
     <%= render @idea.comments %>

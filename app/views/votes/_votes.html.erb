@@ -1,0 +1,6 @@
+<p>
+  Likes: <%= @idea.votes.where(rate: true).count %>
+</p>
+<p>
+  Dislikes: <%= @idea.votes.where(rate: false).count %>
+</p>

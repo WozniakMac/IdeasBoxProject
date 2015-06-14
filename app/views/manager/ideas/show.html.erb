@@ -3,6 +3,8 @@
 <%= link_to 'Edit', edit_manager_box_idea_path(@manager_box,@manager_idea) %> |
 <%= link_to 'Back', manager_box_path(@manager_box) %>
 
+<%= render "manager/votes/votes" %>
+
 <div class="comments">
   <% if !@manager_idea.comments.nil? %>
     <%= render @manager_idea.comments %>

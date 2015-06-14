@@ -5,11 +5,6 @@ class Idea < ActiveRecord::Base
   has_many :votes
 
   def set_status(status)
-  	self.status = case status
-	  	when :new then 1
-	  	when :planed then 2
-	  	when :inprogress then 3
-	  	when :complited then 4
-  	end
+  	self.status = IDEA_STATUS[status]
   end
 end

@@ -1,17 +1,9 @@
-<%= form_for(@vote) do |f| %>
-  <% if @vote.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@vote.errors.count, "error") %> prohibited this vote from being saved:</h2>
-
-      <ul>
-      <% @vote.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+<%= form_tag box_idea_like_path(@box,@idea), method: :post do %>
+  <%= submit_tag "Like", class: "btn btn-default" %>
+<% end %>
+<%= form_tag box_idea_dislike_path(@box,@idea), method: :post do %>
+  <%= submit_tag "Dislike", class: "btn btn-default" %>
+<% end %>
+<%= form_tag box_idea_unlike_path(@box,@idea), method: :post  do %>
+  <%= submit_tag "Unlike", class: "btn btn-default"%>
 <% end %>

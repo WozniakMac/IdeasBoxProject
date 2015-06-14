@@ -6,6 +6,8 @@ class IdeasController < ApplicationController
 
   def show
     @comment = Comment.new
+    @vote = Vote.new
+    @vote.idea = @idea
   end
 
   def edit

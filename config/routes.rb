@@ -16,7 +16,6 @@ Rails.application.routes.draw do
     resources :boxes do
       resources :ideas, only: [:create, :show, :edit, :update, :destroy] do
         resources :comments
-        resources :votes
       end
     end
   end
@@ -27,7 +26,6 @@ Rails.application.routes.draw do
     resources :boxes do
       resources :ideas, only: [:create, :show, :edit, :update, :destroy] do
         resources :comments
-        resources :votes
       end
     end
   end

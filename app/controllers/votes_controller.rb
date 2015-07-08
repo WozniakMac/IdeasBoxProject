@@ -4,11 +4,11 @@ class VotesController < ApplicationController
 
 
   def like
-    set true
+    set_vote true
   end
 
   def dislike
-    set false
+    set_vote false
   end
 
   def unlike
@@ -28,7 +28,7 @@ class VotesController < ApplicationController
       @box = Box.find(params[:box_id])
     end
 
-    def set(type)
+    def set_vote(type)
       if @vote.nil?
         @vote = Vote.new
         @vote.user = current_user

@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   resources :boxes, only: [:index, :show] do
     resources :ideas, only: [:show, :edit, :create, :update] do
       resources :comments
-      resources :votes
+      post 'like', to: 'votes#like', as: 'like'
+      post 'dislike', to: 'votes#dislike', as: 'dislike'
+      post 'unlike', to: 'votes#unlike', as: 'unlike'
     end
   end
 

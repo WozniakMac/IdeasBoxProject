@@ -17,6 +17,7 @@ class IdeasController < ApplicationController
     @idea = Idea.new(idea_params)
     @idea.user = current_user
     @idea.box = @box
+    @idea.set_status :new
 
     respond_to do |format|
       if @idea.save

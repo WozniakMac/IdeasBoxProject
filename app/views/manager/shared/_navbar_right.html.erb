@@ -1,8 +1,8 @@
 <% if current_user.nil? %>
-	<ul class="nav navbar-nav navbar-right">
-		<li data-toggle="modal" data-target="#myModal"><%= link_to "Sign in", '#' %></li>
-		<li><%= link_to "Sign up", new_user_registration_path %></li>
-	</ul>
+  <ul class="nav navbar-nav navbar-right">
+    <li data-toggle="modal" data-target="#myModal"><%= link_to "Sign in", '#' %></li>
+    <li><%= link_to "Sign up", new_user_registration_path %></li>
+  </ul>
   <!-- Modal Login Popup -->
   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -45,8 +45,8 @@
     </div>
   </div>
 <% else %>
-	<ul class="nav navbar-nav navbar-right">
-		<li class="dropdown">
+  <ul class="nav navbar-nav navbar-right">
+    <li class="dropdown">
       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><%= current_user %> <span class="caret"></span></a>
       <ul class="dropdown-menu" role="menu">
         <li><li><%= link_to("Create box", new_manager_box_path ) %></li></li>
@@ -56,5 +56,5 @@
         <li><%= link_to "Log out",destroy_user_session_path, method: :delete %></li>
       </ul>
     </li>
-	</ul>
+  </ul>
 <% end %>

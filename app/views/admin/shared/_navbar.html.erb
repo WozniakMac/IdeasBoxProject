@@ -12,11 +12,10 @@
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <li><%= link_to("Create box", new_manager_box_path ) %></li>
-        <li><%= link_to("Boxes", boxes_path ) %></li>
-        <li><a href="#">Our box</a></li>
+        <li><%= link_to("Create box", new_admin_box_path ) %></li>
+        <li><%= link_to("Your boxes", admin_boxes_path ) %></li>
       </ul>
-      <%= render "homepage/shared/navbar_right" %>
+      <%= render "admin/shared/navbar_right" %>
     </div><!--/.nav-collapse -->
   </div><!--/.container-fluid -->
 </nav>

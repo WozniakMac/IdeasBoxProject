@@ -1,7 +1,8 @@
 class Manager::CommentsController < Manager::BaseController
-  before_action :set_manager_comment, only: [:show, :edit, :update, :destroy]
+  before_action :set_manager_comment, only: [:edit, :update, :destroy]
   before_action :set_manager_box
   before_action :set_manager_idea
+  before_action :check_box_owner
 
   # GET /manager/comments/1/edit
   def edit
@@ -61,6 +62,12 @@ class Manager::CommentsController < Manager::BaseController
 
     def set_manager_idea
       @manager_idea = Idea.find(params[:idea_id])
+    end
+
+    def check_box_owner
+      if !current_user.is_owner?(@manager_box)
+        format.html {redirect_to root_path, notice: 'You have not permissions' }
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

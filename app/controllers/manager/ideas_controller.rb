@@ -1,7 +1,7 @@
 class Manager::IdeasController < Manager::BaseController
   before_action :set_manager_idea, only: [:show, :edit, :update]
   before_action :set_box , only: [:create, :show, :edit, :update]
-  before_action :check_box_owner, only: [:show, :new, :edit, :update]
+  before_action :check_box_owner
 
   # GET /manager/ideas/1
   # GET /manager/ideas/1.json

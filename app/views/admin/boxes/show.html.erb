@@ -7,11 +7,6 @@
     <%= render @admin_box.ideas %>
   <% end %>
 </div>
-<div class="idea-form">
-  <% if !current_user.nil? %>
-    <%= render "admin/ideas/form" %>
-  <% end %>
-</div>
 
 <%= link_to 'Edit', edit_admin_box_path(@admin_box) %> |
 <%= link_to 'Back', admin_boxes_path %>

@@ -12,24 +12,6 @@ class Admin::IdeasController < Admin::BaseController
   def edit
   end
 
-  # POST /admin/ideas
-  # POST /admin/ideas.json
-  def create
-    @admin_idea = Idea.new(admin_idea_params)
-    @admin_idea.user = current_user
-    @admin_idea.box = @admin_box
-
-    respond_to do |format|
-      if @admin_idea.save
-        format.html { redirect_to [:admin,@admin_box,@admin_idea], notice: 'Idea was successfully created.' }
-        format.json { render :show, status: :created, location: @admin_idea }
-      else
-        format.html { render :new }
-        format.json { render json: @admin_idea.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
   # PATCH/PUT /admin/ideas/1
   # PATCH/PUT /admin/ideas/1.json
   def update

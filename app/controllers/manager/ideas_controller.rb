@@ -1,48 +1,12 @@
 class Manager::IdeasController < Manager::BaseController
-  before_action :set_manager_idea, only: [:show, :edit, :update]
-  before_action :set_box , only: [:create, :show, :edit, :update]
+  before_action :set_manager_idea
+  before_action :set_box
   before_action :check_box_owner
 
   # GET /manager/ideas/1
   # GET /manager/ideas/1.json
   def show
     @manager_comment = Comment.new
-  end
-
-  # GET /manager/ideas/1/edit
-  def edit
-  end
-
-  # POST /manager/ideas
-  # POST /manager/ideas.json
-  def create
-    @manager_idea = Idea.new(manager_idea_params)
-    @manager_idea.user = current_user
-    @manager_idea.box = @manager_box
-
-    respond_to do |format|
-      if @manager_idea.save
-        format.html { redirect_to [:manager,@manager_box,@manager_idea], notice: 'Idea was successfully created.' }
-        format.json { render :show, status: :created, location: @manager_idea }
-      else
-        format.html { render :new }
-        format.json { render json: @manager_idea.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # PATCH/PUT /manager/ideas/1
-  # PATCH/PUT /manager/ideas/1.json
-  def update
-    respond_to do |format|
-      if @manager_idea.update(manager_idea_params)
-        format.html { redirect_to [:manager,@manager_box,@manager_idea], notice: 'Idea was successfully updated.' }
-        format.json { render :show, status: :ok, location: @manager_idea }
-      else
-        format.html { render :edit }
-        format.json { render json: @manager_idea.errors, status: :unprocessable_entity }
-      end
-    end
   end
 
   private

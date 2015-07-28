@@ -54,16 +54,6 @@ class Manager::BoxesController < Manager::BaseController
     end
   end
 
-  # DELETE /manager/boxes/1
-  # DELETE /manager/boxes/1.json
-  def destroy
-    @manager_box.destroy
-    respond_to do |format|
-      format.html { redirect_to manager_boxes_url, notice: 'Box was successfully destroyed.' }
-      format.json { head :no_content }
-    end
-  end
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_manager_box

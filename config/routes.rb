@@ -26,7 +26,7 @@ Rails.application.routes.draw do
   namespace :manager do
     get '', to: 'boxes#index', as: '/'
     resources :boxes, only: [ :index, :new, :show, :edit, :update, :create] do
-      resources :ideas, only: :show do
+      resources :ideas, only: [:show, :update ] do
         resources :comments, only: :create
       end
     end

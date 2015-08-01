@@ -1,0 +1,19 @@
+<%= form_for([:manager,@manager_box,@manager_idea]) do |f| %>
+  <% if @manager_idea.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@manager_idea.errors.count, "error") %> prohibited this idea from being saved:</h2>
+
+      <ul>
+      <% @manager_idea.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.select :status, options_for_select(Idea.statuses.map { |k,v| [k.humanize, k] }, :selected => @manager_idea.status) %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

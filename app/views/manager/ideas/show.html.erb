@@ -4,6 +4,8 @@
 
 <%= render "manager/votes/votes" %>
 
+<%= render 'manager/ideas/status' %>
+
 <div class="comments">
   <% if !@manager_idea.comments.nil? %>
     <%= render @manager_idea.comments %>

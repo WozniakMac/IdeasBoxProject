@@ -1,3 +1,4 @@
 <div class="idea_<%= idea.id %>"></div>
 <h2><%= link_to(idea.title, manager_box_idea_path(@manager_box,idea)) %></h2>
 <p>--<%= idea.description %></p>
+<p>--<%= idea.status.humanize %></p>

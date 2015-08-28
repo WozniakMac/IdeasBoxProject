@@ -1,10 +1,29 @@
 <p id="notice"><%= notice %></p>
-<h1><%= @box.name %></h1>
-<p><%= @box.description %></p>
+<div class="page-header">
+    <h1><%= @box.name %></h1>
+</div>
+<div id="tabs">
+    <ul class="nav nav-tabs">
+      <li role="presentation" class="tab-menu active"><a id="about" href="<%= @box.id %>/about"><%= t('box.about') %></a></li>
+      <li role="presentation" class="tab-menu"><a id="fresh" href="<%= @box.id %>/fresh"><%= t('box.fresh') %> <span class="badge"><%= @box.ideas.fresh.count %></span></a></li>
+      <li role="presentation" class="tab-menu"><a id="popular" href="<%= @box.id %>/popular"><%= t('box.popular') %> <span class="badge"><%= @box.ideas.fresh.count %></span></a></li>
+      <li role="presentation" class="tab-menu"><a id="planned" href="<%= @box.id %>/planned"><%= t('box.planned') %> <span class="badge"><%= @box.ideas.planned.count %></span></a></li>
+      <li role="presentation" class="tab-menu"><a id="inprogress" href="<%= @box.id %>/inprogress"><%= t('box.inprogress') %> <span class="badge"><%= @box.ideas.in_progress.count %></span></a></li>
+      <li role="presentation" class="tab-menu"><a id="completed" href="<%= @box.id %>/completed"><%= t('box.completed') %> <span class="badge"><%= @box.ideas.completed.count %></span></a></li>
+    </ul>
+    <div id="ib-tab-content" class="">
+        <div id="ajax-content" class="elem">
+            <p><%= @box.description %></p>
+        </div>
+        <div class="modal"><!-- Place at bottom of page --></div>
+    </div>
+</div>
+
+
 
 <div class="ideas">
   <% if !@box.ideas.nil? %>
-    <%= render @box.ideas %>
+    <%= render @box.ideas.order(created_at: :desc).limit(5) %>
   <% end %>
 </div>
 <div class="idea-form">
@@ -13,3 +32,4 @@
   <% end %>
 </div>
 <%= link_to 'Back', boxes_path %>
+<%= javascript_include_tag 'box', 'data-turbolinks-track' => true %>

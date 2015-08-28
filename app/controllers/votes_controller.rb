@@ -38,6 +38,9 @@ class VotesController < ApplicationController
       @vote.save
       respond_to do |format|
         format.html { redirect_to [@box,@idea] }
+        format.js { render json: @idea }
       end
     end
+
+
 end

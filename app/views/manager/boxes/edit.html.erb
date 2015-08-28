@@ -1,6 +1,10 @@
-<h1>Editing Manager Box</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', [:manager,@manager_box] %> |
-<%= link_to 'Back', manager_boxes_path %>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <div class="page-header">
+        <h2 id="ib-title"><%= t('manager.box.edit.title') %></h2>
+    </div>
+    <div id="ib-content">
+      <%= render 'form' %>
+    </div>
+  </div>
+</div>

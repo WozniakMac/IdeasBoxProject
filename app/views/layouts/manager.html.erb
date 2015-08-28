@@ -2,15 +2,26 @@
 <html>
 <head>
   <title>IdeasBoxProject</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'manager', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <script type="text/javascript">
+      I18n.defaultLocale = "<%= I18n.default_locale %>";
+      I18n.locale = "<%= I18n.locale %>";
+  </script>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
 <div class="container">
   <%= render "manager/shared/navbar" %>
-  <%= yield %>
+  <div id="ib-maincontent">
+    <%= yield %>
+  </div>
+  <%= render 'shared/footer' %>
 </div> <!-- /container -->
 
 </body>

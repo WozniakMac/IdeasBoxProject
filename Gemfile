@@ -15,6 +15,8 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'bootstrap-sass', '~> 3.3.4'
 gem 'angularjs-rails'
+gem 'rails-i18n', github: 'svenfuchs/rails-i18n', branch: 'master' # For 4.x Translations
+gem "i18n-js", ">= 3.0.0.rc11"
 
 group :development, :test do
   gem 'byebug' # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -1,0 +1,34 @@
+//Create box
+
+#ib-content .actions {
+  text-align: right;
+}
+
+@media (min-width: 800px) {
+  #ib-title {
+    margin-bottom: 1em;
+  }
+}
+
+//Manage boxes
+
+.ib-panel-content {
+  overflow: hidden;
+  height: 200px;
+}
+
+#ib-boxes {
+  position: relative;
+}
+
+.ib-indexbutton {
+  display: none;
+  text-align: right;
+  position: absolute;
+  bottom:2em;
+  right:2em;
+}
+
+.ib-panel-content:hover > .ib-indexbutton {
+  display: block;
+}

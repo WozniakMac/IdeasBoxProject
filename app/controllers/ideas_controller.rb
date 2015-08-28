@@ -10,9 +10,6 @@ class IdeasController < ApplicationController
     @vote.idea = @idea
   end
 
-  #def edit
-  #end
-
   def create
     @idea = Idea.new(idea_params)
     @idea.user = current_user

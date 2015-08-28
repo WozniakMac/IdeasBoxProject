@@ -1,0 +1,18 @@
+pl:
+  activerecord:
+    models:
+      user: 'Użytkownik'
+      box: 'Pudełko pomysłów'
+      comment: 'Komentarz'
+      idea: 'Pomysł'
+      vote: 'Głos'
+    attributes:
+      user:
+        email: 'Email'
+        username: 'Nazwa użytkownika'
+        password: 'Hasło'
+        password_confirmation: 'Potwierdzenie hasła'
+        current_password: 'Aktualne hasło'
+      box:
+        name: 'Nazwa'
+        description: 'Opis'

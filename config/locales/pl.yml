@@ -1,8 +1,49 @@
 pl:
-  hello: "Witaj świecie"
-  websitename: "IdeasBox"
+  hello: 'Witaj świecie'
+  websitename: 'ideasha.re'
   box:
-    created: "Twoje pudełko pomysłów zostało pomyślnie założone :)"
-    updated: "Twoje pudełko pomysłów zostało pomyślnie zaktualizowane :)"
+    created: 'Twoje pudełko pomysłów zostało pomyślnie założone :)'
+    updated: 'Twoje pudełko pomysłów zostało pomyślnie zaktualizowane :)'
+    index:
+      new: "Nowe"
+      top: "Top 10"
+      list: "Listy"
+    about: "O nas"
+    fresh: "Nowe"
+    popular: "Popularne"
+    planned: "Planowane"
+    inprogress: "W realizacji"
+    completed: "Zakończone"
+    javascript:
+      nothing: "Nikt nie dodał jeszcze tutaj pomysłu. Bądź pierwszy :)"
+      error: "Coś poszło nie tak :("
   permissions:
-    denied: "Brak uprawnień :("
+    denied: 'Brak uprawnień :('
+  navbar:
+    left:
+      createbox: 'Stwórz'
+      boxes: 'Przeglądaj'
+      ourbox: 'Ulepsz nas'
+      yourboxes: 'Zarządzaj'
+      statistics: 'Statystyki'
+    right:
+      createbox: 'Stwórz'
+      manageboxes: 'Zarządzaj'
+      editprofile: 'Edytuj profil'
+      logout: 'Wyloguj się'
+      signin: 'Zaloguj się'
+      signup: 'Zarejestruj się'
+  manager:
+    box:
+      new:
+        title: 'Nowe pudełko na pomysły'
+        somethingwrong: 'Coś poszło nie tak :('
+      form:
+        submit: 'Zatwierdź'
+      edit:
+        title: "Edytuj"
+      index:
+        title: "Centrum zarządzania"
+        edit: "Edytuj"
+        open: "Otwórz"
+        info: "Info"

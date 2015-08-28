@@ -31,7 +31,7 @@ class Manager::BoxesController < Manager::BaseController
 
     respond_to do |format|
       if @manager_box.save
-        format.html { redirect_to [:manager,@manager_box], notice: 'Box created' }
+        format.html { redirect_to [:manager,@manager_box], notice: I18n.t('box.created') }
         format.json { render :show, status: :created, location: @manager_box }
       else
         format.html { render :new }
@@ -45,7 +45,7 @@ class Manager::BoxesController < Manager::BaseController
   def update
     respond_to do |format|
       if @manager_box.update(manager_box_params)
-        format.html { redirect_to [:manager,@manager_box], notice: 'Box updated' }
+        format.html { redirect_to [:manager,@manager_box], notice: I18n.t('box.updated') }
         format.json { render :show, status: :ok, location: @manager_box }
       else
         format.html { render :edit }

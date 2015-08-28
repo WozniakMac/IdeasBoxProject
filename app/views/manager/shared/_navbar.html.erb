@@ -11,12 +11,7 @@
       <%= link_to( t('websitename'), root_path, class: "navbar-brand") %>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav">
-        <li><%= link_to("Create box", new_manager_box_path ) %></li>
-        <li><%= link_to("Your boxes", manager_boxes_path ) %></li>
-        <li><a href="#">Top new ideas</a></li>
-        <li><a href="#">Users</a></li>
-      </ul>
+      <%= render "manager/shared/navbar_left" %>
       <%= render "manager/shared/navbar_right" %>
     </div><!--/.nav-collapse -->
   </div><!--/.container-fluid -->

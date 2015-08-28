@@ -1,8 +1,49 @@
 en:
   hello: "Hello world"
-  websitename: "IdeasBox"
+  websitename: "ideasha.re"
   box:
     created: "Your ideasBox was successfully created :)"
     updated: "Your ideasBox was successfully updated :)"
+    index:
+      new: "New"
+      top: "Top 10"
+      list: "Lists"
+    about: "About"
+    fresh: "New"
+    popular: "Popular"
+    planned: "Planned"
+    inprogress: "In progress"
+    completed: "Completed"
+    javascript:
+      nothing: "There is nothing here yet. Be first and add idea :)"
+      error: "Something goes wrong :("
   permissions:
     denied: "Permissions denied :("
+  navbar:
+    left:
+      createbox: "Create box"
+      boxes: "Boxes"
+      ourbox: "Make as better"
+      yourboxes: 'Your boxes'
+      statistics: 'Statistics'
+    right:
+      createbox: "Create box"
+      manageboxes: "Manage boxes"
+      editprofile: "Edit profile"
+      logout: "Log out"
+      signin: "Sign in"
+      signup: "Sign up"
+  manager:
+    box:
+      new:
+        title: "New box for ideas"
+        somethingwrong: "Something goes wrong :("
+      form:
+        submit: 'Submit'
+      edit:
+        title: "Edit"
+      index:
+        title: "Managment center"
+        edit: "Edit"
+        open: "Open"
+        info: "Info"

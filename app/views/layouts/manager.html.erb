@@ -11,7 +11,7 @@
   <script type="text/javascript">
       I18n.defaultLocale = "<%= I18n.default_locale %>";
       I18n.locale = "<%= I18n.locale %>";
-      var CURRENT_USER = <%= current_user.id %>;
+      var CURRENT_USER = <%= current_user != nil  ? current_user.id : 'null' %>;
   </script>
   <%= csrf_meta_tags %>
 </head>

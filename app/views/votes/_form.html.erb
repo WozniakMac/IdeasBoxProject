@@ -1,9 +1,9 @@
-<%= form_tag box_idea_like_path(@box,@idea), method: :post do %>
+<%= form_tag box_idea_like_path(@box,@idea), method: :post, remote: true do %>
   <%= submit_tag "Like", class: "btn btn-default" %>
 <% end %>
-<%= form_tag box_idea_dislike_path(@box,@idea), method: :post do %>
+<%= form_tag box_idea_dislike_path(@box,@idea), method: :post, remote: true do %>
   <%= submit_tag "Dislike", class: "btn btn-default" %>
 <% end %>
-<%= form_tag box_idea_unlike_path(@box,@idea), method: :post  do %>
+<%= form_tag box_idea_unlike_path(@box,@idea), method: :post, remote: true  do %>
   <%= submit_tag "Unlike", class: "btn btn-default"%>
 <% end %>

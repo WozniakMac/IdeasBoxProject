@@ -18,23 +18,23 @@ class BoxesController < ApplicationController
   end
 
   def fresh
-    render json: @box.ideas.fresh
+    render json: @box.ideas.fresh.as_json(user: current_user)
   end
 
   def popular
-    render json: @box.ideas.fresh
+    render json: @box.ideas.fresh.as_json(user: current_user)
   end
 
   def planned
-    render json: @box.ideas.planned.order(:updated_at)
+    render json: @box.ideas.planned.order(:updated_at).as_json(user: current_user)
   end
 
   def in_progress
-    render json: @box.ideas.in_progress.order(:updated_at)
+    render json: @box.ideas.in_progress.order(:updated_at).as_json(user: current_user)
   end
 
   def completed
-    render json: @box.ideas.completed.order(:updated_at)
+    render json: @box.ideas.completed.order(:updated_at).as_json(user: current_user)
   end
 
   private

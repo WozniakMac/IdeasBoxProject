@@ -15,9 +15,10 @@ class VotesController < ApplicationController
     if !@vote.nil?
       @vote.destroy
     end
-    respond_to do |format|
-      format.html { redirect_to [@box,@idea] }
-    end
+    #respond_to do |format|
+    #  format.html { redirect_to [@box,@idea] }
+    #  format.js {  }
+    #end
   end
 
   private
@@ -36,10 +37,10 @@ class VotesController < ApplicationController
       end
       @vote.rate = type
       @vote.save
-      respond_to do |format|
-        format.html { redirect_to [@box,@idea] }
-        format.js { render json: @idea }
-      end
+      #respond_to do |format|
+      #  format.html { redirect_to [@box,@idea] }
+      #  format.js {  }
+      #end
     end
 
 

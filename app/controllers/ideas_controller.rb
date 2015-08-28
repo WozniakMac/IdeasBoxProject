@@ -8,6 +8,10 @@ class IdeasController < ApplicationController
     @comment = Comment.new
     @vote = Vote.new
     @vote.idea = @idea
+    respond_to do |format|
+      format.html { render :show }
+      format.json { render json: @idea.as_json(user: current_user) }
+    end
   end
 
   def create

@@ -1,4 +1,79 @@
 $(function() {
+    //Like button
+
+    function addLikesButtons(element) {
+
+        var AUTH_TOKEN = $('meta[name=csrf-token]').attr('content');
+
+        //Functions
+        function likeIdea(ideaUrl) {
+            $.ajax({
+                type: 'post',
+                dataType: 'text',
+                data: "user_id=" + CURRENT_USER + "&authenticity_token=" + AUTH_TOKEN,
+                url: ideaUrl + '/like'
+            })
+        }
+
+        function dislikeIdea(ideaUrl) {
+            $.ajax({
+                type: 'post',
+                dataType: 'text',
+                data: "user_id=" + CURRENT_USER + "&authenticity_token=" + AUTH_TOKEN,
+                url: ideaUrl + '/dislike'
+            })
+        }
+
+        function unlikeIdea(ideaUrl) {
+            $.ajax({
+                type: 'post',
+                dataType: 'text',
+                data: "user_id=" + CURRENT_USER + "&authenticity_token=" + AUTH_TOKEN,
+                url: ideaUrl + '/unlike'
+            })
+        }
+
+        function addButtonsToElement(element){
+            //get every one element button pannel
+            var ideaUrl = element.attr('data-idea-url');
+            var likeButton = $('<button></button>')
+                .addClass('ib-like-button btn btn-default')
+                .html('<span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>')
+                .appendTo(element);
+            likeButton.click(function(){
+                likeIdea(ideaUrl);
+            });
+            var dislikeButton = $('<button></button>')
+                .addClass('ib-dislike-button btn btn-default')
+                .html('<span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>')
+                .appendTo(element);
+            dislikeButton.click(function(){
+                dislikeIdea(ideaUrl);
+            });
+            //var unlikeButton = $('<button></button>')
+            //    .addClass('ib-unlike-button btn btn-default')
+            //    .html('<span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>')
+            //    .appendTo(element);
+            //unlikeButton.click(function(){
+            //    unlikeIdea(ideaUrl);
+            //});
+        }
+
+        //Get div where will be buttons
+        function addButtonsToAllElements() {
+            var buttonsPanel = $('.ib-like-buttons-panel');
+            buttonsPanel.each(addButtonsToElement($(this)));
+        }
+
+        if(typeof element !== 'undefined'){
+            addButtonsToElement(element);
+        }else{
+            addButtonsToAllElements();
+        }
+    }
+
+    //END Like buttons
+
     //Vars
     $body = $("body");
 
@@ -57,6 +132,7 @@ $(function() {
                         $("#ajax-content").text(I18n.t("box.javascript.nothing"));
                     } else {
                         $("#ajax-content").html("");
+                        //$("#ajax-content").text(JSON.stringify(content));
                         $( "<ol></ol>" )
                             .addClass( "list-group" )
                             .appendTo( "#ajax-content" );
@@ -69,9 +145,10 @@ $(function() {
                             var link = $("<a>"+ (i+1) +'. '+ content[i].title+"</a>");
                             link.attr("href", content[i].base_uri);
                             link.appendTo(ideList);
-                            //Add triangle icon
                             var right = $('<div></div>').addClass('ib-right').appendTo(ideList);
-                            var icon = $("<span></span>").addClass('caret').appendTo(right);
+                            var likepanel = $("<div></div>").addClass('ib-like-buttons-panel').appendTo(right);
+                            //Add triangle icon
+                            //var icon = $("<div></div>").addClass('caret').appendTo(right);
                             //Add descriptiom
                             var description = $('<div></div>')
                                                 .addClass('ib-idea-description')
@@ -79,11 +156,13 @@ $(function() {
                                                 .appendTo(ideList)
                                                 .hide();
                             ideList.click(function(e){
-                                if( $(e.target).is('a') ) {
+                                if( $(e.target).is('a') || $(e.target).is('button') || $(e.target).is('span') ) {
                                     return true; // True, because we don't want to cancel the 'a' click.
                                 }
                                 $(this).find('.ib-idea-description').slideToggle();
                             });
+                            likepanel.attr('data-idea-url',content[i].base_uri);
+                            addLikesButtons(likepanel);
 
                         }
                     }

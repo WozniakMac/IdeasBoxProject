@@ -23,7 +23,20 @@ class Idea < ActiveRecord::Base
     time_ago_in_words(self.created_at)
   end
 
+  def liked(current_user)
+    return 0 if current_user == nil
+    self.votes.where("user_id = #{current_user.id} and rate = true").count
+  end
+
+  def disliked(current_user)
+    return 0 if current_user == nil
+    self.votes.where("user_id = #{current_user.id} and rate = false").count
+  end
+
   def as_json(options={})
-    super(only: [:id, :box_id, :title, :description, :created_at, :updated_at, :status, :like_counter, :dislike_counter] ,:methods => [:base_uri, :created_at_as_text])
+    json = super(only: [:id, :box_id, :title, :description, :created_at, :updated_at, :status, :like_counter, :dislike_counter] ,:methods => [:base_uri, :created_at_as_text])
+    json[:liked] = liked(options[:user])
+    json[:disliked] = disliked(options[:user])
+    return json
   end
 end

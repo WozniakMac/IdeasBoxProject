@@ -12,6 +12,7 @@
   <script type="text/javascript">
       I18n.defaultLocale = "<%= I18n.default_locale %>";
       I18n.locale = "<%= I18n.locale %>";
+      var CURRENT_USER = <%= current_user.id %>;
   </script>
   <%= csrf_meta_tags %>
 </head>

@@ -16,3 +16,6 @@ pl:
       box:
         name: 'Nazwa'
         description: 'Opis'
+      idea:
+        title: 'Pomysł'
+        description: 'Opis'

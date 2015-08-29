@@ -9,7 +9,7 @@ $(function() {
         function likeIdea(ideaUrl) {
             $.ajax({
                 type: 'post',
-                dataType: 'text',
+                dataType: 'script',
                 data: "user_id=" + CURRENT_USER + "&authenticity_token=" + AUTH_TOKEN,
                 url: ideaUrl + '/like'
             })
@@ -18,7 +18,7 @@ $(function() {
         function dislikeIdea(ideaUrl) {
             $.ajax({
                 type: 'post',
-                dataType: 'text',
+                dataType: 'script',
                 data: "user_id=" + CURRENT_USER + "&authenticity_token=" + AUTH_TOKEN,
                 url: ideaUrl + '/dislike'
             })
@@ -27,7 +27,7 @@ $(function() {
         function unlikeIdea(ideaUrl) {
             $.ajax({
                 type: 'post',
-                dataType: 'text',
+                dataType: 'script',
                 data: "user_id=" + CURRENT_USER + "&authenticity_token=" + AUTH_TOKEN,
                 url: ideaUrl + '/unlike'
             })
@@ -36,20 +36,27 @@ $(function() {
         function addButtonsToElement(element){
             //get every one element button pannel
             var ideaUrl = element.attr('data-idea-url');
+            var buttonGrup = $('<div></div>').addClass('btn-group').appendTo(element);
             var likeButton = $('<button></button>')
-                .addClass('ib-like-button btn btn-default')
-                .html('<span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>')
-                .appendTo(element);
+                .addClass('ib-like-button btn btn-success')
+                .html('<span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span> ')
+                .appendTo(buttonGrup);
             likeButton.click(function(){
                 likeIdea(ideaUrl);
             });
+            $('<span>'+element.attr('data-idea-like-counter')+'</span>')
+                .addClass("badge")
+                .appendTo(likeButton);
             var dislikeButton = $('<button></button>')
-                .addClass('ib-dislike-button btn btn-default')
-                .html('<span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>')
-                .appendTo(element);
+                .addClass('ib-dislike-button btn btn-warning')
+                .html('<span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span> ')
+                .appendTo(buttonGrup);
             dislikeButton.click(function(){
                 dislikeIdea(ideaUrl);
             });
+            $('<span>'+element.attr('data-idea-dislike-counter')+'</span>')
+                .addClass("badge")
+                .appendTo(dislikeButton);
             //var unlikeButton = $('<button></button>')
             //    .addClass('ib-unlike-button btn btn-default')
             //    .html('<span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>')
@@ -140,6 +147,7 @@ $(function() {
                             //Create list element
                             var ideList = $( "<li></li>" );
                             ideList.addClass("list-group-item").addClass("ib-list-click");
+                            ideList.attr('id','idea-'+content[i].id);
                             ideList.appendTo("#ajax-content .list-group");
                             //Add to list element link and text
                             var link = $("<a>"+ (i+1) +'. '+ content[i].title+"</a>");
@@ -162,6 +170,8 @@ $(function() {
                                 $(this).find('.ib-idea-description').slideToggle();
                             });
                             likepanel.attr('data-idea-url',content[i].base_uri);
+                            likepanel.attr('data-idea-like-counter',content[i].like_counter);
+                            likepanel.attr('data-idea-dislike-counter',content[i].dislike_counter);
                             addLikesButtons(likepanel);
 
                         }
@@ -183,11 +193,11 @@ $(function() {
 
     function refreshPage(){
         var id = location.hash.split('##')[1] ? location.hash.split('##')[1] : 'about';
-        //if($('li.active a').attr('id') !== id) {
+        if($('li.active a').attr('id') !== id) {
             setTab(id);
-        //}
+        }
     }
 
-    refreshPage()
+    refreshPage();
 
 });

@@ -17,6 +17,7 @@ pl:
     javascript:
       nothing: "Nikt nie dodał jeszcze tutaj pomysłu. Bądź pierwszy :)"
       error: "Coś poszło nie tak :("
+    addnewidea: "Dodaj nowy pomysł"
   permissions:
     denied: 'Brak uprawnień :('
   navbar:
@@ -47,3 +48,5 @@ pl:
         edit: "Edytuj"
         open: "Otwórz"
         info: "Info"
+  idea:
+    submit: "Wyślij"

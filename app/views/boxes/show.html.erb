@@ -20,16 +20,10 @@
 </div>
 
 
-
-<div class="ideas">
-  <% if !@box.ideas.nil? %>
-    <%= render @box.ideas.order(created_at: :desc).limit(5) %>
-  <% end %>
-</div>
 <div class="idea-form">
   <% if !current_user.nil? %>
-    <%= render "ideas/form" %>
+      <h2><%= t('box.addnewidea') %></h2>
+      <%= render "ideas/form" %>
   <% end %>
 </div>
-<%= link_to 'Back', boxes_path %>
 <%= javascript_include_tag 'box', 'data-turbolinks-track' => true %>

@@ -17,6 +17,7 @@ en:
     javascript:
       nothing: "There is nothing here yet. Be first and add idea :)"
       error: "Something goes wrong :("
+    addnewidea: "New idea"
   permissions:
     denied: "Permissions denied :("
   navbar:
@@ -47,3 +48,5 @@ en:
         edit: "Edit"
         open: "Open"
         info: "Info"
+  idea:
+    submit: "Submit"

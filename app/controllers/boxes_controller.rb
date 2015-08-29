@@ -22,7 +22,7 @@ class BoxesController < ApplicationController
   end
 
   def popular
-    render json: @box.ideas.fresh.as_json(user: current_user)
+    render json: @box.ideas.fresh.order('dislike_counter - like_counter').as_json(user: current_user)
   end
 
   def planned
@@ -38,6 +38,7 @@ class BoxesController < ApplicationController
   end
 
   private
+    #Because is difrent scope between method and this parrameter has difrent name
     def set_box
       @box = Box.find(params[:box_id])
     end

@@ -35,6 +35,7 @@ $(function() {
 
         function addButtonsToElement(element){
             //get every one element button pannel
+            //LIKE
             var ideaUrl = element.attr('data-idea-url');
             var buttonGrup = $('<div></div>').addClass('btn-group').appendTo(element);
             var likeButton = $('<button></button>')
@@ -47,6 +48,11 @@ $(function() {
             $('<span>'+element.attr('data-idea-like-counter')+'</span>')
                 .addClass("badge")
                 .appendTo(likeButton);
+
+            if(element.attr('data-idea-liked')==1 || CURRENT_USER == null){
+                likeButton.attr('disabled','disabled');
+            }
+            //DISLIKE
             var dislikeButton = $('<button></button>')
                 .addClass('ib-dislike-button btn btn-warning')
                 .html('<span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span> ')
@@ -57,6 +63,12 @@ $(function() {
             $('<span>'+element.attr('data-idea-dislike-counter')+'</span>')
                 .addClass("badge")
                 .appendTo(dislikeButton);
+
+            if(element.attr('data-idea-disliked')==1 || CURRENT_USER == null){
+                dislikeButton.attr('disabled','disabled');
+            }
+
+
             //var unlikeButton = $('<button></button>')
             //    .addClass('ib-unlike-button btn btn-default')
             //    .html('<span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>')
@@ -172,6 +184,8 @@ $(function() {
                             likepanel.attr('data-idea-url',content[i].base_uri);
                             likepanel.attr('data-idea-like-counter',content[i].like_counter);
                             likepanel.attr('data-idea-dislike-counter',content[i].dislike_counter);
+                            likepanel.attr('data-idea-liked',content[i].liked);
+                            likepanel.attr('data-idea-disliked',content[i].disliked);
                             addLikesButtons(likepanel);
 
                         }

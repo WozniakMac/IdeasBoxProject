@@ -1,7 +1,11 @@
 function setCounters() {
     var idea = $('#idea-<%= @idea.id %>');
-    idea.find('.ib-like-button').find('.badge').text('<%= @idea.like_counter %>');
-    idea.find('.ib-dislike-button').find('.badge').text('<%= @idea.dislike_counter %>');
+    var likeButton = idea.find('.ib-like-button');
+    likeButton.find('.badge').text('<%= @idea.like_counter %>');
+    likeButton.removeAttr('disabled');
+    var dislikeButton = idea.find('.ib-dislike-button');
+    dislikeButton.find('.badge').text('<%= @idea.dislike_counter %>');
+    dislikeButton.attr('disabled','disabled');
 }
 
 setCounters();

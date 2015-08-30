@@ -162,10 +162,16 @@ $(function() {
                             ideList.attr('id','idea-'+content[i].id);
                             ideList.appendTo("#ajax-content .list-group");
                             //Add to list element link and text
-                            var link = $("<a>"+ (i+1) +'. '+ content[i].title+"</a>");
+                            var link = $("<a>"+ (i+1) +'. '+ content[i].title+"</a> ");
                             link.attr("href", content[i].base_uri);
                             link.appendTo(ideList);
+
                             var right = $('<div></div>').addClass('ib-right').appendTo(ideList);
+                            var ideaData= $('<div></div>');
+                            ideaData.addClass('small ib-idea-data').appendTo(ideList);
+                            ideaData.append('<div class="ib-idea-data-element"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> '+content[i].author_name +'</div>');
+                            ideaData.append('<div class="ib-idea-data-element"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> '+content[i].comments_count+'</div>');
+                            ideaData.append('<div class="ib-idea-data-element"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> '+content[i].created_at_as_text +'</div>');
                             var likepanel = $("<div></div>").addClass('ib-like-buttons-panel').appendTo(right);
                             //Add triangle icon
                             //var icon = $("<div></div>").addClass('caret').appendTo(right);
@@ -200,8 +206,10 @@ $(function() {
 
     navTabs.find("a").click(function(e) {
         e.preventDefault();
-        navTabs.find("div.elem").hide();
-        setTab($(this).attr('id'));
+        if(!$(this).parent().hasClass('active')){
+            navTabs.find("div.elem").hide();
+            setTab($(this).attr('id'));
+        }
     });
 
 

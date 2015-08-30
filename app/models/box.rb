@@ -25,6 +25,7 @@ class Box < ActiveRecord::Base
         order('ideas_count DESC').
         limit(10) }
 
+
   def as_json(options={})
     if options== :description
       super(only: [:description])

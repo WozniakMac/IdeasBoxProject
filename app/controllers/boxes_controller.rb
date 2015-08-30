@@ -18,11 +18,11 @@ class BoxesController < ApplicationController
   end
 
   def fresh
-    render json: @box.ideas.fresh.as_json(user: current_user)
+    render json: @box.ideas.fresh.order(created_at: :desc).as_json(user: current_user)
   end
 
   def popular
-    render json: @box.ideas.fresh.order('dislike_counter - like_counter').as_json(user: current_user)
+    render json: @box.ideas.popular.as_json(user: current_user)
   end
 
   def planned

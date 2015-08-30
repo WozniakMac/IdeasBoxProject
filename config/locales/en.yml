@@ -50,3 +50,10 @@ en:
         info: "Info"
   idea:
     submit: "Submit"
+  comment:
+    zero: '0 comments'
+    one: '1 comment'
+    few: '%{count} comments'
+    meny: '%{count} comments'
+    other: '%{count} comments'
+  ago: 'ago'

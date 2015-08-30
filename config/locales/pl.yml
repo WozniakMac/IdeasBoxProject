@@ -50,3 +50,10 @@ pl:
         info: "Info"
   idea:
     submit: "Wyślij"
+  comment:
+    zero: '0 komentarzy'
+    one: '1 komentarz'
+    few: '%{count} komentarze'
+    many: '%{count} komentarzy'
+    other: '%{count} komentarzy'
+  ago: 'temu'

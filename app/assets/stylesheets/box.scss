@@ -39,8 +39,24 @@ body.loading .modal {
 .ib-right{
   text-align: right;
   display: inline;
+  float: right;
 }
 
 .list-group-item a {
-  float: left;
+  //float: left;
+}
+
+.ib-idea-data {
+  //float: left;
+  display: inline-flex;
+  width: 100%;
+  color: #777777;
+}
+
+.ib-idea-data-element {
+  margin-right: 1em;
+}
+
+.ib-idea-description{
+  margin-top: 2em;
 }

@@ -1,3 +1,13 @@
-<div class="idea_<%= idea.id %>"></div>
-<h2><%= link_to(idea.title, box_idea_path(@box,idea)) %></h2>
-<p><%= idea.description %></p>
+<div id="idea-<%= idea.id %>">
+    <div class="ib-idea-like-buttons-panel"
+       data-idea-url="<%= idea.base_uri %>"
+       data-idea-like-counter = "<%= idea.like_counter %>"
+       data-idea-dislike-counter = "<%= idea.dislike_counter %>"
+       data-idea-liked = "<%= idea.liked(current_user) %>"
+       data-idea-disliked = "<%= idea.disliked(current_user) %>">
+    </div>
+    <div class="page-header">
+        <h1><%= idea.title %></h1>
+    </div>
+    <p class="ib-idea-description"><%= idea.description %></p>
+</div>

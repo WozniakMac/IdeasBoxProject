@@ -1,13 +1,15 @@
 <p id="notice"><%= notice %></p>
 <%= render @idea %>
-<%= link_to 'Back', box_path(@box) %>
 
-<%= render "votes/form" %>
-<%= render "votes/votes" %>
 
+<div class="page-header">
+  <h3><%= t('idea.comments') %></h3>
+</div>
 <div class="comments">
   <% if !@idea.comments.nil? %>
-    <%= render @idea.comments %>
+      <ul class="media-list">
+          <%= render @idea.comments %>
+      </ul>
   <% end %>
 </div>
 <div class="comment-form">
@@ -15,3 +17,5 @@
     <%= render "comments/form" %>
   <% end %>
 </div>
+
+<%= javascript_include_tag 'idea', 'data-turbolinks-track' => true %>

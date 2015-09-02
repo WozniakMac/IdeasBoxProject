@@ -15,3 +15,6 @@ Rails.application.config.assets.precompile += %w( public.css )
 Rails.application.config.assets.precompile += %w( box.js )
 Rails.application.config.assets.precompile += %w( box.css )
 Rails.application.config.assets.precompile += %w( like_buttons.js )
+Rails.application.config.assets.precompile += %w( idea.js )
+Rails.application.config.assets.precompile += %w( idea.css )
+

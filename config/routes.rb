@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root 'homepage#index'
   devise_for :users
   resources :boxes, only: [:index, :show] do
-    resources :ideas, only: [:show, :create] do
+    resources :ideas, only: [:show, :create, :new] do
       resources :comments, only: :create
       post 'like', to: 'votes#like', as: 'like'
       post 'dislike', to: 'votes#dislike', as: 'dislike'

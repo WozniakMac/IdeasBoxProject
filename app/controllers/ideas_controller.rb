@@ -14,12 +14,16 @@ class IdeasController < ApplicationController
     end
   end
 
+  def new
+    @idea = Idea.new
+  end
+
   def create
     @idea = Idea.new(idea_params)
     @idea.user = current_user
     @idea.box = @box
     if @idea.status == nil
-      @idea.fresh!
+      @idea.status = :fresh
     end
 
     respond_to do |format|

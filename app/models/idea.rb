@@ -8,6 +8,9 @@ class Idea < ActiveRecord::Base
   has_many :comments
   has_many :votes
 
+  validates :title, length: { in: 4..20 }
+  validates :description, length: { in: 10..20000 }
+
   enum status: {
        fresh: 1,
        planned: 2,

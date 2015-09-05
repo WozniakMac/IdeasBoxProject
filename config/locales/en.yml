@@ -51,6 +51,7 @@ en:
   idea:
     submit: "Submit"
     comments: "Comments"
+    new: "New idea"
   comment:
     zero: '0 comments'
     one: '1 comment'
@@ -60,3 +61,4 @@ en:
     add: "Add comment"
     submit: "Create"
   ago: 'ago'
+  somethingwrong: "Something goes wrong :("

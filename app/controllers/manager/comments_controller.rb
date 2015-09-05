@@ -11,10 +11,8 @@ class Manager::CommentsController < Manager::BaseController
     respond_to do |format|
       if @manager_comment.save
         format.html { redirect_to [:manager, @manager_box, @manager_idea], notice: 'Comment was successfully created.' }
-        format.json { render :show, status: :created, location: @manager_comment }
       else
         format.html { render :new }
-        format.json { render json: @manager_comment.errors, status: :unprocessable_entity }
       end
     end
   end

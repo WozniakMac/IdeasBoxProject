@@ -28,10 +28,8 @@ class Manager::IdeasController < Manager::BaseController
     respond_to do |format|
       if @manager_idea.update(manager_idea_status)
         format.html { redirect_to [:manager,@manager_box,@manager_idea], notice: 'Idea was successfully updated.' }
-        format.json { render :show, status: :ok, location: @manager_idea }
       else
         format.html { render :edit }
-        format.json { render json: @manager_idea.errors, status: :unprocessable_entity }
       end
     end
   end

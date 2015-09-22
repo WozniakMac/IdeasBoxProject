@@ -1,20 +1,24 @@
 <%= form_for([:manager,@manager_box,@manager_idea,@manager_comment]) do |f| %>
   <% if @manager_comment.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@manager_comment.errors.count, "error") %> prohibited this manager_comment from being saved:</h2>
+    <div id="error_explanation" class="alert alert-danger" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <p><%= t('somethingwrong') %></p>
 
       <ul>
-      <% @manager_comment.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% @manager_comment.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
-  <div class="field">
-    <%= f.label :comment %><br>
-    <%= f.text_field :comment %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <div class="form-group field">
+        <%= f.label I18n.t('comment.add') %><br>
+        <%= f.text_field :comment, :rows => 5, :cols => 20, class: 'form-control' %>
+    </div>
+
+    <div class="form-group actions">
+        <%= f.submit I18n.t('comment.submit'), class: 'btn btn-default' %>
+    </div>
 <% end %>

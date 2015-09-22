@@ -1,4 +1,23 @@
-<div class="idea_<%= idea.id %>"></div>
-<h2><%= link_to(idea.title, manager_box_idea_path(@manager_box,idea)) %></h2>
-<p>--<%= idea.description %></p>
-<p>--<%= idea.status.humanize %></p>
+<li class="list-group-item">
+  <div class="idea-elem idea-<%= idea.id %>">
+    <div class="ib-idea-like-buttons-panel">
+      <div class="btn-group">
+        <button class="ib-like-button btn btn-success btn-xs" disabled="disabled">
+          <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+          <span class="badge"><%= idea.like_counter %></span>
+        </button>
+        <button class="ib-dislike-button btn btn-warning btn-xs" disabled="disabled">
+        <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true">
+        </span> <span class="badge"><%= idea.dislike_counter %></span>
+        </button>
+      </div>
+    </div>
+    <h4 class="ib-idea-title"><%= link_to(idea.title, manager_box_idea_path(@manager_box,idea)) %></h4>
+    <div class="ib-idea-description"><%= markdown(idea.description) %></div>
+    <div class="small ib-idea-data">
+      <div class="ib-idea-data-element"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <%= idea.user %></div>
+      <div class="ib-idea-data-element"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> <%= idea.comments.count %></div>
+      <div class="ib-idea-data-element"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> <%= idea.created_at_as_text %></div>
+    </div>
+  </div>
+</li>

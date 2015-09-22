@@ -29,7 +29,7 @@ class Manager::IdeasController < Manager::BaseController
       if @manager_idea.update(manager_idea_status)
         format.html { redirect_to [:manager,@manager_box,@manager_idea], notice: 'Idea was successfully updated.' }
       else
-        format.html { render :edit }
+        format.html { redirect_to [:manager,@manager_box,@manager_idea], notice: 'Something goes wrong.' }
       end
     end
   end

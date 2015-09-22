@@ -2,13 +2,14 @@ class Idea < ActiveRecord::Base
   include Rails.application.routes.url_helpers
   include ActionView::Helpers::DateHelper
   include ActionView::Helpers::TextHelper
+  include ApplicationHelper
 
   belongs_to :box
   belongs_to :user
   has_many :comments
   has_many :votes
 
-  validates :title, length: { in: 4..20 }
+  validates :title, length: { in: 4..200 }
   validates :description, length: { in: 10..20000 }
 
   enum status: {
@@ -46,6 +47,7 @@ class Idea < ActiveRecord::Base
     json[:disliked] = disliked(options[:user])
     json[:author_name] = self.user.to_s
     json[:comments_count] = I18n.t('comment',count: self.comments.count)
+    json[:description_markdown] = markdown(self.description)
     return json
   end
 end

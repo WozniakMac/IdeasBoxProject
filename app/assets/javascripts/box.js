@@ -50,7 +50,7 @@ $(function() {
             switch(id){
                 case 'about':
                 {
-                    $("#ajax-content").text(content.description);
+                    $("#ajax-content").html(content.description_markdown);
                     break;
                 }
                 default:
@@ -86,7 +86,7 @@ $(function() {
                             //Add descriptiom
                             var description = $('<div></div>')
                                                 .addClass('ib-idea-description')
-                                                .text(content[i].description)
+                                                .html(content[i].description_markdown)
                                                 .appendTo(ideList)
                                                 .hide();
                             ideList.click(function(e){

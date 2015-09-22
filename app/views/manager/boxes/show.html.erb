@@ -1,10 +1,152 @@
 <p id="notice"><%= notice %></p>
-<h1><%= @manager_box.name %></h1>
-<p><%= @manager_box.description %></p>
+<div class="page-header">
+  <h1><%= @manager_box.name %></h1>
+</div>
+<div class="row" id="ib-mn-desctiprion">
+  <div class="col-md-12">
+    <div class="panel panel-default">
+      <div class="panel-body ib-box-description">
+        <%= markdown(@manager_box.description) %>
+      </div>
+      <div class="panel-footer ib-box-desc-rozwin">
+        <span class="ib-desc-roz"><%= t('show') %> <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></span>
+        <span class="hide ib-desc-zw"><%= t('hide') %>  <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span></span>
+      </div>
+    </div>
+  </div>
+</div>
 
 <div class="ideas">
-  <% if !@manager_box.ideas.nil? %>
-    <%= render @manager_box.ideas %>
+
+</div>
+<div class="row">
+  <% if !@manager_box.ideas.fresh.empty? %>
+      <div class="col-md-4">
+        <div class="panel panel-default" id="ib-ideas-fresh">
+          <div class="panel-heading">
+            <div class="row">
+              <div class="col-xs-6">
+                <h3 class="panel-title"><%= t('manager.idea.fresh') %></h3>
+              </div>
+              <div class="col-xs-6">
+                <input class="search form-control input-sm" type="text" placeholder="<%= t('search') %>" />
+              </div>
+            </div>
+          </div>
+          <div class="panel-body ib-pagination"><ul class="pagination-fresh-top pagination"></ul></div>
+          <ul class="list-group list">
+            <%= render @manager_box.ideas.fresh.order(created_at: :desc) %>
+          </ul>
+          <div class="panel-body ib-pagination"><ul class="pagination-fresh-bottom pagination"></ul></div>
+        </div>
+      </div>
+  <% end %>
+  <% if !@manager_box.ideas.popular.empty? %>
+      <div class="col-md-4">
+        <div class="panel panel-primary" id="ib-ideas-popular">
+          <div class="panel-heading">
+            <div class="row">
+              <div class="col-xs-6">
+                <h3 class="panel-title"><%= t('manager.idea.popular') %></h3>
+              </div>
+              <div class="col-xs-6">
+                <input class="search form-control input-sm" type="text" placeholder="<%= t('search') %>" />
+              </div>
+            </div>
+          </div>
+          <div class="panel-body ib-pagination"><ul class="pagination-popular-top pagination"></ul></div>
+          <ul class="list-group list">
+            <%= render @manager_box.ideas.popular %>
+          </ul>
+          <div class="panel-body ib-pagination"><ul class="pagination-popular-bottom pagination"></ul></div>
+        </div>
+      </div>
+  <% end %>
+  <% if !@manager_box.ideas.planned.empty? %>
+      <div class="col-md-4">
+        <div class="panel panel-info" id="ib-ideas-planned">
+          <div class="panel-heading">
+            <div class="row">
+              <div class="col-xs-6">
+                <h3 class="panel-title"><%= t('manager.idea.planned') %></h3>
+              </div>
+              <div class="col-xs-6">
+                <input class="search form-control input-sm" type="text" placeholder="<%= t('search') %>" />
+              </div>
+            </div>
+          </div>
+          <div class="panel-body ib-pagination"><ul class="pagination-planned-top pagination"></ul></div>
+          <ul class="list-group list">
+            <%= render @manager_box.ideas.planned.order(:updated_at) %>
+          </ul>
+          <div class="panel-body ib-pagination"><ul class="pagination-planned-bottom pagination"></ul></div>
+        </div>
+      </div>
+  <% end %>
+</div>
+<div class="row">
+  <% if !@manager_box.ideas.in_progress.empty? %>
+      <div class="col-md-4">
+        <div class="panel panel-danger" id="ib-ideas-inprogress">
+          <div class="panel-heading">
+            <div class="row">
+              <div class="col-xs-6">
+                <h3 class="panel-title"><%= t('manager.idea.inprogress') %></h3>
+              </div>
+              <div class="col-xs-6">
+                <input class="search form-control input-sm" type="text" placeholder="<%= t('search') %>" />
+              </div>
+            </div>
+          </div>
+          <div class="panel-body ib-pagination"><ul class="pagination-inprogress-top pagination"></ul></div>
+          <ul class="list-group list">
+            <%= render @manager_box.ideas.in_progress.order(:updated_at) %>
+          </ul>
+          <div class="panel-body ib-pagination"><ul class="pagination-inprogress-bottom pagination"></ul></div>
+        </div>
+      </div>
+  <% end %>
+  <% if !@manager_box.ideas.completed.empty? %>
+      <div class="col-md-4">
+        <div class="panel panel-success" id="ib-ideas-completed">
+          <div class="panel-heading">
+            <div class="row">
+              <div class="col-xs-6">
+                <h3 class="panel-title"><%= t('manager.idea.completed') %></h3>
+              </div>
+              <div class="col-xs-6">
+                <input class="search form-control input-sm" type="text" placeholder="<%= t('search') %>" />
+              </div>
+            </div>
+          </div>
+          <div class="panel-body ib-pagination"><ul class="pagination-completed-top pagination"></ul></div>
+          <ul class="list-group list">
+            <%= render @manager_box.ideas.completed.order(:updated_at) %>
+          </ul>
+          <div class="panel-body ib-pagination"><ul class="pagination-completed-bottom pagination"></ul></div>
+        </div>
+      </div>
+  <% end %>
+  <% if !@manager_box.ideas.canceled.empty? %>
+      <div class="col-md-4">
+        <div class="panel panel-danger" id="ib-ideas-canceled">
+          <div class="panel-heading">
+            <div class="row">
+              <div class="col-xs-6">
+                <h3 class="panel-title"><%= t('manager.idea.canceled') %></h3>
+              </div>
+              <div class="col-xs-6">
+                <input class="search form-control input-sm" type="text" placeholder="<%= t('search') %>" />
+              </div>
+            </div>
+          </div>
+          <div class="panel-body ib-pagination"><ul class="pagination-canceled-top pagination"></ul></div>
+          <ul class="list-group list">
+            <%= render @manager_box.ideas.canceled.order(:updated_at) %>
+          </ul>
+          <div class="panel-body ib-pagination"><ul class="pagination-canceled-bottom pagination"></ul></div>
+        </div>
+      </div>
   <% end %>
 </div>
 

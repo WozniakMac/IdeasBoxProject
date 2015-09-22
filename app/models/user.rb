@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
   has_many :votes
   has_many :comments
 
+  validates :username, length: { in: 4..20 }
+
   def is_owner?(model_item)
   	model_item.user == self
   end

@@ -17,6 +17,7 @@ gem 'bootstrap-sass', '~> 3.3.4'
 gem 'angularjs-rails'
 gem 'rails-i18n', github: 'svenfuchs/rails-i18n', branch: 'master' # For 4.x Translations
 gem "i18n-js", ">= 3.0.0.rc11"
+gem 'redcarpet'
 gem 'rails_12factor', group: :production
 
 group :development, :test do

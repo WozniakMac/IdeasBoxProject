@@ -58,3 +58,6 @@ pl:
       not_saved:
         one: "%{resource} nie został zapisany z powodu błędu:"
         other: "%{resource} nie został zapisany z powodu następujących błędów:"
+        many: "%{resource} nie został zapisany z powodu następujących błędów:"
+        zero: "%{resource} nie został zapisany z powodu błędu:"
+        few: "%{resource} nie został zapisany z powodu następujących błędów:"

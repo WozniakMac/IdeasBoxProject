@@ -48,6 +48,13 @@ en:
         edit: "Edit"
         open: "Open"
         info: "Manage"
+    idea:
+      fresh: "New"
+      popular: "Popular"
+      planned: "Planned"
+      inprogress: "In progress"
+      completed: "Completed"
+      canceled: "Canceled"
   idea:
     submit: "Submit"
     comments: "Comments"
@@ -60,5 +67,15 @@ en:
     other: '%{count} comments'
     add: "Add comment"
     submit: "Create"
+    new: "New comment"
   ago: 'ago'
   somethingwrong: "Something goes wrong :("
+  search: "Search"
+  show: "Show"
+  hide: "Hide"
+  fresh: "New"
+  planned: "Planned"
+  in_progress: "In Progress"
+  completed: "Completed"
+  canceled: "Canceled"
+  save: "Save"

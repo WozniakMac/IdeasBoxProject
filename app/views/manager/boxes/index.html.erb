@@ -11,7 +11,7 @@
         <h3 class="panel-title"><%= link_to(manager_box.name, [:manager,manager_box]) %></h3>
       </div>
       <div class="panel-body ib-panel-content">
-        <%= manager_box.description %>
+        <%= markdown(manager_box.description) %>
         <p class="ib-indexbutton btn-group" role="group">
           <%= link_to(I18n.t('manager.box.index.edit'), edit_manager_box_path(manager_box), class: "btn btn-primary" )%>
           <%= link_to(I18n.t('manager.box.index.info'), [:manager,manager_box], class: "btn btn-default" )%>

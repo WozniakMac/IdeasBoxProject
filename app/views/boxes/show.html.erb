@@ -13,7 +13,7 @@
     </ul>
     <div id="ib-tab-content" class="">
         <div id="ajax-content" class="elem">
-            <p><%= @box.description %></p>
+            <%= markdown(@box.description) %>
         </div>
         <div class="modal"><!-- Place at bottom of page --></div>
     </div>

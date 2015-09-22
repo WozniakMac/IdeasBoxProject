@@ -17,4 +17,6 @@ Rails.application.config.assets.precompile += %w( box.css )
 Rails.application.config.assets.precompile += %w( like_buttons.js )
 Rails.application.config.assets.precompile += %w( idea.js )
 Rails.application.config.assets.precompile += %w( idea.css )
-
+Rails.application.config.assets.precompile += %w( list.min.js )
+Rails.application.config.assets.precompile += %w( list.pagination.min.js )
+Rails.application.config.assets.precompile += %w( manager.js )

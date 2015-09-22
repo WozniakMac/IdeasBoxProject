@@ -1,11 +1,39 @@
 <p id="notice"><%= notice %></p>
-<%= render @manager_idea %>
-<%= link_to 'Back', manager_box_path(@manager_box) %>
+<div class="row idea-elem idea-<%= @manager_idea.id %>">
+  <div class="idea-content col-md-8">
+    <div class="page-header">
+      <h1><%= @manager_idea.title %></h1>
+    </div>
+    <div class="ib-idea-description"><%= markdown(@manager_idea.description) %></div>
+  </div>
+  <div class="ib-idea-info-panel col-md-4">
+    <%= render 'manager/ideas/status' %>
+    <div class="small ib-idea-data-s">
+      <div class="ib-idea-data-element">
+        <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span> <%= @manager_idea.like_counter %>
+      </div>
+      <div class="ib-idea-data-element">
+        <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span> <%= @manager_idea.dislike_counter %>
+      </div>
+      <div class="ib-idea-data-element">
+        <span class="glyphicon glyphicon-user" aria-hidden="true"></span> <%= @manager_idea.user %>
+      </div>
+      <div class="ib-idea-data-element">
+        <span class="glyphicon glyphicon-comment" aria-hidden="true"></span> <%= @manager_idea.comments.count %>
+      </div>
+      <div class="ib-idea-data-element">
+        <span class="glyphicon glyphicon-time" aria-hidden="true"></span> <%= @manager_idea.created_at_as_text %>
+      </div>
+    </div>
+  </div>
 
-<%= render "manager/votes/votes" %>
+</div>
 
-<%= render 'manager/ideas/status' %>
 
+
+<div class="page-header">
+  <h3><%= t('idea.comments') %></h3>
+</div>
 <div class="comments">
   <% if !@manager_idea.comments.nil? %>
     <%= render @manager_idea.comments %>

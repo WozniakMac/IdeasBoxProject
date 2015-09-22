@@ -48,6 +48,13 @@ pl:
         edit: "Edytuj"
         open: "Otwórz"
         info: "Zarządzaj"
+    idea:
+      fresh: "Nowe"
+      popular: "Popularne"
+      planned: "Planowane"
+      inprogress: "W realizacji"
+      completed: "Zakończone"
+      canceled: "Anulowane"
   idea:
     submit: "Wyślij"
     comments: "Komentarze"
@@ -60,5 +67,15 @@ pl:
     other: '%{count} komentarzy'
     add: "Dodaj komentarz"
     submit: "Wyślij"
+    new: "Nowy komentarz"
   ago: 'temu'
   somethingwrong: 'Coś poszło nie tak :('
+  search: "Szukaj"
+  show: "Pokaż"
+  hide: "Ukryj"
+  fresh: "Nowe"
+  planned: "Planowane"
+  in_progress: "W Realizacji"
+  completed: "Zakończone"
+  canceled: "Anulowane"
+  save: "Zapisz"

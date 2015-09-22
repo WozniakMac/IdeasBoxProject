@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   devise_for :users
   resources :boxes, only: [:index, :show] do
     resources :ideas, only: [:show, :create, :new] do
-      resources :comments, only: :create
+      resources :comments, only: [:create, :show, :new]
+      get 'comments', to: 'comments#new', as: 'new'
       post 'like', to: 'votes#like', as: 'like'
       post 'dislike', to: 'votes#dislike', as: 'dislike'
       post 'unlike', to: 'votes#unlike', as: 'unlike'
@@ -33,7 +34,8 @@ Rails.application.routes.draw do
     get '', to: 'boxes#index', as: '/'
     resources :boxes, only: [ :index, :new, :show, :edit, :update, :create] do
       resources :ideas, only: [:show, :update ] do
-        resources :comments, only: :create
+        resources :comments, only: [:create, :show, :new]
+        get 'comments', to: 'comments#new', as: 'new'
       end
     end
   end

@@ -19,6 +19,14 @@ class CommentsController < ApplicationController
     end
   end
 
+  def new
+    @comment = Comment.new
+  end
+
+  def show
+    @comment = Comment.find(params[:id])
+  end
+
   private
     def set_box
       @box = Box.find(params[:box_id])

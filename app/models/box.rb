@@ -1,4 +1,6 @@
 class Box < ActiveRecord::Base
+  include ApplicationHelper
+
   belongs_to :user
   has_many :ideas
 
@@ -28,7 +30,9 @@ class Box < ActiveRecord::Base
 
   def as_json(options={})
     if options== :description
-      super(only: [:description])
+      json = super(only: [:description])
+      json[:description_markdown] = markdown(self.description)
+      return json
     else
       super(only: [:id, :title, :description, :created_at, :updated_at])
     end

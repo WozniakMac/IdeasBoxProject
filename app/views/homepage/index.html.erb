@@ -11,7 +11,7 @@
     <div class="item item-first active">
       <div class="container">
         <div class="carousel-caption">
-          <h1><span class="padded-multi-line">Pomysły</span></h1>
+          <h1>Pomysły</h1>
           <p>One sprawiają, że świat staje się lepszy :)</p>
           <% if current_user.nil? %>
             <p><%= link_to(I18n.t('navbar.right.signup'), new_user_registration_path, class: 'btn btn-lg btn-primary' )%></p>

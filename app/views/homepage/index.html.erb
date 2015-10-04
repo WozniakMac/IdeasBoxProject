@@ -8,44 +8,46 @@
     <li data-target="#myCarousel" data-slide-to="2"></li>
   </ol>
   <div class="carousel-inner" role="listbox">
-    <div class="item active">
-      <img class="first-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="First slide">
+    <div class="item item-first active">
       <div class="container">
         <div class="carousel-caption">
-          <h1>Example headline.</h1>
-          <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
-          <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+          <h1><span class="padded-multi-line">Pomysły</span></h1>
+          <p>One sprawiają, że świat staje się lepszy :)</p>
+          <% if current_user.nil? %>
+            <p><%= link_to(I18n.t('navbar.right.signup'), new_user_registration_path, class: 'btn btn-lg btn-primary' )%></p>
+          <% end %>
+          <% if !current_user.nil? %>
+              <p><%= link_to('Stwórz nowe pudełko na pomysły', new_manager_box_path, class: 'btn btn-lg btn-primary' ) %></p>
+          <% end %>
         </div>
       </div>
     </div>
-    <div class="item">
-      <img class="second-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Second slide">
+    <div class="item item-second">
       <div class="container">
         <div class="carousel-caption">
-          <h1>Another example headline.</h1>
-          <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-          <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+          <h1>Cele</h1>
+          <p>Pokazać, że głos każdego człowieka na ziemi ma znaczenie.</p>
+          <p><a class="btn btn-lg btn-primary" href="#" role="button">Więcej</a></p>
         </div>
       </div>
     </div>
-    <div class="item">
-      <img class="third-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Third slide">
+    <div class="item item-third">
       <div class="container">
         <div class="carousel-caption">
-          <h1>One more for good measure.</h1>
-          <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-          <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+          <h1>Codziennie staramy się dla Ciebie</h1>
+          <p>Jeżeli masz dla nas sugestię, daj nam znać, abyśmy mogli być jeszcze lepsi :)</p>
+          <p><a class="btn btn-lg btn-primary" href="#" role="button">Nasze pudełko na pomysły</a></p>
         </div>
       </div>
     </div>
   </div>
   <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
     <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
+    <span class="sr-only">Poprzedni</span>
   </a>
   <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
     <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
+    <span class="sr-only">Następny</span>
   </a>
 </div><!-- /.carousel -->
 
@@ -59,22 +61,22 @@
   <!-- Three columns of text below the carousel -->
   <div class="row">
     <div class="col-lg-4">
-      <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-      <h2>Heading</h2>
-      <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-      <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+      <span class="flaticon-multiple25"></span>
+      <h2>Użytkownik</h2>
+      <p>Pokaż innym jak mogliby ulepszyć swoje produkty. Pokaż twórcą, że chcesz zmian.</p>
+      <p><a class="btn btn-default" href="#" role="button">Więcej &raquo;</a></p>
     </div><!-- /.col-lg-4 -->
     <div class="col-lg-4">
-      <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-      <h2>Heading</h2>
-      <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-      <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+      <span class="flaticon-settings48"></span>
+      <h2>Twórca</h2>
+      <p>Nawiąż kontakt ze społecznością i pokaż im jak wiele dla ciebie znaczą. Udostępnij pudełko.</p>
+      <p><a class="btn btn-default" href="#" role="button">Więcej &raquo;</a></p>
     </div><!-- /.col-lg-4 -->
     <div class="col-lg-4">
-      <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-      <h2>Heading</h2>
-      <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-      <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+      <span class="flaticon-brain13"></span>
+      <h2>Marzyciel</h2>
+      <p>Odnajdź nowe możliwości na wykożystanie pudełka i zmień świat :)</p>
+      <p><a class="btn btn-default" href="#" role="button">Więcej &raquo;</a></p>
     </div><!-- /.col-lg-4 -->
   </div><!-- /.row -->
 
@@ -85,11 +87,11 @@
 
   <div class="row featurette">
     <div class="col-md-7">
-      <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
-      <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+      <h2 class="featurette-heading">Załóż pudełko na pomysły. <span class="text-muted">Pozwól swoim myślom płynąć.</span></h2>
+      <p class="lead">Pokaż ludziom, że zależy Ci na tym co myślą i czego chcę. Dzięki temu dotrzesz do ich serc.</p>
     </div>
     <div class="col-md-5">
-      <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+      <%= image_tag "box.png", class: "featurette-image img-responsive center-block" %>
     </div>
   </div>
 
@@ -97,11 +99,11 @@
 
   <div class="row featurette">
     <div class="col-md-7 col-md-push-5">
-      <h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
-      <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+      <h2 class="featurette-heading">Bądź kreatywny. <span class="text-muted">Pokaż innym swój punkt widzenia.</span></h2>
+      <p class="lead">Twój pomysł może zmienić świat.</p>
     </div>
     <div class="col-md-5 col-md-pull-7">
-      <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+      <%= image_tag "ideas.png", class: "featurette-image img-responsive center-block" %>
     </div>
   </div>
 
@@ -109,11 +111,11 @@
 
   <div class="row featurette">
     <div class="col-md-7">
-      <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
-      <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+      <h2 class="featurette-heading">Wspieraj innych. <span class="text-muted">Głosuj, komentuj.</span></h2>
+      <p class="lead">Twoja opinia jest bardzo ważna. Nie lekceważ tego. Pchnij swój głos w świat.</p>
     </div>
     <div class="col-md-5">
-      <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+      <%= image_tag "comments.png", class: "featurette-image img-responsive center-block" %>
     </div>
   </div>
 

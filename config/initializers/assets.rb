@@ -24,3 +24,9 @@ Rails.application.config.assets.precompile += %w( manager.js )
 Rails.application.config.assets.precompile += %w( homeone.css )
 Rails.application.config.assets.precompile += %w( imagesloaded.pkgd.min.js )
 Rails.application.config.assets.precompile += %w( jquery-imagefill.js )
+
+# Icons fonts
+Rails.application.config.assets.precompile += %w( flaticon.eot )
+Rails.application.config.assets.precompile += %w( flaticon.woff )
+Rails.application.config.assets.precompile += %w( flaticon.ttf )
+Rails.application.config.assets.precompile += %w( flaticon.svg )

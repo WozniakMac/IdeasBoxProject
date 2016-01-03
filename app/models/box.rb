@@ -27,14 +27,4 @@ class Box < ActiveRecord::Base
         order('ideas_count DESC').
         limit(10) }
 
-
-  def as_json(options={})
-    if options== :description
-      json = super(only: [:description])
-      json[:description_markdown] = markdown(self.description)
-      return json
-    else
-      super(only: [:id, :title, :description, :created_at, :updated_at])
-    end
-  end
 end

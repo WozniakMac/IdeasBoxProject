@@ -18,25 +18,4 @@ Rails.application.routes.draw do
     get 'inprogress', to: 'boxes#in_progress', as: 'inprogress'
     get 'completed', to: 'boxes#completed', as: 'completed'
   end
-
-  # admin
-  namespace :admin do
-    get '', to: 'boxes#index', as: '/'
-    resources :boxes do
-      resources :ideas, only: [ :show, :edit, :update, :destroy] do
-        resources :comments
-      end
-    end
-  end
-
-  # manager
-  namespace :manager do
-    get '', to: 'boxes#index', as: '/'
-    resources :boxes, only: [ :index, :new, :show, :edit, :update, :create] do
-      resources :ideas, only: [:show, :update ] do
-        resources :comments, only: [:create, :show, :new]
-        get 'comments', to: 'comments#new', as: 'new'
-      end
-    end
-  end
 end

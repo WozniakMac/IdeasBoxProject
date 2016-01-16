@@ -1,29 +1,48 @@
-<p id="notice"><%= notice %></p>
-<div class="page-header">
-    <h1><%= @box.name %></h1>
-</div>
-<div id="tabs">
-    <ul class="nav nav-tabs">
-      <li role="presentation" class="tab-menu active"><a id="about" href="<%= @box.id %>/about"><%= t('box.about') %></a></li>
-      <li role="presentation" class="tab-menu"><a id="fresh" href="<%= @box.id %>/fresh"><%= t('box.fresh') %> <span class="badge"><%= @box.ideas.fresh.count %></span></a></li>
-      <li role="presentation" class="tab-menu"><a id="popular" href="<%= @box.id %>/popular"><%= t('box.popular') %> <span class="badge"><%= @box.ideas.popular.count %></span></a></li>
-      <li role="presentation" class="tab-menu"><a id="planned" href="<%= @box.id %>/planned"><%= t('box.planned') %> <span class="badge"><%= @box.ideas.planned.count %></span></a></li>
-      <li role="presentation" class="tab-menu"><a id="inprogress" href="<%= @box.id %>/inprogress"><%= t('box.inprogress') %> <span class="badge"><%= @box.ideas.in_progress.count %></span></a></li>
-      <li role="presentation" class="tab-menu"><a id="completed" href="<%= @box.id %>/completed"><%= t('box.completed') %> <span class="badge"><%= @box.ideas.completed.count %></span></a></li>
-    </ul>
-    <div id="ib-tab-content" class="">
-        <div id="ajax-content" class="elem">
-            <%= markdown(@box.description) %>
-        </div>
-        <div class="modal"><!-- Place at bottom of page --></div>
+<% content_for :css do %>
+    <%= stylesheet_link_tag    'card-small', media: 'all' %>
+<% end %>
+
+<% content_for :title do %>
+    <%= @box.name %>
+<% end %>
+
+<% content_for :content do %>
+    <div class="mdl-layout__tab-panel is-active mdl-grid ids-content" id="content">
+      <div class="ids-cards-left mdl-grid mdl-cell mdl-cell--8-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone">
+        <%= render @ideas %>
+        <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+        </section>
+      </div>
+      <!--  ROGHT PANEL  -->
+      <div class="ids-cards-left mdl-grid mdl-cell mdl-cell--4-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone">
+        <!--  ONE CARD  -->
+        <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone">
+          <header class="user-info__head mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone mdl-color-text--white">
+            <div class="ids-font__grey-light">
+              <img class="" src="/images/face-big.png" alt="">
+              <h4><%= @box.user.username %></h4>
+            </div>
+          </header>
+          <div class="mdl-card mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone ideashare-idea-content">
+            <div class="mdl-card__supporting-text">
+              <%= markdown(@box.description) %>
+            </div>
+          </div>
+        </section>
+        <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+        </section>
+      </div>
     </div>
-</div>
+<% end %>
 
+<% content_for :addbutton do %>
+    <%= render "shared/navbar/button" %>
+<% end %>
 
-<div class="idea-form">
-  <% if !current_user.nil? %>
-      <h2><%= t('box.addnewidea') %></h2>
-      <%= render "ideas/form" %>
-  <% end %>
-</div>
-<%= javascript_include_tag 'box', 'data-turbolinks-track' => true %>
+<% content_for :navbartop do %>
+    <%= render "shared/navbar/top" %>
+<% end %>
+
+<% content_for :leftnav do %>
+    <%= render "shared/navbar/down" %>
+<% end %>

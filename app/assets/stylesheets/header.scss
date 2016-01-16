@@ -1,0 +1,112 @@
+/*****************************HEADER*******************************/
+
+.mdl-ideashare-base .mdl-layout__header-row {
+    padding-left: 0px;
+}
+
+.mdl-ideashare-base .its-tab-bar .mdl-layout__tab {
+    height: 60px;
+    line-height: 60px;
+}
+
+.mdl-ideashare-base .its-tab-bar .mdl-layout__tab i {
+    line-height: inherit;
+}
+
+.mdl-ideashare-base .mdl-layout__header-row h3 {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.mdl-ideashare-base .mdl-layout__tab-bar-button {
+    display: none;
+}
+
+.mdl-ideashare-base .mdl-layout:not(.is-small-screen) .its-tab-bar, .mdl-ideashare-base .mdl-layout:not(.is-small-screen) .mdl-layout__tab-bar-container {
+    overflow: visible;
+}
+
+.mdl-ideashare-base .mdl-layout__tab-bar-container {
+    height: 60px;
+}
+
+.mdl-ideashare-base .its-tab-bar {
+    padding: 0;
+    padding-left: 0px;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+.mdl-ideashare-base .mdl-layout__tab {
+    font-size: 12px;
+}
+
+.mdl-ideashare-base .its-tab-bar .mdl-layout__tab {
+    height: 60px;
+    line-height: 60px;
+}
+
+.mdl-ideashare-base .its-tab-bar .mdl-layout__tab.is-active::after {
+    background-color: #aed136;
+    height: 4px;
+}
+
+.mdl-ideashare-base main > .mdl-layout__tab-panel {
+    padding: 8px;
+    padding-top: 48px;
+}
+
+.mdl-ideashare-base .mdl-main-title {
+    padding-left: 15px;
+}
+
+.mdl-ideashare-base .mdl-main-title h3 {
+    margin-top: 0px;
+}
+
+.mdl-ideashare-base .mdl-navigation__link i {
+    line-height: inherit;
+    font-size: 16px;
+}
+
+.mdl-ideashare-base .mdl-navigation__link {
+    -o-transition: .5s;
+    -ms-transition: .5s;
+    -moz-transition: .5s;
+    -webkit-transition: .5s;
+    transition: .5s;
+}
+
+.mdl-ideashare-base .mdl-navigation__link:hover {
+    color: white;
+}
+
+.mdl-ideashare-base .mdl-ideashare-right-menu > a {
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+.mdl-ideashare-base .mdl-ideashare-emptyspace {
+    height: 30px;
+}
+
+.mdl-ideashare-base .mdl-ideashare-sitename-little {
+    height: 20px;
+    padding-left: 15px;
+}
+
+.mdl-ideashare-base .mdl-color--ideashare-dark a {
+    color: #babbbd;
+}
+
+.mdl-ideashare-base .mdl-color--ideashare-grey-font {
+    color: #babbbd;
+}
+
+.mdl-ideashare-base .header-width {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 0px;
+}

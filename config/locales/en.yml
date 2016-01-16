@@ -27,6 +27,7 @@ en:
       ourbox: "Make as better"
       yourboxes: 'Your boxes'
       statistics: 'Statistics'
+      table: "Table"
     right:
       createbox: "Create box"
       manageboxes: "Manage boxes"
@@ -56,9 +57,14 @@ en:
       completed: "Completed"
       canceled: "Canceled"
   idea:
+    zero: '0 ideas'
+    one: '1 idea'
+    few: '%{count} ideas'
+    meny: '%{count} ideas'
+    other: '%{count} ideas'
+    new: "New idea"
     submit: "Submit"
     comments: "Comments"
-    new: "New idea"
   comment:
     zero: '0 comments'
     one: '1 comment'

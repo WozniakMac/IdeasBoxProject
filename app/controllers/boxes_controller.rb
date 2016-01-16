@@ -4,37 +4,32 @@ class BoxesController < ApplicationController
   # GET /boxes
   # GET /boxes.json
   def index
-    @boxes = Box.all.order(created_at: :desc).limit(10)
-    @boxes_top = Box.top10
+    @boxes = Box.all.order(created_at: :desc)
   end
 
   def show
     @box = Box.find(params[:id])
-    @idea = Idea.new
-  end
-
-  def about
-    render json: @box.as_json(:description)
+    @ideas = @box.ideas.limit(4)
   end
 
   def fresh
-    render json: @box.ideas.fresh.order(created_at: :desc).as_json(user: current_user)
+    @ideas = @box.ideas.fresh.order(created_at: :desc)
   end
 
   def popular
-    render json: @box.ideas.popular.as_json(user: current_user)
+    @ideas = @box.ideas.popular
   end
 
   def planned
-    render json: @box.ideas.planned.order(:updated_at).as_json(user: current_user)
+    @ideas = @box.ideas.planned.order(:updated_at)
   end
 
   def in_progress
-    render json: @box.ideas.in_progress.order(:updated_at).as_json(user: current_user)
+    @ideas = @box.ideas.in_progress.order(:updated_at)
   end
 
   def completed
-    render json: @box.ideas.completed.order(:updated_at).as_json(user: current_user)
+    @ideas = @box.ideas.completed.order(:updated_at)
   end
 
   private

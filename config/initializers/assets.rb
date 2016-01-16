@@ -9,12 +9,15 @@ Rails.application.config.assets.version = '1.0'
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
 # Rails.application.config.assets.precompile += %w( search.js )
-Rails.application.config.assets.precompile += %w( homepage.css )
+#JS
 Rails.application.config.assets.precompile += %w( homepage.js )
-Rails.application.config.assets.precompile += %w( manager.css )
-Rails.application.config.assets.precompile += %w( public.css )
-Rails.application.config.assets.precompile += %w( box.js )
-Rails.application.config.assets.precompile += %w( box.css )
-Rails.application.config.assets.precompile += %w( idea.js )
-Rails.application.config.assets.precompile += %w( idea.css )
-Rails.application.config.assets.precompile += %w( homeone.css )
+
+
+#CSS
+Rails.application.config.assets.precompile += %w( homepage.css )
+Rails.application.config.assets.precompile += %w( card.css )
+Rails.application.config.assets.precompile += %w( global.css )
+Rails.application.config.assets.precompile += %w( header.css )
+Rails.application.config.assets.precompile += %w( material-click.css )
+Rails.application.config.assets.precompile += %w( paginations.css )
+Rails.application.config.assets.precompile += %w( card-small.css )

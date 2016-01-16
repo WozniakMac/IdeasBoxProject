@@ -1,6 +1,4 @@
 class Box < ActiveRecord::Base
-  include ApplicationHelper
-
   belongs_to :user
   has_many :ideas
 

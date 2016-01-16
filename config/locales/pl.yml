@@ -18,6 +18,7 @@ pl:
       nothing: "Nikt nie dodał jeszcze tutaj pomysłu. Bądź pierwszy :)"
       error: "Coś poszło nie tak :("
     addnewidea: "Dodaj nowy pomysł"
+    ideas: "pomysłów"
   permissions:
     denied: 'Brak uprawnień :('
   navbar:
@@ -27,6 +28,7 @@ pl:
       ourbox: 'Ulepsz nas'
       yourboxes: 'Zarządzaj'
       statistics: 'Statystyki'
+      table: "Tablica"
     right:
       createbox: 'Stwórz'
       manageboxes: 'Zarządzaj'
@@ -56,9 +58,14 @@ pl:
       completed: "Zakończone"
       canceled: "Anulowane"
   idea:
+    zero: '0 pomysłów'
+    one: '1 pomysł'
+    few: '%{count} pomysły'
+    many: '%{count} pomysłów'
+    other: '%{count} pomysłów'
+    new: "Nowy pomysł"
     submit: "Wyślij"
     comments: "Komentarze"
-    new: "Nowy pomysł"
   comment:
     zero: '0 komentarzy'
     one: '1 komentarz'

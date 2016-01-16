@@ -1,129 +1,165 @@
-<!-- Carousel
-    ================================================== -->
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
-  </ol>
-  <div class="carousel-inner" role="listbox">
-    <div class="item item-first active">
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header class="mdl-layout__header mdl-layout__header--scroll mdl-color--ideashare-dark">
+    <div class="header-width mdl-ideashare-top-menu mdl-layout--large-screen-only mdl-layout__header-row">
+      <%= render "shared/navbar/top" %>
+    </div>
+    <div class="mdl-ideashare-sitename-little mdl-color--ideashare-grey-font header-width mdl-layout--large-screen-only mdl-layout__header-row">
+      <h6>Ideashare</h6>
+    </div>
+    <div class="header-width mdl-main-title mdl-layout--large-screen-only mdl-layout__header-row">
+      <h3>Jak ulepszyć naszą stronę?</h3>
+    </div>
+    <div class="mdl-ideashare-emptyspace header-width mdl-layout--large-screen-only mdl-layout__header-row">
+    </div>
+    <div class="header-width its-tab-bar mdl-color--ideashare-dark">
+      <%= render "shared/navbar/down" %>
+      <%= render "shared/navbar/button" %>
+    </div>
+  </header>
+  <main class="mdl-layout__content">
+    <div class="mdl-layout__tab-panel is-active" id="overview">
+      <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+        <header class="ideashare-idea ideashare-idea-header section__play-btn mdl-cell mdl-cell--2-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color-text--white ids-background-color">
+          <div class="ideashare-idea-buttons">
+            <div class="like idea-button">
+              <i class="material-icons ripple-effect" data-ripple-color="#aed136" data-ripple-limit=".section--center">thumb_up</i>
+              <p>13430</p>
+            </div>
+            <div class="empty idea-button"></div>
+            <div class="dislike idea-button">
+              <i class="material-icons ripple-effect" data-ripple-color="#d13636" data-ripple-limit=".section--center">thumb_down</i>
+              <p>975</p>
+            </div>
+          </div>
+          <img class="ids-image-card" src="images/slide1.jpg" alt="">
+        </header>
+        <div class="mdl-card mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone ideashare-idea-content">
+          <div class="mdl-card__supporting-text">
+            <h4>Banowanie użytkowników</h4>
+            Dolore ex deserunt aute fugiat aute nulla ea sunt aliqua nisi cupidatat eu. Nostrud in laboris labore nisi amet do dolor eu fugiat consectetur elit cillum esse.
+          </div>
+          <div class="mdl-card__actions">
+            <a href="#" class="ideashare-link-action">
+              <div class="mdl-card__actions--icon">
+                <i class="material-icons">person</i>
+              </div>
+              <div class="mdl-card__actions--text">
+                WozniakMac
+              </div>
+            </a>
+            <a href="#" class="ideashare-link-action">
+              <div class="mdl-card__actions--icon">
+                <i class="material-icons">comment</i>
+              </div>
+              <div class="mdl-card__actions--text">
+                20 komentarzy
+              </div>
+            </a>
+          </div>
+        </div>
+        <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn1">
+          <i class="material-icons">more_vert</i>
+        </button>
+        <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn1">
+          <li class="mdl-menu__item">Edytuj</li>
+          <li class="mdl-menu__item">Zgłoś</li>
+          <li class="mdl-menu__item">Zmień status</li>
+        </ul>
+      </section>
+
+      <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+        <header class="ideashare-idea ideashare-idea-header section__play-btn mdl-cell mdl-cell--2-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color-text--white ids-background-color">
+          <div class="ideashare-idea-buttons">
+            <div class="like idea-button">
+              <i class="material-icons ripple-effect" data-ripple-color="#aed136" data-ripple-limit=".section--center">thumb_up</i>
+              <p>13430</p>
+            </div>
+            <div class="empty idea-button"></div>
+            <div class="dislike idea-button">
+              <i class="material-icons ripple-effect" data-ripple-color="#d13636" data-ripple-limit=".section--center">thumb_down</i>
+              <p>975</p>
+            </div>
+          </div>
+          <img class="ids-image-card" src="images/slide1.jpg" alt="">
+        </header>
+        <div class="mdl-card mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone ideashare-idea-content">
+          <div class="mdl-card__supporting-text">
+            <h4>Banowanie użytkowników</h4>
+            Dolore ex deserunt aute fugiat aute nulla ea sunt aliqua nisi cupidatat eu. Nostrud in laboris labore nisi amet do dolor eu fugiat consectetur elit cillum esse.
+          </div>
+          <div class="mdl-card__actions">
+            <a href="#" class="ideashare-link-action">
+              <div class="mdl-card__actions--icon">
+                <i class="material-icons">person</i>
+              </div>
+              <div class="mdl-card__actions--text">
+                WozniakMac
+              </div>
+            </a>
+            <a href="#" class="ideashare-link-action">
+              <div class="mdl-card__actions--icon">
+                <i class="material-icons">comment</i>
+              </div>
+              <div class="mdl-card__actions--text">
+                20 komentarzy
+              </div>
+            </a>
+          </div>
+        </div>
+        <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn2">
+          <i class="material-icons">more_vert</i>
+        </button>
+        <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn2">
+          <li class="mdl-menu__item">Edytuj</li>
+          <li class="mdl-menu__item">Zgłoś</li>
+          <li class="mdl-menu__item">Zmień status</li>
+        </ul>
+      </section>
+
+
       <div class="container">
-        <div class="carousel-caption">
-          <h1>Pomysły</h1>
-          <p>One sprawiają, że świat staje się lepszy :)</p>
-          <% if current_user.nil? %>
-            <p><%= link_to(I18n.t('navbar.right.signup'), new_user_registration_path, class: 'btn btn-lg btn-primary' )%></p>
-          <% end %>
-          <% if !current_user.nil? %>
-              <p><%= link_to('Stwórz nowe pudełko na pomysły', new_manager_box_path, class: 'btn btn-lg btn-primary' ) %></p>
-          <% end %>
+        <div class="pagination">
+          <button class="mdl-button mdl-js-button mdl-button--icon">
+            <i class="material-icons">keyboard_arrow_left</i>
+          </button>
+          <button class="mdl-button mdl-js-button mdl-button--icon">
+            1
+          </button>
+          <button class="mdl-button mdl-js-button mdl-button--icon">
+            2
+          </button>
+          <button class="mdl-button mdl-js-button mdl-button--icon mdl-shadow--4dp mdl-button--fab">
+            3
+          </button>
+          <button class="mdl-button mdl-js-button mdl-button--icon">
+            4
+          </button>
+          <button class="mdl-button mdl-js-button mdl-button--icon">
+            5
+          </button>
+          <button class="mdl-button mdl-js-button mdl-button--icon">
+            6
+          </button>
+          <button class="mdl-button mdl-js-button mdl-button--icon" disabled>
+            ...
+          </button>
+          <button class="mdl-button mdl-js-button mdl-button--icon">
+            15
+          </button>
+          <button class="mdl-button mdl-js-button mdl-button--icon">
+            16
+          </button>
+          <button class="mdl-button mdl-js-button mdl-button--icon">
+            <i class="material-icons">keyboard_arrow_right</i>
+          </button>
         </div>
       </div>
+
+
+      <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+
+
+      </section>
     </div>
-    <div class="item item-second">
-      <div class="container">
-        <div class="carousel-caption">
-          <h1>Cele</h1>
-          <p>Pokazać, że głos każdego człowieka na ziemi ma znaczenie.</p>
-          <p><a class="btn btn-lg btn-primary" href="#" role="button">Więcej</a></p>
-        </div>
-      </div>
-    </div>
-    <div class="item item-third">
-      <div class="container">
-        <div class="carousel-caption">
-          <h1>Codziennie staramy się dla Ciebie</h1>
-          <p>Jeżeli masz dla nas sugestię, daj nam znać, abyśmy mogli być jeszcze lepsi :)</p>
-          <p><a class="btn btn-lg btn-primary" href="#" role="button">Nasze pudełko na pomysły</a></p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-    <span class="sr-only">Poprzedni</span>
-  </a>
-  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-    <span class="sr-only">Następny</span>
-  </a>
-</div><!-- /.carousel -->
-
-
-<!-- Marketing messaging and featurettes
-================================================== -->
-<!-- Wrap the rest of the page in another container to center all the content. -->
-
-<div class="container marketing">
-
-  <!-- Three columns of text below the carousel -->
-  <div class="row">
-    <div class="col-lg-4">
-      <span class="flaticon-multiple25"></span>
-      <h2>Użytkownik</h2>
-      <p>Pokaż innym jak mogliby ulepszyć swoje produkty. Pokaż twórcą, że chcesz zmian.</p>
-      <p><a class="btn btn-default" href="#" role="button">Więcej &raquo;</a></p>
-    </div><!-- /.col-lg-4 -->
-    <div class="col-lg-4">
-      <span class="flaticon-settings48"></span>
-      <h2>Twórca</h2>
-      <p>Nawiąż kontakt ze społecznością i pokaż im jak wiele dla ciebie znaczą. Udostępnij pudełko.</p>
-      <p><a class="btn btn-default" href="#" role="button">Więcej &raquo;</a></p>
-    </div><!-- /.col-lg-4 -->
-    <div class="col-lg-4">
-      <span class="flaticon-brain13"></span>
-      <h2>Marzyciel</h2>
-      <p>Odnajdź nowe możliwości na wykożystanie pudełka i zmień świat :)</p>
-      <p><a class="btn btn-default" href="#" role="button">Więcej &raquo;</a></p>
-    </div><!-- /.col-lg-4 -->
-  </div><!-- /.row -->
-
-
-  <!-- START THE FEATURETTES -->
-
-  <hr class="featurette-divider">
-
-  <div class="row featurette">
-    <div class="col-md-7">
-      <h2 class="featurette-heading">Załóż pudełko na pomysły. <span class="text-muted">Pozwól swoim myślom płynąć.</span></h2>
-      <p class="lead">Pokaż ludziom, że zależy Ci na tym co myślą i czego chcę. Dzięki temu dotrzesz do ich serc.</p>
-    </div>
-    <div class="col-md-5">
-      <%= image_tag "box.png", class: "featurette-image img-responsive center-block" %>
-    </div>
-  </div>
-
-  <hr class="featurette-divider">
-
-  <div class="row featurette">
-    <div class="col-md-7 col-md-push-5">
-      <h2 class="featurette-heading">Bądź kreatywny. <span class="text-muted">Pokaż innym swój punkt widzenia.</span></h2>
-      <p class="lead">Twój pomysł może zmienić świat.</p>
-    </div>
-    <div class="col-md-5 col-md-pull-7">
-      <%= image_tag "ideas.png", class: "featurette-image img-responsive center-block" %>
-    </div>
-  </div>
-
-  <hr class="featurette-divider">
-
-  <div class="row featurette">
-    <div class="col-md-7">
-      <h2 class="featurette-heading">Wspieraj innych. <span class="text-muted">Głosuj, komentuj.</span></h2>
-      <p class="lead">Twoja opinia jest bardzo ważna. Nie lekceważ tego. Pchnij swój głos w świat.</p>
-    </div>
-    <div class="col-md-5">
-      <%= image_tag "comments.png", class: "featurette-image img-responsive center-block" %>
-    </div>
-  </div>
-
-  <hr class="featurette-divider">
-
-  <!-- /END THE FEATURETTES -->
-
-
-<%= render 'shared/footer' %>
-
-</div><!-- /.container -->
+  </main>
+</div>

@@ -1,13 +1,51 @@
-<div id="idea-<%= idea.id %>">
-    <div class="ib-idea-like-buttons-panel"
-       data-idea-url="<%= idea.base_uri %>"
-       data-idea-like-counter = "<%= idea.like_counter %>"
-       data-idea-dislike-counter = "<%= idea.dislike_counter %>"
-       data-idea-liked = "<%= idea.liked(current_user) %>"
-       data-idea-disliked = "<%= idea.disliked(current_user) %>">
+<!--  ONE CARD  -->
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp mdl-cell mdl-cell--6-col-desktop mdl-cell--4-col-tablet mdl-cell--12-col-phone">
+  <header class="ideashare-idea ideashare-idea-header section__play-btn mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone mdl-color-text--white">
+    <div class="ideashare-idea-buttons">
+      <div class="like idea-button">
+        <i class="material-icons ripple-effect" data-ripple-color="#aed136" data-ripple-limit=".section--center">thumb_up</i>
+        <p><%= idea.like_counter %></p>
+      </div>
+      <div class="empty idea-button"></div>
+      <div class="dislike idea-button">
+        <i class="material-icons ripple-effect" data-ripple-color="#d13636" data-ripple-limit=".section--center">thumb_down</i>
+        <p><%= idea.dislike_counter %></p>
+      </div>
     </div>
-    <div class="page-header">
-        <h1><%= idea.title %></h1>
+    <div class="ids-card-title">
+      <h3><%= idea.title %></h3>
     </div>
-    <p class="ib-idea-description"><%= markdown(idea.description) %></p>
-</div>
+    <img class="ids-image-card" src="/images/slide1.jpg" alt="">
+  </header>
+  <div class="mdl-card mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone ideashare-idea-content">
+    <div class="mdl-card__supporting-text">
+      <%= markdown idea.description %>
+    </div>
+    <div class="mdl-card__actions">
+      <a href="#" class="ideashare-link-action">
+        <div class="mdl-card__actions--icon">
+          <i class="material-icons">person</i>
+        </div>
+        <div class="mdl-card__actions--text">
+          <%= idea.user.username %>
+        </div>
+      </a>
+      <a href="#" class="ideashare-link-action">
+        <div class="mdl-card__actions--icon">
+          <i class="material-icons">comment</i>
+        </div>
+        <div class="mdl-card__actions--text">
+          <%= t('comment', count: idea.comments.count) %>
+        </div>
+      </a>
+    </div>
+  </div>
+  <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn1-<%= idea.id %>">
+    <i class="material-icons white">more_vert</i>
+  </button>
+  <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn1-<%= idea.id %>">
+    <li class="mdl-menu__item">Edytuj</li>
+    <li class="mdl-menu__item">Zgłoś</li>
+    <li class="mdl-menu__item">Zmień status</li>
+  </ul>
+</section>

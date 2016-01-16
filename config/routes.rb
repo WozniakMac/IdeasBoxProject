@@ -11,7 +11,6 @@ Rails.application.routes.draw do
       post 'dislike', to: 'votes#dislike', as: 'dislike'
       post 'unlike', to: 'votes#unlike', as: 'unlike'
     end
-    get 'about', to: 'boxes#about', as: 'about'
     get 'fresh', to: 'boxes#fresh', as: 'fresh'
     get 'popular', to: 'boxes#popular', as: 'popular'
     get 'planned', to: 'boxes#planned', as: 'planned'

@@ -1,215 +1,172 @@
-/*****************************CARD*******************************/
+//colors
+$color_outer_space_approx: #31343c;
+$black: #000;
+$black_12: rgba(0, 0, 0, 0.12);
+$white: #fff;
+$color_atlantis_approx: #aed136;
+$color_lima_approx: #73ad21;
+$color_persian_red_approx: #d13636;
 
-.mdl-ideashare-base .mdl-card {
+.mdl-ideashare-base {
+  .mdl-card {
     height: auto;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
     flex-direction: column;
-}
-
-.mdl-ideashare-base .mdl-card > * {
-    height: auto;
-}
-
-.mdl-ideashare-base .mdl-card .mdl-card__supporting-text {
-    margin: 40px;
-    -webkit-box-flex: 1;
-    -webkit-flex-grow: 1;
-    -ms-flex-positive: 1;
-    flex-grow: 1;
-    padding: 0;
-    color: inherit;
-    width: calc(100% - 80px);
-}
-
-.mdl-ideashare-base.mdl-ideashare-base .mdl-card__supporting-text h4 {
-    margin-top: 0;
-    margin-bottom: 20px;
-}
-
-.mdl-ideashare-base .mdl-card__actions {
+    > * {
+      height: auto;
+    }
+    .mdl-card__supporting-text {
+      margin: 40px;
+      flex-grow: 1;
+      padding: 0;
+      color: inherit;
+      width: calc(100% - 80px);
+    }
+  }
+  .mdl-card__actions {
     margin: 0;
-    padding: 8px 40px 8px 40px;
-    color: #31343c;
-}
-
-.mdl-ideashare-base .mdl-card__actions .mdl-card__actions--icon {
-    display: inline-block;
+    padding: 8px 40px;
+    color: $color_outer_space_approx;
+    .mdl-card__actions--icon {
+      display: inline-block;
+      position: relative;
+      top: 3px;
+    }
+    .mdl-card__actions--text {
+      display: inline-block;
+    }
+    a {
+      text-decoration: none;
+      font-size: 13px;
+      color: $color_outer_space_approx;
+      margin-right: 10px;
+      &:hover {
+        color: $black;
+      }
+      &:active {
+        color: $black;
+      }
+    }
+    i {
+      line-height: 0;
+      font-size: 17px;
+      color: $color_outer_space_approx;
+    }
+  }
+  #add {
     position: relative;
-    top: 3px;
-}
-
-.mdl-ideashare-base .mdl-card__actions .mdl-card__actions--text {
-    display: inline-block;
-}
-
-.mdl-ideashare-base .mdl-card__actions a {
-    text-decoration: none;
-    font-size: 13px;
-    color: #31343c;
-    margin-right: 10px;
-}
-
-.mdl-ideashare-base .mdl-card__actions i {
-    line-height: 0px;
-    font-size: 17px;
-    color: #31343c;
-}
-
-.mdl-ideashare-base .mdl-card__actions a:hover, .mdl-ideashare-base .mdl-card__actions a:active {
-    color: black;
-}
-
-.mdl-ideashare-base .mdl-card__supporting-text + .mdl-card__actions {
-    border-top: 1px solid rgba(0, 0, 0, 0.12);
-}
-
-.mdl-ideashare-base #add {
-    position: relative;
-    right: 0px;
+    right: 0;
     top: 30px;
     z-index: 999;
-    margin-right: 0px;
-}
-
-.mdl-ideashare-base .mdl-layout__content section:not(:last-of-type) {
+    margin-right: 0;
+  }
+  section {
+    &.section--center {
+      max-width: 1200px;
+    }
+    > header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    > button {
+      position: absolute;
+      z-index: 99;
+      top: 8px;
+      right: 8px;
+    }
+    > .section__play-btn {
+      min-height: 200px;
+    }
+  }
+  .mdl-menu__container {
+    z-index: 99;
+  }
+  .mdl-color--ideashare-dark {
+    background-color: $color_outer_space_approx;
+  }
+  .mdl-color--ideashare-green {
+    background-color: $color_atlantis_approx;
+    color: $white;
+  }
+  .mdl-button--green {
+    background: $color_atlantis_approx;
+    color: $white;
+    &:hover {
+      background-color: $color_atlantis_approx;
+      color: $white;
+    }
+    &:active {
+      background-color: $color_atlantis_approx;
+      color: $white;
+    }
+    &:focus:not(:active) {
+      background-color: $color_atlantis_approx;
+      color: $white;
+    }
+  }
+  .ids-image-card {
+    //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: scale(0);
+    opacity: 0;
+    //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+    transition: all .3s ease-out;
+    object-fit: contain;
+    position: absolute;
+    &.show {
+      opacity: 0.5;
+      //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+      transform: scale(1);
+    }
+  }
+  .ideashare-idea-header {
+    //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+    transition: left 0.5s;
+  }
+  .ideashare-idea-content {
+    //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+    transition: left 0.5s;
+  }
+  &.mdl-ideashare-base .mdl-card__supporting-text h4 {
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+  .mdl-card__supporting-text + .mdl-card__actions {
+    border-top: 1px solid $black_12;
+  }
+  .mdl-layout__content section:not(:last-of-type) {
     position: relative;
     margin-bottom: 48px;
+  }
+  .mdl-layout__tab-panel:not(#overview) {
+    background-color: $white;
+  }
 }
-
-.mdl-ideashare-base section.section--center {
-    max-width: 1200px;
-}
-
-.mdl-ideashare-base section > header {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-}
-
-.mdl-ideashare-base section > .section__play-btn {
-    min-height: 200px;
-}
-
-.mdl-ideashare-base section > button {
-    position: absolute;
-    z-index: 99;
-    top: 8px;
-    right: 8px;
-}
-
-.mdl-ideashare-base .mdl-layout__tab-panel:not(#overview) {
-    background-color: white;
-}
-
-.mdl-ideashare-base .mdl-menu__container {
-    z-index: 99;
-}
-
-.mdl-ideashare-base .mdl-color--ideashare-dark {
-    background-color: #31343c;
-}
-
-.mdl-ideashare-base .mdl-color--ideashare-green {
-    background-color: #aed136;
-    color: white;
-}
-
-.mdl-ideashare-base .mdl-button--green {
-    background: #aed136;
-    color: #fff;
-}
-
-.mdl-ideashare-base .mdl-button--green:hover {
-    background-color: #aed136;
-    color: #fff;
-}
-
-.mdl-ideashare-base .mdl-button--green:active {
-    background-color: #aed136;
-    color: #fff;
-}
-
-.mdl-ideashare-base .mdl-button--green:focus:not(:active) {
-    background-color: #aed136;
-    color: #fff;
-}
-
-/********** ANiMaTioN ***************/
-
-.mdl-ideashare-base .ids-image-card {
-  -moz-transform: scale(0);
-  -webkit-transform: scale(0);
-  transform: scale(0);
-  opacity: 0;
-  -moz-transition: all .3s ease-out;
-  -webkit-transition: all .3s ease-out;
-  transition: all .3s ease-out;
-  object-fit: contain;
-  position: absolute;
-}
-
-.mdl-ideashare-base .ids-image-card.show {
-  opacity: 0.5;
-  -moz-transform: scale(1);
-  -webkit-transform: scale(1);
-  transform: scale(1);
-}
-
-.mdl-ideashare-base .ideashare-idea-header {
-    transition: left 0.5s;
-}
-
-.mdl-ideashare-base .ideashare-idea-content {
-    transition: left 0.5s;
-}
-
-
-
 .ideashare-idea-buttons {
-    z-index: 999;
+  z-index: 999;
 }
-
-.idea-button i {
+.idea-button {
+  display: inline-block;
+  text-align: center;
+  i {
     font-size: 40px;
+    //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
     transition: all 0.2s ease-in-out;
-}
-
-.idea-button p {
+  }
+  p {
+    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
     border-radius: 25px;
-    background: #73AD21;
+    background: $color_lima_approx;
     padding-right: 5px;
     padding-left: 5px;
+  }
 }
-
-.idea-button {
-    display: inline-block;
-    text-align: center;
-}
-
 .empty {
-    width: 10px;
+  width: 10px;
 }
-
 .like i:hover {
-    color: #aed136;
+  color: $color_atlantis_approx;
 }
-
 .dislike i:hover {
-    color: #d13636;
+  color: $color_persian_red_approx;
 }

@@ -1,28 +1,41 @@
-/*****************************GLOBAL*******************************/
+//colors
+$color_outer_space_approx: #31343c;
+$color_storm_dust_approx: #616161;
+$white: #fff;
 
-html, body {
-    font-family: 'Open Sans', sans-serif;
-    margin: 0;
-    padding: 0;
+//fonts
+$font_0: Open Sans;
+$font_1: sans-serif;
+
+//@extend-elements
+//original selectors
+//html, body
+%extend_1 {
+  font-family: $font_0, $font_1;
+  margin: 0;
+  padding: 0;
 }
 
+
+html {
+  @extend %extend_1;
+}
+body {
+  @extend %extend_1;
+}
 .ids-background-color {
-	background-color: #31343c;
+  background-color: $color_outer_space_approx;
 }
-
-.ids-font__grey{
-	color: #31343c;
+.ids-font__grey {
+  color: $color_outer_space_approx;
 }
-
-.ids-font__grey-light{
-	color: #616161;
+.ids-font__grey-light {
+  color: $color_storm_dust_approx;
 }
-
 .white {
-	color: #FFFFFF;
+  color: $white;
 }
-
 a {
-  color: #616161;
+  color: $color_storm_dust_approx;
   text-decoration: none;
 }

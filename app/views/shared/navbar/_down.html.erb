@@ -1,6 +1,6 @@
-<a href="#overview" class="mdl-layout__tab is-active"><i class="material-icons">home</i></a>
-<a href="#features" class="mdl-layout__tab">Nowe</a>
-<a href="#features" class="mdl-layout__tab">Popularne</a>
-<a href="#features" class="mdl-layout__tab">Planowane</a>
-<a href="#features" class="mdl-layout__tab">W realizacji</a>
-<a href="#features" class="mdl-layout__tab">Zakończone</a>
+<%= link_to('<i class="material-icons">home</i>'.html_safe, @box, class: current_page?(@box) ? "mdl-layout__tab is-active" : "mdl-layout__tab"  ) %>
+<%= link_to(I18n.t('box.fresh').html_safe, box_fresh_path(@box), class: current_page?(box_fresh_path(@box)) ? "mdl-layout__tab is-active" : "mdl-layout__tab" ) %>
+<%= link_to(I18n.t('box.popular').html_safe, box_popular_path(@box), class: current_page?(box_popular_path(@box)) ? "mdl-layout__tab is-active" : "mdl-layout__tab") %>
+<%= link_to(I18n.t('box.planned').html_safe, box_planned_path(@box), class: current_page?(box_planned_path(@box)) ? "mdl-layout__tab is-active" : "mdl-layout__tab" ) %>
+<%= link_to(I18n.t('box.inprogress').html_safe, box_inprogress_path(@box), class: current_page?(box_inprogress_path(@box)) ? "mdl-layout__tab is-active" : "mdl-layout__tab" ) %>
+<%= link_to(I18n.t('box.completed').html_safe, box_completed_path(@box), class: current_page?(box_completed_path(@box)) ? "mdl-layout__tab is-active" : "mdl-layout__tab" ) %>

@@ -1,0 +1,29 @@
+<% content_for :css do %>
+    <%= stylesheet_link_tag    'card', media: 'all' %>
+<% end %>
+
+<% content_for :title do %>
+    <%= @box.name %>
+<% end %>
+
+<% content_for :content do %>
+    <div class="mdl-layout__tab-panel is-active mdl-grid ids-content" id="content">
+        <% @ideas.each do |idea|%>
+          <%= render 'ideas/idea_long', idea: idea %>
+        <% end %>
+        <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+        </section>
+    </div>
+<% end %>
+
+<% content_for :addbutton do %>
+    <%= render "shared/navbar/button" %>
+<% end %>
+
+<% content_for :navbartop do %>
+    <%= render "shared/navbar/top" %>
+<% end %>
+
+<% content_for :leftnav do %>
+    <%= render "shared/navbar/down" %>
+<% end %>

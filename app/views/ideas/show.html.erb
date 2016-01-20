@@ -1,19 +1,48 @@
-<p id="notice"><%= notice %></p>
-<%= render @idea %>
+<% content_for :css do %>
+    <%= stylesheet_link_tag    'card-big', media: 'all' %>
+<% end %>
 
+<% content_for :title do %>
+    <%= @box.name %>
+<% end %>
 
-<div class="page-header">
-  <h3><%= t('idea.comments') %></h3>
-</div>
-<div class="comments">
-  <% if !@idea.comments.nil? %>
-      <ul class="media-list">
-          <%= render @idea.comments %>
-      </ul>
-  <% end %>
-</div>
-<div class="comment-form">
-  <% if !current_user.nil? %>
-    <%= render "comments/form" %>
-  <% end %>
-</div>
+<% content_for :content do %>
+    <div class="mdl-layout__tab-panel is-active mdl-grid ids-content" id="content">
+      <div class="ids-cards-left mdl-grid mdl-cell mdl-cell--8-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone">
+        <%= render 'ideas/idea_big', idea: @idea %>
+        <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+        </section>
+      </div>
+      <!--  ROGHT PANEL  -->
+      <div class="ids-cards-left mdl-grid mdl-cell mdl-cell--4-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone">
+        <!--  ONE CARD  -->
+        <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone">
+          <header class="user-info__head mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone mdl-color-text--white">
+            <div class="ids-font__grey-light">
+              <img class="" src="/images/face-big.png" alt="">
+              <h4><%= @box.user.username %></h4>
+            </div>
+          </header>
+          <div class="mdl-card mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone ideashare-idea-content">
+            <div class="mdl-card__supporting-text">
+
+            </div>
+          </div>
+        </section>
+        <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+        </section>
+      </div>
+    </div>
+<% end %>
+
+<% content_for :addbutton do %>
+    <%= render "shared/navbar/button" %>
+<% end %>
+
+<% content_for :navbartop do %>
+    <%= render "shared/navbar/top" %>
+<% end %>
+
+<% content_for :leftnav do %>
+    <%= render "shared/navbar/down" %>
+<% end %>

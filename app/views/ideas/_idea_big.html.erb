@@ -1,6 +1,13 @@
 <!--  ONE CARD  -->
-<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp mdl-cell mdl-cell--6-col-desktop mdl-cell--4-col-tablet mdl-cell--12-col-phone">
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone">
   <header class="ideashare-idea ideashare-idea-header section__play-btn mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone mdl-color-text--white">
+    <img class="ids-image-card" src="/images/slide1.jpg" alt="">
+  </header>
+  <div class="mdl-card mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone ideashare-idea-content">
+    <div class="mdl-card__supporting-text">
+      <h4><%= idea.title %></h4>
+      <%= markdown idea.description %>
+    </div>
     <div class="ideashare-idea-buttons">
       <div class="like idea-button">
         <i class="material-icons ripple-effect" data-ripple-color="#aed136" data-ripple-limit=".section--center">thumb_up</i>
@@ -11,15 +18,6 @@
         <i class="material-icons ripple-effect" data-ripple-color="#d13636" data-ripple-limit=".section--center">thumb_down</i>
         <p><%= idea.dislike_counter %></p>
       </div>
-    </div>
-    <div class="ids-card-title">
-      <h3><%= link_to(idea.title, [@box, idea]) %></h3>
-    </div>
-    <img class="ids-image-card" src="/images/slide1.jpg" alt="">
-  </header>
-  <div class="mdl-card mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone ideashare-idea-content">
-    <div class="mdl-card__supporting-text">
-      <%= markdown idea.description %>
     </div>
     <div class="mdl-card__actions">
       <a href="#" class="ideashare-link-action">

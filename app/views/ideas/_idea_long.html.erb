@@ -15,7 +15,7 @@
   </header>
   <div class="mdl-card mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone ideashare-idea-content">
     <div class="mdl-card__supporting-text">
-      <h4><%= idea.title %></h4>
+      <h4><%= link_to(idea.title, [@box, idea]) %></h4>
       <%= markdown idea.description %>
     </div>
     <div class="mdl-card__actions">

@@ -6,11 +6,17 @@
 </nav>
 <div class="mdl-layout-spacer"></div>
 <nav class="mdl-navigation mdl-ideashare-right-menu">
-  <a class="mdl-navigation__link" href="">WozniakMac</a>
-  <a class="mdl-navigation__link" href=""><i class="material-icons">share</i></a>
-  <a class="mdl-navigation__link" href=""><i class="material-icons">favorite</i></a>
-  <a class="mdl-navigation__link" href=""><i class="material-icons">notifications</i></a>
-  <a class="mdl-navigation__link" href=""><img src="/images/face.png"></img></a>
+  <% if current_user.nil? %>
+      <%= link_to(I18n.t('navbar.right.signin'), new_user_session_path, class: 'mdl-navigation__link') %>
+      <%= link_to(I18n.t('navbar.right.signup'), new_user_registration_path, class: 'mdl-navigation__link' )%>
+  <% else %>
+      <%= link_to(current_user,'#', class: 'mdl-navigation__link')%>
+      <%= link_to(I18n.t('navbar.right.editprofile'), edit_user_registration_path, class: 'mdl-navigation__link') %>
+      <%= link_to(I18n.t('navbar.right.logout'),destroy_user_session_path, method: :delete, class: 'mdl-navigation__link') %>
+      <a class="mdl-navigation__link" href=""><i class="material-icons">share</i></a>
+      <a class="mdl-navigation__link" href=""><i class="material-icons">favorite</i></a>
+      <a class="mdl-navigation__link" href=""><i class="material-icons">notifications</i></a>
+      <a class="mdl-navigation__link" href=""><img src="/images/face.png"></img></a>
+  <% end %>
 </nav>
-
 

@@ -1,0 +1,12 @@
+.ids-comment{
+  display: flex;
+  margin-bottom: 5px;
+
+  .ids-comment-content p{
+    margin-bottom: 0px;
+    margin-left: 10px;
+    .ids-comment-date {
+      font-size: smaller;
+    }
+  }
+}

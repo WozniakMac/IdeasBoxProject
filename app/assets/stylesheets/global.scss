@@ -1,6 +1,7 @@
 //colors
 $color_outer_space_approx: #31343c;
 $color_storm_dust_approx: #616161;
+$color_storm_dust_ultra: #a9a9a9;
 $white: #fff;
 
 //fonts
@@ -32,10 +33,21 @@ body {
 .ids-font__grey-light {
   color: $color_storm_dust_approx;
 }
+.ids-font__grey-ultralight {
+  color: $color_storm_dust_ultra;
+}
 .white {
   color: $white;
 }
 a {
   color: $color_storm_dust_approx;
   text-decoration: none;
+}
+
+.ids-right {
+  float: right;
+}
+
+.ids-text-heigh{
+  height: 67px;
 }

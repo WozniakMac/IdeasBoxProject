@@ -14,14 +14,12 @@
       <a class="mdl-navigation__link" href=""><i class="material-icons">share</i></a>
       <a class="mdl-navigation__link" href=""><i class="material-icons">favorite</i></a>
       <a class="mdl-navigation__link" href=""><i class="material-icons">notifications</i></a>
-      <div class="wrapper ids-wrapper">
       <a class="mdl-navigation__link" id="session-menu-button"><img src="/images/face.png"></img></a>
       <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
           for="session-menu-button">
         <%= link_to(I18n.t('navbar.right.editprofile'), edit_user_registration_path, class: 'mdl-menu__item') %>
         <%= link_to(I18n.t('navbar.right.logout'),destroy_user_session_path, method: :delete, class: 'mdl-menu__item') %>
       </ul>
-      </div>
   <% end %>
 </nav>
 

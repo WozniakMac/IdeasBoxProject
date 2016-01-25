@@ -1,13 +1,12 @@
 class IdeasController < ApplicationController
-  before_action :authenticate_user!, only: :create
+  before_action :authenticate_user!, only: [:create, :update]
   before_action :set_box
+  before_action :set_idea, only: [:show, :edit, :update]
 
 
   def show
-    @idea = Idea.find(params[:id])
     @comment = Comment.new
-    @vote = Vote.new
-    @vote.idea = @idea
+    @vote = @idea.votes.new
     respond_to do |format|
       format.html { render :show }
     end
@@ -15,6 +14,9 @@ class IdeasController < ApplicationController
 
   def new
     @idea = Idea.new
+  end
+
+  def edit
   end
 
   def create
@@ -34,21 +36,25 @@ class IdeasController < ApplicationController
     end
   end
 
-  #def update
-  #  respond_to do |format|
-  #    if @idea.update(idea_params)
-  #      format.html { redirect_to [@box,@idea], notice: 'Idea was successfully updated.' }
-  #      format.json { render :show, status: :ok, location: @idea }
-  #    else
-  #      format.html { render :edit }
-  #      format.json { render json: @idea.errors, status: :unprocessable_entity }
-  #    end
-  #  end
-  #end
+  def update
+    respond_to do |format|
+      if @idea.created_at < 5.minute.ago
+        format.html { redirect_to [@box,@idea], notice: 'Masz tylko 5 minut na edycje' }
+      elsif @idea.update(idea_params)
+        format.html { redirect_to [@box,@idea], notice: 'Idea was successfully updated.' }
+      else
+        format.html { render :edit }
+      end
+    end
+  end
 
   private
     def set_box
       @box = Box.find(params[:box_id])
+    end
+
+    def set_idea
+      @idea = Idea.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

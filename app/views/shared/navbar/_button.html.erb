@@ -1,4 +1,7 @@
-<button class="mdl-button--green mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-shadow--4dp mdl-layout--large-screen-only" id="add">
-  <i class="material-icons" role="presentation">add</i>
-  <span class="visuallyhidden">Add</span>
-</button>
+<% if @box.nil? or !@box.persisted? %>
+    <%= link_to('<i class="material-icons" role="presentation">add</i>
+    <span class="visuallyhidden">Add</span>'.html_safe, new_box_path, class: "mdl-button--green mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-shadow--4dp mdl-layout--large-screen-only", id: "add") %>
+<% else %>
+    <%= link_to('<i class="material-icons" role="presentation">add</i>
+    <span class="visuallyhidden">Add</span>'.html_safe, new_box_idea_path(@box), class: "mdl-button--green mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-shadow--4dp mdl-layout--large-screen-only", id: "add") %>
+<% end %>

@@ -9,6 +9,25 @@ $font_0: Open Sans;
 $font_1: sans-serif;
 
 .mdl-ideashare-base {
+  .mdl-button--green {
+    background: $color_atlantis_approx;
+    color: $white;
+    &:hover {
+      background-color: $color_atlantis_approx;
+      color: $white;
+    }
+    &:active {
+      background-color: $color_atlantis_approx;
+      color: $white;
+    }
+    &:focus:not(:active) {
+      background-color: $color_atlantis_approx;
+      color: $white;
+    }
+    i {
+      color: $white;
+    }
+  }
   .mdl-layout__header-row {
     padding-left: 0;
     h3 {

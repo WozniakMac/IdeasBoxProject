@@ -66,6 +66,7 @@ pl:
     new: "Nowy pomysł"
     submit: "Wyślij"
     comments: "Komentarze"
+    edit: "Edycja pomysłu"
   comment:
     zero: '0 komentarzy'
     one: '1 komentarz'

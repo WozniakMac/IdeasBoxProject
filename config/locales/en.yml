@@ -65,6 +65,7 @@ en:
     new: "New idea"
     submit: "Submit"
     comments: "Comments"
+    edit: "Edit idea"
   comment:
     zero: '0 comments'
     one: '1 comment'

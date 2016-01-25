@@ -89,22 +89,6 @@ $color_persian_red_approx: #d13636;
     background-color: $color_atlantis_approx;
     color: $white;
   }
-  .mdl-button--green {
-    background: $color_atlantis_approx;
-    color: $white;
-    &:hover {
-      background-color: $color_atlantis_approx;
-      color: $white;
-    }
-    &:active {
-      background-color: $color_atlantis_approx;
-      color: $white;
-    }
-    &:focus:not(:active) {
-      background-color: $color_atlantis_approx;
-      color: $white;
-    }
-  }
   .ids-image-card {
     //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
     transform: scale(0);

@@ -22,7 +22,7 @@
     <div class="mdl-card__actions">
       <a href="#" class="ideashare-link-action">
         <div class="mdl-card__actions--text">
-          <%= t('comment.add') %>
+          <%= link_to(t('comment.add'),'#comment_comment') if idea.comments.count > 5 and !current_user.nil? %>
         </div>
       </a>
       <a href="#" class="ideashare-link-action ids-right">
@@ -38,6 +38,7 @@
   <div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone ideashare-idea-content ids-comments">
     <div class="mdl-card__supporting-text">
       <%= render idea.comments.order('id desc') %>
+      <%= render 'comments/form' %>
     </div>
   </div>
   <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn1-<%= idea.id %>">

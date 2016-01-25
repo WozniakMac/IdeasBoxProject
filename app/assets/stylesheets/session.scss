@@ -1,3 +1,5 @@
+$color_light_red: rgba(255, 0, 0, 0.17);
+
 .ids-session {
   margin-left: auto;
   margin-right: auto;
@@ -5,6 +7,10 @@
   margin-bottom: 40px;
   form {
     display: table-caption;
+  }
+
+  .field_with_errors input{
+    background-color: $color_light_red;
   }
 
   .ids-actions{

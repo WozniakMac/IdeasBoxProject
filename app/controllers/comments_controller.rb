@@ -14,7 +14,7 @@ class CommentsController < ApplicationController
       if @comment.save
         format.html { redirect_to [@box, @idea], notice: 'Comment was successfully created.' }
       else
-        format.html { render :new }
+        format.html { redirect_to [@box, @idea] }
       end
     end
   end

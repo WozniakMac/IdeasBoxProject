@@ -44,7 +44,7 @@ pl:
       form:
         submit: 'Zatwierdź'
       edit:
-        title: "Edytuj"
+        title: "Edycja"
       index:
         title: "Centrum zarządzania"
         edit: "Edytuj"
@@ -75,6 +75,7 @@ pl:
     add: "Dodaj komentarz"
     submit: "Wyślij"
     new: "Nowy komentarz"
+    mustlogged: "Musisz być zalogowany aby dodać komentarz"
   ago: 'temu'
   somethingwrong: 'Coś poszło nie tak :('
   search: "Szukaj"

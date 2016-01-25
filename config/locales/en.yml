@@ -74,6 +74,7 @@ en:
     add: "Add comment"
     submit: "Create"
     new: "New comment"
+    mustlogged: "You must be logged to add comments"
   ago: 'ago'
   somethingwrong: "Something goes wrong :("
   search: "Search"

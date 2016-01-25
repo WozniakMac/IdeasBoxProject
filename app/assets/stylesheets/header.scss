@@ -2,6 +2,7 @@
 $color_atlantis_approx: #aed136;
 $white: #fff;
 $color_silver_approx: #babbbd;
+$black: #000;
 
 //fonts
 $font_0: Open Sans;
@@ -88,11 +89,19 @@ $font_1: sans-serif;
     padding: 8px;
     padding-top: 48px;
   }
-  .mdl-ideashare-right-menu > a {
+  .mdl-ideashare-right-menu > .mdl-navigation__link {
     padding-left: 6px;
     padding-right: 6px;
   }
+
+  .mdl-ideashare-right-menu {
+    position: relative;
+  }
   .mdl-color--ideashare-dark a {
     color: $color_silver_approx;
+  }
+
+  .mdl-menu a {
+    color: $black;
   }
 }

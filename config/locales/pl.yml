@@ -105,3 +105,6 @@ pl:
     ideas: "Pomysły"
     boxes: "Pudełka"
     table: "Tablica"
+  views:
+    pagination:
+      truncate: "..."

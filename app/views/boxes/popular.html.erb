@@ -11,6 +11,7 @@
         <% @ideas.each do |idea|%>
           <%= render 'ideas/idea_long', idea: idea %>
         <% end %>
+        <%= paginate @ideas %>
         <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
         </section>
     </div>

@@ -11,18 +11,26 @@
       <section class="section--center mdl-grid">
         <h3 class="mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone">Lubisz :)</h3>
         <section class="section--center mdl-grid mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone">
-          <% @liked_ideas.limit(4).each do |idea|%>
+          <% @liked_ideas.each do |idea|%>
               <%= render 'ideas/idea_table', idea: idea %>
           <% end %>
+          <section class="mdl-grid mdl-grid--no-spacing mdl-shadow--2dp mdl-cell--3-col-desktop mdl-cell--4-col-tablet mdl-cell--12-col-phone">
+          </section>
         </section>
+        <div class="mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone">
+          <%= paginate @liked_ideas, :param_name => :liked %>
+        </div>
         <h3 class="mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone">Twoje pomysły</h3>
         <section class="section--center mdl-grid mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone">
-          <% @user_ideas.limit(4).each do |idea|%>
+          <% @user_ideas.each do |idea|%>
               <%= render 'ideas/idea_table', idea: idea %>
           <% end %>
+          <section class="mdl-grid mdl-grid--no-spacing mdl-shadow--2dp mdl-cell--3-col-desktop mdl-cell--4-col-tablet mdl-cell--12-col-phone">
+          </section>
         </section>
-        <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
-        </section>
+        <div class="mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone">
+          <%= paginate @user_ideas, :param_name => :user %>
+        </div>
       </section>
     </div>
 <% end %>

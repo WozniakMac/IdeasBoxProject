@@ -1,0 +1,9 @@
+<% if current_page.last? %>
+    <%= content_tag :a, class: 'mdl-button mdl-js-button mdl-button--icon', disabled: true  do %>
+      <i class="material-icons">chevron_right</i>
+    <% end %>
+<% else %>
+    <%= link_to url, :rel => 'next', :remote => remote, class: 'mdl-button mdl-js-button mdl-button--icon' do %>
+      <i class="material-icons">chevron_right</i>
+    <% end %>
+<% end %>

@@ -9,6 +9,8 @@ class Idea < ActiveRecord::Base
   has_many :comments
   has_many :votes
 
+  paginates_per 5
+
   validates :title, length: { in: 4..200 }
   validates :description, length: { in: 10..20000 }
 

@@ -1,11 +1,23 @@
-.container {
-  max-width: 400px;
+.ids-container {
+  max-width: 500px;
   margin-left: auto;
   margin-right: auto;
   left: 0;
   right: 0;
   z-index: 999;
-  .pagination button {
+  .ids-pagination {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .ids-pagination a {
     font-size: 13px;
+    position: relative;
+    text-align: center;
+  }
+  .ids-pagination a .ids-p-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }

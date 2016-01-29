@@ -1,0 +1,9 @@
+<% if page.current? %>
+    <%= content_tag :a, class: 'mdl-button mdl-js-button mdl-button--icon mdl-shadow--4dp mdl-button--fab'  do %>
+        <span class="ids-p-text"><%= page %></span>
+    <% end %>
+<% else %>
+    <%= link_to url, :rel => 'next', :remote => remote, class: 'mdl-button mdl-js-button mdl-button--icon' do %>
+        <span class="ids-p-text"><%= page %></span>
+    <% end %>
+<% end %>

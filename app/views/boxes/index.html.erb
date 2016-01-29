@@ -9,6 +9,7 @@
 <% content_for :content do %>
     <div class="mdl-layout__tab-panel is-active" id="content">
       <%= render @boxes %>
+      <%= paginate @boxes %>
       <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
       </section>
     </div>

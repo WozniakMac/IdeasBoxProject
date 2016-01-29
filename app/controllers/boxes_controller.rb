@@ -7,7 +7,7 @@ class BoxesController < ApplicationController
   # GET /boxes
   # GET /boxes.json
   def index
-    @boxes = Box.all.order(created_at: :desc)
+    @boxes = Box.all.order(created_at: :desc).page params[:page]
   end
 
   def show
@@ -15,23 +15,23 @@ class BoxesController < ApplicationController
   end
 
   def fresh
-    @ideas = @box.ideas.fresh.order(created_at: :desc)
+    @ideas = @box.ideas.fresh.order(created_at: :desc).page params[:page]
   end
 
   def popular
-    @ideas = @box.ideas.popular
+    @ideas = @box.ideas.popular.page params[:page]
   end
 
   def planned
-    @ideas = @box.ideas.planned.order(:updated_at)
+    @ideas = @box.ideas.planned.order(:updated_at).page params[:page]
   end
 
   def in_progress
-    @ideas = @box.ideas.in_progress.order(:updated_at)
+    @ideas = @box.ideas.in_progress.order(:updated_at).page params[:page]
   end
 
   def completed
-    @ideas = @box.ideas.completed.order(:updated_at)
+    @ideas = @box.ideas.completed.order(:updated_at).page params[:page]
   end
 
   # GET /boxes/new

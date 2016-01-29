@@ -104,3 +104,6 @@ en:
     ideas: "Ideas"
     boxes: "Boxes"
     table: "Table"
+  views:
+    pagination:
+      truncate: "..."

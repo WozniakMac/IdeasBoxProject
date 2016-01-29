@@ -101,3 +101,7 @@ pl:
   update: "Zaktualizuj"
   forgot: "Zapomniałeś hasła?"
   backtotop: "Wróć na górę"
+  table:
+    ideas: "Pomysły"
+    boxes: "Pudełka"
+    table: "Tablica"

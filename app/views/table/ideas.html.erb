@@ -1,0 +1,40 @@
+<% content_for :css do %>
+    <%= stylesheet_link_tag    'card-table', media: 'all' %>
+<% end %>
+
+<% content_for :title do %>
+    <%= t('table.table') %>
+<% end %>
+
+<% content_for :content do %>
+    <div class="mdl-layout__tab-panel is-active mdl-grid ids-content" id="content">
+      <section class="section--center mdl-grid">
+        <h3 class="mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone">Lubisz :)</h3>
+        <section class="section--center mdl-grid mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone">
+          <% @liked_ideas.limit(4).each do |idea|%>
+              <%= render 'ideas/idea_table', idea: idea %>
+          <% end %>
+        </section>
+        <h3 class="mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone">Twoje pomysły</h3>
+        <section class="section--center mdl-grid mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone">
+          <% @user_ideas.limit(4).each do |idea|%>
+              <%= render 'ideas/idea_table', idea: idea %>
+          <% end %>
+        </section>
+        <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+        </section>
+      </section>
+    </div>
+<% end %>
+
+<% content_for :addbutton do %>
+    <%= render "shared/navbar/button" %>
+<% end %>
+
+<% content_for :navbartop do %>
+    <%= render "shared/navbar/top" %>
+<% end %>
+
+<% content_for :leftnav do %>
+    <%= render "table/down" %>
+<% end %>

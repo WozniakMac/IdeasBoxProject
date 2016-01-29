@@ -100,3 +100,7 @@ en:
   update: "Update"
   forgot: "Forgot your password?"
   backtotop: "Back to top"
+  table:
+    ideas: "Ideas"
+    boxes: "Boxes"
+    table: "Table"

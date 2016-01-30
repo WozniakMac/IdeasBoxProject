@@ -1,3 +1,26 @@
-// Place all the styles related to the Table controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+$color_lima_approx: #73ad21;
+$color_persian_red_approx: #d13636;
+
+.ids-table-statstitle {
+  text-align: center;
+}
+
+.ids-table-statsvalue {
+  font-size: 40px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.ids-table-statsfooter {
+  text-align: center;
+  font-size: 30px;
+}
+
+.green {
+  color: $color_lima_approx;
+}
+
+.red{
+  color: $color_persian_red_approx
+}

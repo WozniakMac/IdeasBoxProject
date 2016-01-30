@@ -101,9 +101,13 @@ en:
   forgot: "Forgot your password?"
   backtotop: "Back to top"
   table:
-    ideas: "Ideas"
+    ideas: "Pomysły"
+    lastday: "Last 24 hours"
     boxes: "Boxes"
     table: "Table"
+    last30day: "Last 30 days"
+    all: "All"
+    views: "Views"
   views:
     pagination:
       truncate: "..."

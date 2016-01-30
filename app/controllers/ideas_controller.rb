@@ -1,5 +1,5 @@
 class IdeasController < ApplicationController
-  before_action :authenticate_user!, only: [:create, :update]
+  before_action :authenticate_user!, only: [:create, :update, :edit, :new]
   before_action :set_box
   before_action :set_idea, only: [:show, :edit, :update]
 

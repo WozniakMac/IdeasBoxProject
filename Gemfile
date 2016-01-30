@@ -6,6 +6,8 @@ gem 'pg'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'kaminari'
+gem 'impressionist' # statistics
+gem 'draper', '~> 1.3'
 
 # frontend
 gem 'sass-rails', '~> 5.0'
@@ -22,6 +24,7 @@ group :development, :test do
   gem 'byebug' # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'web-console', '~> 2.0' # Access an IRB console on exception pages or by using <%= console %> in views
 	gem 'spring'
+  gem 'meta_request'
 end
 
 group :development do

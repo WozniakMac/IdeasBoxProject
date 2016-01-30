@@ -103,8 +103,12 @@ pl:
   backtotop: "Wróć na górę"
   table:
     ideas: "Pomysły"
+    lastday: "Ostatnie 24 godziny"
     boxes: "Pudełka"
     table: "Tablica"
+    last30day: "Ostatnie 30 dni"
+    all: "Wszystkie"
+    views: "Wyświetlenia"
   views:
     pagination:
       truncate: "..."

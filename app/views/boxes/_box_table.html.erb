@@ -1,0 +1,70 @@
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+  <header class="ideashare-idea ideashare-idea-header section__play-btn mdl-cell mdl-cell--4-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-color-text--white ids-background-color">
+    <img class="ids-image-card" src="/images/slide1.jpg" alt="">
+  </header>
+  <div class="mdl-card mdl-cell mdl-cell--8-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone ideashare-idea-content">
+    <div class="mdl-card__supporting-text">
+      <h4><%= link_to(box.name, box) %></h4>
+      <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--12-col-phone"><h5><%= t('table.ideas') %></h5></div>
+        <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--12-col-phone mdl-grid">
+          <div class="mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone ids-table-statstitle"><%= t('table.lastday') %></div>
+          <div class="mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone ids-table-statsvalue"><%= box.ideas.where('created_at >= ?', DateTime.now - 1).count %></div>
+          <% if box.ideas_trending?(1) %>
+              <div class="mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone ids-table-statsfooter green"><%= box.ideas_trending(1) %> <i class="material-icons">trending_up</i></div>
+          <% else %>
+              <div class="mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone ids-table-statsfooter red"><%= box.ideas_trending(1) %> <i class="material-icons">trending_down</i></div>
+          <% end %>
+        </div>
+        <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--12-col-phone mdl-grid">
+          <div class="mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone ids-table-statstitle"><%= t('table.last30day') %></div>
+          <div class="mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone ids-table-statsvalue"><%= box.ideas.where('created_at >= ?', DateTime.now - 30).count %></div>
+          <% if box.ideas_trending?(30) %>
+            <div class="mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone ids-table-statsfooter green"><%= box.ideas_trending(30) %> <i class="material-icons">trending_up</i></div>
+          <% else %>
+            <div class="mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone ids-table-statsfooter red"><%= box.ideas_trending(30) %> <i class="material-icons">trending_down</i></div>
+          <% end %>
+        </div>
+        <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--12-col-phone mdl-grid">
+          <div class="mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone ids-table-statstitle"><%= t('table.all') %></div>
+          <div class="mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone ids-table-statsvalue"><%= box.ideas.count %></div>
+          <div class="mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone ids-table-statsfooter"></div>
+        </div>
+      </div>
+      <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--12-col-phone"><h5><%= t('table.views') %></h5></div>
+        <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--12-col-phone mdl-grid">
+          <div class="mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone ids-table-statstitle"><%= t('table.lastday') %></div>
+          <div class="mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone ids-table-statsvalue"><%= box.impressionist_count(:start_date=>DateTime.now - 1) %></div>
+          <% if box.views_trending?(1) %>
+              <div class="mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone ids-table-statsfooter green"><%= box.views_trending(1) %> <i class="material-icons">trending_up</i></div>
+          <% else %>
+              <div class="mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone ids-table-statsfooter red"><%= box.views_trending(1) %> <i class="material-icons">trending_down</i></div>
+          <% end %>
+        </div>
+        <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--12-col-phone mdl-grid">
+          <div class="mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone ids-table-statstitle"><%= t('table.last30day') %></div>
+          <div class="mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone ids-table-statsvalue"><%= box.impressionist_count(:start_date=>DateTime.now - 30) %></div>
+          <% if box.views_trending?(30) %>
+              <div class="mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone ids-table-statsfooter green"><%= box.views_trending(30) %> <i class="material-icons">trending_up</i></div>
+          <% else %>
+              <div class="mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone ids-table-statsfooter red"><%= box.views_trending(30) %> <i class="material-icons">trending_down</i></div>
+          <% end %>
+        </div>
+        <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--12-col-phone mdl-grid">
+          <div class="mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone ids-table-statstitle"><%= t('table.all') %></div>
+          <div class="mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone ids-table-statsvalue"><%= box.impressionist_count %></div>
+          <div class="mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone ids-table-statsfooter"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn1-<%= box.id %>">
+    <i class="material-icons">more_vert</i>
+  </button>
+  <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn1-<%= box.id %>">
+    <li class="mdl-menu__item">Edytuj</li>
+    <li class="mdl-menu__item">Zgłoś</li>
+    <li class="mdl-menu__item">Zmień status</li>
+  </ul>
+</section>

@@ -3,6 +3,7 @@ class BoxesController < ApplicationController
   before_action :set_box, only: [ :fresh, :popular, :planned, :completed, :in_progress]
   before_action :set_box_short, only: [ :about, :show, :edit, :update]
   before_action :check_owner, only: [:edit, :update]
+  impressionist actions: [:show]
 
   # GET /boxes
   # GET /boxes.json
@@ -16,22 +17,27 @@ class BoxesController < ApplicationController
 
   def fresh
     @ideas = @box.ideas.fresh.order(created_at: :desc).page params[:page]
+    impressionist(@box, "fresh")
   end
 
   def popular
     @ideas = @box.ideas.popular.page params[:page]
+    impressionist(@box, "popular")
   end
 
   def planned
     @ideas = @box.ideas.planned.order(:updated_at).page params[:page]
+    impressionist(@box, "planned")
   end
 
   def in_progress
     @ideas = @box.ideas.in_progress.order(:updated_at).page params[:page]
+    impressionist(@box, "in_progress")
   end
 
   def completed
     @ideas = @box.ideas.completed.order(:updated_at).page params[:page]
+    impressionist(@box, "completed")
   end
 
   # GET /boxes/new

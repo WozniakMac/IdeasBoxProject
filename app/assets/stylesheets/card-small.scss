@@ -162,6 +162,7 @@ $color_persian_red_approx: #d13636;
     font-size: 20px;
     //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
     transition: all 0.2s ease-in-out;
+    color: white;
   }
   p {
     font-size: 12px;

@@ -25,7 +25,7 @@ class VotesController < ApplicationController
     def set_params
       @idea = Idea.find(params[:idea_id])
       @vote = @idea.votes.where(user_id: current_user.id).first
-      @box = Box.find(params[:box_id])
+      @box = Box.friendly.find(params[:box_id])
     end
 
     def set_vote(type)
@@ -35,9 +35,10 @@ class VotesController < ApplicationController
         @vote.idea = @idea
       end
       @vote.rate = type
-      @vote.save
-      respond_to do |format|
-        format.js
+      if @vote.save
+        respond_to do |format|
+          format.js
+        end
       end
     end
 

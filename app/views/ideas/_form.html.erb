@@ -1,16 +1,13 @@
 <%= form_for([@box,@idea]) do |f| %>
   <% if @idea.errors.any? %>
     <div id="error_explanation" class="alert alert-danger" role="alert">
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
       <p><%= t('somethingwrong') %></p>
 
-      <ul>
+      <p>
       <% @idea.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+            <%= t('field') %> <%= message %><br>
       <% end %>
-      </ul>
+      </p>
     </div>
   <% end %>
   <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label ids-text-heigh">

@@ -13,6 +13,10 @@ $color_light_red: rgba(255, 0, 0, 0.17);
     background-color: $color_light_red;
   }
 
+  .field_with_errors textarea{
+    background-color: $color_light_red;
+  }
+
   .ids-actions{
     float: right;
   }

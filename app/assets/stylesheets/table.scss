@@ -1,5 +1,6 @@
 $color_lima_approx: #73ad21;
 $color_persian_red_approx: #d13636;
+$color_deep_orange: #FF4800;
 
 .ids-table-statstitle {
   text-align: center;
@@ -23,4 +24,8 @@ $color_persian_red_approx: #d13636;
 
 .red{
   color: $color_persian_red_approx
+}
+
+.orange {
+  color: $color_deep_orange;
 }

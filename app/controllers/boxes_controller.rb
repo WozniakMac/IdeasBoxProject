@@ -3,7 +3,6 @@ class BoxesController < ApplicationController
   before_action :set_box, only: [ :fresh, :popular, :planned, :completed, :in_progress]
   before_action :set_box_short, only: [ :about, :show, :edit, :update]
   before_action :check_owner, only: [:edit, :update]
-  impressionist actions: [:show]
 
   # GET /boxes
   # GET /boxes.json
@@ -11,33 +10,38 @@ class BoxesController < ApplicationController
     @boxes = Box.all.order(created_at: :desc).page params[:page]
   end
 
+  def top
+    @boxes = Box.top10.page(params[:page]).per(5)
+  end
+
   def show
     @ideas = @box.ideas.limit(4)
+    impressionist(@box, "show", unique: [:session_hash])
   end
 
   def fresh
     @ideas = @box.ideas.fresh.order(created_at: :desc).page params[:page]
-    impressionist(@box, "fresh")
+    impressionist(@box, "fresh", unique: [:session_hash])
   end
 
   def popular
     @ideas = @box.ideas.popular.page params[:page]
-    impressionist(@box, "popular")
+    impressionist(@box, "popular", unique: [:session_hash])
   end
 
   def planned
     @ideas = @box.ideas.planned.order(:updated_at).page params[:page]
-    impressionist(@box, "planned")
+    impressionist(@box, "planned", unique: [:session_hash])
   end
 
   def in_progress
     @ideas = @box.ideas.in_progress.order(:updated_at).page params[:page]
-    impressionist(@box, "in_progress")
+    impressionist(@box, "in_progress", unique: [:session_hash])
   end
 
   def completed
     @ideas = @box.ideas.completed.order(:updated_at).page params[:page]
-    impressionist(@box, "completed")
+    impressionist(@box, "completed", unique: [:session_hash])
   end
 
   # GET /boxes/new
@@ -79,11 +83,11 @@ class BoxesController < ApplicationController
   private
     #Because is difrent scope between method and this parrameter has difrent name
     def set_box
-      @box = Box.find(params[:box_id])
+      @box = Box.friendly.find(params[:box_id])
     end
 
     def set_box_short
-      @box = Box.find(params[:id])
+      @box = Box.friendly.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
@@ -93,7 +97,7 @@ class BoxesController < ApplicationController
 
     def check_owner
       if !current_user.is_owner?(@box)
-        format.html {redirect_to root_path, notice: 'You have not permissions' }
+        format.html {redirect_to root_path, notice: I18n.t('permissions.denied') }
       end
     end
 

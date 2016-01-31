@@ -8,15 +8,15 @@
       <h4><%= idea.title %></h4>
       <%= markdown idea.description %>
     </div>
-    <div class="ideashare-idea-buttons">
+    <div class="ideashare-idea-buttons" id="buttons-<%= idea.id %>">
       <div class="like idea-button">
-        <i class="material-icons ripple-effect" data-ripple-color="#aed136" data-ripple-limit=".section--center">thumb_up</i>
-        <p><%= idea.like_counter %></p>
+        <%= link_to '<i class="material-icons ripple-effect" data-ripple-color="#aed136" data-ripple-limit=".section--center">thumb_up</i>'.html_safe, box_idea_like_path(idea.box,idea), method: :post, remote: true %>
+        <p><%= idea.votes.where(rate: true).count %></p>
       </div>
       <div class="empty idea-button"></div>
       <div class="dislike idea-button">
-        <i class="material-icons ripple-effect" data-ripple-color="#d13636" data-ripple-limit=".section--center">thumb_down</i>
-        <p><%= idea.dislike_counter %></p>
+        <%= link_to '<i class="material-icons ripple-effect" data-ripple-color="#d13636" data-ripple-limit=".section--center">thumb_down</i>'.html_safe, box_idea_dislike_path(idea.box,idea), method: :post, remote: true %>
+        <p><%= idea.votes.where(rate: false).count %></p>
       </div>
     </div>
     <div class="mdl-card__actions">
@@ -45,8 +45,6 @@
     <i class="material-icons ids-font__grey">more_vert</i>
   </button>
   <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn1-<%= idea.id %>">
-    <li class="mdl-menu__item">Edytuj</li>
-    <li class="mdl-menu__item">Zgłoś</li>
-    <li class="mdl-menu__item">Zmień status</li>
+    <%= render 'ideas/menu', idea: idea %>
   </ul>
 </section>

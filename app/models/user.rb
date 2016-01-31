@@ -9,6 +9,10 @@ class User < ActiveRecord::Base
   has_many :comments
 
   validates :username, length: { in: 4..20 }
+  validates :username, exclusion: { in: %w(admin superuser) }
+  validates :username, presence: true
+  validates :username, uniqueness: true
+  validates :username, format: { with: /\A[a-zA-Z0-9]+\Z/ }
 
   def is_owner?(model_item)
   	model_item.user == self

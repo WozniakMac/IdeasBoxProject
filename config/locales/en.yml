@@ -28,6 +28,7 @@ en:
       yourboxes: 'Your boxes'
       statistics: 'Statistics'
       table: "Table"
+      top: "Top"
     right:
       createbox: "Create box"
       manageboxes: "Manage boxes"
@@ -66,6 +67,9 @@ en:
     submit: "Submit"
     comments: "Comments"
     edit: "Edit idea"
+    created: "Idea was successfully created."
+    updated: "Idea was successfully updated."
+    canedit: "You can edit Idea only 5 mintes after create."
   comment:
     zero: '0 comments'
     one: '1 comment'
@@ -76,6 +80,7 @@ en:
     submit: "Create"
     new: "New comment"
     mustlogged: "You must be logged to add comments"
+    created: "Comment was successfully created."
   ago: 'ago'
   somethingwrong: "Something goes wrong :("
   search: "Search"
@@ -111,3 +116,12 @@ en:
   views:
     pagination:
       truncate: "..."
+  days:
+    day0: "Sunday"
+    day1: "Monday"
+    day2: "Tuesday"
+    day3: "Wednesday"
+    day4: "Thursday"
+    day5: "Friday"
+    day6: "Saturday"
+  field: "Field"

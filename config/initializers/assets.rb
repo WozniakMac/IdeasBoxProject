@@ -11,6 +11,8 @@ Rails.application.config.assets.version = '1.0'
 # Rails.application.config.assets.precompile += %w( search.js )
 #JS
 Rails.application.config.assets.precompile += %w( homepage.js )
+Rails.application.config.assets.precompile += %w( table.js )
+Rails.application.config.assets.precompile += %w( Chart.min.js )
 
 
 #CSS

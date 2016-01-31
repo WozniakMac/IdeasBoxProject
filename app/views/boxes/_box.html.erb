@@ -30,8 +30,6 @@
     <i class="material-icons">more_vert</i>
   </button>
   <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn1-<%= box.id %>">
-    <li class="mdl-menu__item">Edytuj</li>
-    <li class="mdl-menu__item">Zgłoś</li>
-    <li class="mdl-menu__item">Zmień status</li>
+    <%= render 'boxes/menu', box: box %>
   </ul>
 </section>

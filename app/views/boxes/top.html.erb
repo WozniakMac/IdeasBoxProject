@@ -1,23 +1,15 @@
 <% content_for :css do %>
     <%= stylesheet_link_tag    'card', media: 'all' %>
-    <%= stylesheet_link_tag    'table', media: 'all' %>
-<% end %>
-
-<% content_for :js do %>
-    <%= javascript_include_tag 'Chart.min' %>
-    <%= javascript_include_tag 'table' %>
 <% end %>
 
 <% content_for :title do %>
-    <%= t('table.table') %>
+    <%= t('box.index.new') %>
 <% end %>
 
 <% content_for :content do %>
     <div class="mdl-layout__tab-panel is-active" id="content">
-      <% @user_boxes.each do |box| %>
-          <%= render 'boxes/box_table', box: box %>
-      <% end %>
-      <%= paginate @user_boxes %>
+      <%= render @boxes %>
+      <%= paginate @boxes %>
       <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
       </section>
     </div>
@@ -29,8 +21,4 @@
 
 <% content_for :navbartop do %>
     <%= render "shared/navbar/top" %>
-<% end %>
-
-<% content_for :leftnav do %>
-    <%= render "table/down" %>
 <% end %>

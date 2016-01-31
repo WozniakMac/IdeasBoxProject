@@ -29,6 +29,7 @@ pl:
       yourboxes: 'Zarządzaj'
       statistics: 'Statystyki'
       table: "Tablica"
+      top: "Top"
     right:
       createbox: 'Stwórz'
       manageboxes: 'Zarządzaj'
@@ -67,6 +68,9 @@ pl:
     submit: "Wyślij"
     comments: "Komentarze"
     edit: "Edycja pomysłu"
+    created: "Pomysł został poprawnie dodany."
+    updated: "Pomysł został poprawnie zaktualizowany."
+    canedit: "Możesz edytować pomysł tylko 5 minut po stworzeniu."
   comment:
     zero: '0 komentarzy'
     one: '1 komentarz'
@@ -77,6 +81,7 @@ pl:
     submit: "Wyślij"
     new: "Nowy komentarz"
     mustlogged: "Musisz być zalogowany aby dodać komentarz"
+    created: "Komentarz poprawnie dodany."
   ago: 'temu'
   somethingwrong: 'Coś poszło nie tak :('
   search: "Szukaj"
@@ -112,3 +117,12 @@ pl:
   views:
     pagination:
       truncate: "..."
+  days:
+    day0: "Niedziela"
+    day1: "Poniedziałek"
+    day2: "Wtorek"
+    day3: "Środa"
+    day4: "Czwartek"
+    day5: "Piątek"
+    day6: "Sobota"
+  field: "Pole"

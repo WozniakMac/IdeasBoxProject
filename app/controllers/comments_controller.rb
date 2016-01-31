@@ -12,9 +12,9 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to [@box, @idea], notice: 'Comment was successfully created.' }
+        format.html { redirect_to [@box, @idea], notice: I18n.t('comment.created') }
       else
-        format.html { redirect_to [@box, @idea] }
+        format.html { redirect_to [@box, @idea], notice: "#{I18n.t('field')} " +@comment.errors.full_messages.first }
       end
     end
   end
@@ -29,7 +29,7 @@ class CommentsController < ApplicationController
 
   private
     def set_box
-      @box = Box.find(params[:box_id])
+      @box = Box.friendly.find(params[:box_id])
     end
 
     def set_idea

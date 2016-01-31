@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     get 'inprogress', to: 'boxes#in_progress', as: 'inprogress'
     get 'completed', to: 'boxes#completed', as: 'completed'
   end
+  get 'top', to: 'boxes#top', as: 'top'
   get 'table/ideas'
   get 'table/boxes'
 end

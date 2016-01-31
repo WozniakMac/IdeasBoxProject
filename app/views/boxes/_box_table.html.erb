@@ -1,12 +1,45 @@
 <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
-  <header class="ideashare-idea ideashare-idea-header section__play-btn mdl-cell mdl-cell--4-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-color-text--white ids-background-color">
-    <img class="ids-image-card" src="/images/slide1.jpg" alt="">
+  <header class="ideashare-idea ideashare-idea-header section__play-btn mdl-cell mdl-cell--4-col-desktop mdl-cell--10-col-tablet mdl-cell--10-col-phone mdl-color-text--white ids-background-color">
+    <canvas id="ids-chart-<%= box.id %>" height="300"></canvas>
+    <script>
+      $(function() {
+        var ctx = $("#ids-chart-<%= box.id %>").get(0).getContext("2d");
+
+        var data = {
+          labels: ["<%= day_of_week(Date.today-7) %>", "<%= day_of_week(Date.today-6) %>", "<%= day_of_week(Date.today-5) %>", "<%= day_of_week(Date.today-4) %>", "<%= day_of_week(Date.today-3) %>", "<%= day_of_week(Date.today-2) %>", "<%= day_of_week(Date.today-1) %>"],
+          datasets: [
+            {
+              label: "<%= t('table.ideas') %>",
+              fillColor: "rgba(174, 209, 54, 0.2)",
+              strokeColor: "rgba(174, 209, 54, 1)",
+              pointColor: "rgba(174, 209, 54, 1)",
+              pointStrokeColor: "#fff",
+              pointHighlightFill: "#fff",
+              pointHighlightStroke: "rgba(174, 209, 54, 1)",
+              data: [<%= box.ideas_count_in_day(Date.today-7) %>, <%= box.ideas_count_in_day(Date.today-6) %>, <%= box.ideas_count_in_day(Date.today-5) %>, <%= box.ideas_count_in_day(Date.today-4) %>, <%= box.ideas_count_in_day(Date.today-3) %>, <%= box.ideas_count_in_day(Date.today-2) %>, <%= box.ideas_count_in_day(Date.today-1) %>]
+            },
+            {
+              label: "<%= t('table.views') %>",
+              fillColor: "rgba(255, 72, 0, 0.2)",
+              strokeColor: "rgba(255, 72, 0, 1)",
+              pointColor: "rgba(255, 72, 0, 1)",
+              pointStrokeColor: "#fff",
+              pointHighlightFill: "#fff",
+              pointHighlightStroke: "rgba(255, 72, 0, 1)",
+              data: [<%= box.impressionist_count_in_day(Date.today-7) %>, <%= box.impressionist_count_in_day(Date.today-6) %>, <%= box.impressionist_count_in_day(Date.today-5) %>, <%= box.impressionist_count_in_day(Date.today-4) %>, <%= box.impressionist_count_in_day(Date.today-3) %>, <%= box.impressionist_count_in_day(Date.today-2) %>, <%= box.impressionist_count_in_day(Date.today-1) %>]
+            }
+          ]
+        };
+
+        var myLineChart = new Chart(ctx).Line(data);
+      });
+    </script>
   </header>
-  <div class="mdl-card mdl-cell mdl-cell--8-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone ideashare-idea-content">
+  <div class="mdl-card mdl-cell mdl-cell--8-col-desktop mdl-cell--10-col-tablet mdl-cell--10-col-phone ideashare-idea-content">
     <div class="mdl-card__supporting-text">
       <h4><%= link_to(box.name, box) %></h4>
       <div class="mdl-grid">
-        <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--12-col-phone"><h5><%= t('table.ideas') %></h5></div>
+        <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--12-col-phone green"><h5><%= t('table.ideas') %></h5></div>
         <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--12-col-phone mdl-grid">
           <div class="mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone ids-table-statstitle"><%= t('table.lastday') %></div>
           <div class="mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone ids-table-statsvalue"><%= box.ideas.where('created_at >= ?', DateTime.now - 1).count %></div>
@@ -32,7 +65,7 @@
         </div>
       </div>
       <div class="mdl-grid">
-        <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--12-col-phone"><h5><%= t('table.views') %></h5></div>
+        <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--12-col-phone orange"><h5><%= t('table.views') %></h5></div>
         <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--12-col-phone mdl-grid">
           <div class="mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone ids-table-statstitle"><%= t('table.lastday') %></div>
           <div class="mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone ids-table-statsvalue"><%= box.impressionist_count(:start_date=>DateTime.now - 1) %></div>
@@ -63,8 +96,6 @@
     <i class="material-icons">more_vert</i>
   </button>
   <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn1-<%= box.id %>">
-    <li class="mdl-menu__item">Edytuj</li>
-    <li class="mdl-menu__item">Zgłoś</li>
-    <li class="mdl-menu__item">Zmień status</li>
+    <%= render 'boxes/menu', box: box %>
   </ul>
 </section>

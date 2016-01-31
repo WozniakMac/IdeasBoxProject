@@ -7,6 +7,6 @@ class TableController < ApplicationController
   end
 
   def boxes
-    @user_boxes = Box.where(user: current_user).page params[:page]
+    @user_boxes = Box.where(user: current_user).page(params[:page]).per(3)
   end
 end

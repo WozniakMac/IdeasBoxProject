@@ -128,7 +128,7 @@ $color_persian_red_approx: #d13636;
   }
 }
 .ideashare-idea-buttons {
-  z-index: 999;
+  z-index: 50;
 }
 .idea-button {
   display: inline-block;
@@ -137,6 +137,7 @@ $color_persian_red_approx: #d13636;
     font-size: 40px;
     //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
     transition: all 0.2s ease-in-out;
+    color: white;
   }
   p {
     //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
@@ -154,4 +155,8 @@ $color_persian_red_approx: #d13636;
 }
 .dislike i:hover {
   color: $color_persian_red_approx;
+}
+
+.ids-on-top {
+  z-index: 999;
 }

@@ -6,7 +6,7 @@ pl:
     updated: 'Twoje pudełko pomysłów zostało pomyślnie zaktualizowane :)'
     index:
       new: "Nowe"
-      top: "Top 10"
+      top: "Top"
       list: "Listy"
     about: "O nas"
     fresh: "Nowe"
@@ -25,11 +25,12 @@ pl:
     left:
       createbox: 'Stwórz'
       boxes: 'Przeglądaj'
-      ourbox: 'Ulepsz nas'
+      ourbox: 'Nasze pudełko'
       yourboxes: 'Zarządzaj'
       statistics: 'Statystyki'
       table: "Tablica"
       top: "Top"
+      home: "Główna"
     right:
       createbox: 'Stwórz'
       manageboxes: 'Zarządzaj'

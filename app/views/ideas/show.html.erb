@@ -19,7 +19,7 @@
         <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone">
           <header class="user-info__head mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone mdl-color-text--white">
             <div class="ids-font__grey-light">
-              <img class="" src="/images/face-big.png" alt="">
+              <%= image_tag(@idea.user.get_avatar(:medium), height: 78, width: 78, class: 'img-circle') %>
               <h4><%= @idea.user.username %></h4>
             </div>
           </header>

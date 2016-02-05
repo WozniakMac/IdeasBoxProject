@@ -1,7 +1,7 @@
 <div class="ids-comment">
   <div class="ids-comment-image">
     <a href="#">
-      <img src="/images/face.png"></img>
+      <%= image_tag(comment.user.get_avatar(:thumb), height: 40, width: 40, class: 'img-circle') %>
     </a>
   </div>
   <div class="ids-comment-content">

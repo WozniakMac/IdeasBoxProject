@@ -9,6 +9,8 @@ gem 'kaminari'
 gem 'impressionist' # statistics
 gem 'draper', '~> 1.3'
 gem 'friendly_id', '~> 5.1.0'
+gem 'paperclip', '~> 4.3'
+gem 'gravtastic'
 
 # frontend
 gem 'sass-rails', '~> 5.0'

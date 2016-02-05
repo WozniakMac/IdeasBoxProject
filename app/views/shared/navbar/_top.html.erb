@@ -1,8 +1,9 @@
 <nav class="mdl-navigation">
+  <%= link_to(I18n.t('navbar.left.home'), root_path , class: 'mdl-navigation__link') %>
   <%= link_to(I18n.t('navbar.left.table'), table_ideas_path , class: 'mdl-navigation__link') %>
   <%= link_to(I18n.t('navbar.left.boxes'), boxes_path , class: 'mdl-navigation__link') %>
   <%= link_to(I18n.t('navbar.left.top'), top_path , class: 'mdl-navigation__link') %>
-  <a class="mdl-navigation__link" href="">Nasze pudełko</a>
+  <%= link_to(I18n.t('navbar.left.ourbox'), box_path(Box.first) , class: 'mdl-navigation__link') %>
 </nav>
 <div class="mdl-layout-spacer"></div>
 <nav class="mdl-navigation mdl-ideashare-right-menu">
@@ -14,7 +15,7 @@
       <a class="mdl-navigation__link" href=""><i class="material-icons">share</i></a>
       <a class="mdl-navigation__link" href=""><i class="material-icons">favorite</i></a>
       <a class="mdl-navigation__link" href=""><i class="material-icons">notifications</i></a>
-      <a class="mdl-navigation__link" id="session-menu-button"><img src="/images/face.png"></img></a>
+      <a class="mdl-navigation__link" id="session-menu-button"><%= image_tag(current_user.get_avatar(:thumb), height: 40, width: 40, class: 'img-circle') %></a>
       <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
           for="session-menu-button">
         <%= link_to(I18n.t('navbar.right.editprofile'), edit_user_registration_path, class: 'mdl-menu__item') %>

@@ -64,5 +64,18 @@ class Box < ActiveRecord::Base
     self.ideas.where('created_at > ?', date).where('created_at <= ?', date.end_of_day).count
   end
 
+  def color
+    color = case self.ideas.count
+               when 0..10 then 1
+               when 11..20 then 2
+               when 21..50 then 3
+               when 51..100 then 4
+               when 101..200 then 5
+               when 201..1000 then 6
+               else 7
+            end
+    return color
+  end
+
 
 end

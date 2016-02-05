@@ -6,7 +6,7 @@ en:
     updated: "Your ideasBox was successfully updated :)"
     index:
       new: "New"
-      top: "Top 10"
+      top: "Top"
       list: "Lists"
     about: "About"
     fresh: "New"
@@ -24,11 +24,12 @@ en:
     left:
       createbox: "Create box"
       boxes: "Boxes"
-      ourbox: "Make as better"
+      ourbox: "Our box"
       yourboxes: 'Your boxes'
       statistics: 'Statistics'
       table: "Table"
       top: "Top"
+      home: "Home"
     right:
       createbox: "Create box"
       manageboxes: "Manage boxes"

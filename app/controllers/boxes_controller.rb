@@ -16,32 +16,32 @@ class BoxesController < ApplicationController
 
   def show
     @ideas = @box.ideas.limit(4)
-    impressionist(@box, "show", unique: [:session_hash])
+    impressionist(@box, "show")
   end
 
   def fresh
     @ideas = @box.ideas.fresh.order(created_at: :desc).page params[:page]
-    impressionist(@box, "fresh", unique: [:session_hash])
+    impressionist(@box, "fresh")
   end
 
   def popular
     @ideas = @box.ideas.popular.page params[:page]
-    impressionist(@box, "popular", unique: [:session_hash])
+    impressionist(@box, "popular")
   end
 
   def planned
     @ideas = @box.ideas.planned.order(:updated_at).page params[:page]
-    impressionist(@box, "planned", unique: [:session_hash])
+    impressionist(@box, "planned")
   end
 
   def in_progress
     @ideas = @box.ideas.in_progress.order(:updated_at).page params[:page]
-    impressionist(@box, "in_progress", unique: [:session_hash])
+    impressionist(@box, "in_progress")
   end
 
   def completed
     @ideas = @box.ideas.completed.order(:updated_at).page params[:page]
-    impressionist(@box, "completed", unique: [:session_hash])
+    impressionist(@box, "completed")
   end
 
   # GET /boxes/new

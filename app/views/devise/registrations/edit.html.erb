@@ -30,6 +30,12 @@
               <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
                   <div><%= t('devise.waitingconfirmation') %> <%= resource.unconfirmed_email %></div>
               <% end %>
+              <%= image_tag(current_user.get_avatar(:thumb), height: 40, width: 40, class: 'img-circle') %>
+
+              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label ids-text-heigh">
+                <%= f.label :avatar, class: ''  %>
+                <%= f.file_field :avatar, class: '' %>
+              </div>
 
               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label ids-text-heigh">
                 <%= f.label :password, class: 'mdl-textfield__label'%>

@@ -13,6 +13,7 @@ pl:
     popular: "Popularne"
     planned: "Planowane"
     inprogress: "W realizacji"
+    in_progress: "W realizacji"
     completed: "Zakończone"
     javascript:
       nothing: "Nikt nie dodał jeszcze tutaj pomysłu. Bądź pierwszy :)"

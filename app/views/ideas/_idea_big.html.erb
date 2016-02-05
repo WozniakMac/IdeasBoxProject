@@ -41,8 +41,9 @@
       <%= render 'comments/form' %>
     </div>
   </div>
+  <div class="ids-status"><%= t('box.'+idea.status) %></div>
   <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn1-<%= idea.id %>">
-    <i class="material-icons ids-font__grey">more_vert</i>
+    <i class="material-icons <%=  !idea.photo_file_name.nil? ? "ids-font__grey" : "" %>">more_vert</i>
   </button>
   <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn1-<%= idea.id %>">
     <%= render 'ideas/menu', idea: idea %>

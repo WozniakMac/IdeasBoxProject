@@ -15,6 +15,7 @@
         <p><%= idea.votes.where(rate: false).count %></p>
       </div>
     </div>
+    <div class="ids-status"><%= t('box.'+idea.status) %></div>
     <div class="ids-card-title">
       <h3><%= link_to(idea.title, [@box, idea]) %></h3>
     </div>

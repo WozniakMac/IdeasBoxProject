@@ -2,6 +2,7 @@
 $color_outer_space_approx: #31343c;
 $color_storm_dust_approx: #616161;
 $color_storm_dust_ultra: #a9a9a9;
+$color_lima_approx: #73ad21;
 $white: #fff;
 
 //fonts
@@ -484,4 +485,20 @@ $color_smalt_blue_26_approx: rgba(96, 125, 139, 0.56);
 }
 .ids-idea-bg-19 {
   background-color: #B0BEC5 !important;
+}
+
+.ids-status {
+  font-size: 12px;
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 25px;
+  background: white;
+  padding-right: 5px;
+  padding-left: 5px;
+  color: black;
+  display: inline-flex;
+  text-align: center;
+  position: absolute;
+  z-index: 99;
+  top: 14px;
+  right: 45px;
 }

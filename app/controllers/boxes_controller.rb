@@ -15,7 +15,10 @@ class BoxesController < ApplicationController
   end
 
   def show
-    @ideas = @box.ideas.limit(4)
+    @idea_new = @box.ideas.fresh.order(created_at: :desc).first
+    @idea_popular = @box.ideas.popular.first
+    @idea_planned = @box.ideas.planned.order(:updated_at).first
+    @idea_inprogress = @box.ideas.in_progress.order(:updated_at).first
     impressionist(@box, "show")
   end
 

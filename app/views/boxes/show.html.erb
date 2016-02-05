@@ -9,7 +9,10 @@
 <% content_for :content do %>
     <div class="mdl-layout__tab-panel is-active mdl-grid ids-content" id="content">
       <div class="ids-cards-left mdl-grid mdl-cell mdl-cell--8-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone">
-        <%= render @ideas %>
+        <%= render 'ideas/idea', idea: @idea_new unless @idea_new.nil? %>
+        <%= render 'ideas/idea', idea: @idea_popular unless @idea_popular.nil? %>
+        <%= render 'ideas/idea', idea: @idea_planned unless @idea_planned.nil? %>
+        <%= render 'ideas/idea', idea: @idea_inprogress unless @idea_inprogress.nil? %>
         <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
         </section>
       </div>

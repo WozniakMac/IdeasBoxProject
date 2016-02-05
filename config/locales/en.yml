@@ -13,6 +13,7 @@ en:
     popular: "Popular"
     planned: "Planned"
     inprogress: "In progress"
+    in_progress: "In progress"
     completed: "Completed"
     javascript:
       nothing: "There is nothing here yet. Be first and add idea :)"

@@ -1,6 +1,9 @@
 <!--  ONE CARD  -->
 <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp mdl-cell mdl-cell--6-col-desktop mdl-cell--4-col-tablet mdl-cell--12-col-phone">
-  <header class="ideashare-idea ideashare-idea-header section__play-btn mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone mdl-color-text--white">
+
+
+
+  <header class="ideashare-idea ideashare-idea-header section__play-btn mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone mdl-color-text--white <%=  idea.photo_file_name.nil? ? "ids-background-color" : "" %>">
     <div class="ideashare-idea-buttons" id="buttons-<%= idea.id %>">
       <div class="like idea-button">
         <%= link_to '<i class="material-icons ripple-effect" data-ripple-color="#aed136" data-ripple-limit=".section--center">thumb_up</i>'.html_safe, box_idea_like_path(idea.box,idea), method: :post, remote: true %>
@@ -15,7 +18,7 @@
     <div class="ids-card-title">
       <h3><%= link_to(idea.title, [@box, idea]) %></h3>
     </div>
-    <img class="ids-image-card" src="/images/slide1.jpg" alt="">
+    <%= image_tag(idea.photo.url(:medium), class: 'ids-image-card') unless idea.photo_file_name.nil? %>
   </header>
   <div class="mdl-card mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone ideashare-idea-content">
     <div class="mdl-card__supporting-text">

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160202200239) do
+ActiveRecord::Schema.define(version: 20160205203229) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,11 +57,16 @@ ActiveRecord::Schema.define(version: 20160202200239) do
     t.integer  "user_id"
     t.string   "title"
     t.text     "description"
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
     t.integer  "status"
-    t.integer  "like_counter",    default: 0, null: false
-    t.integer  "dislike_counter", default: 0, null: false
+    t.integer  "like_counter",       default: 0, null: false
+    t.integer  "dislike_counter",    default: 0, null: false
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+    t.integer  "color"
   end
 
   add_index "ideas", ["box_id"], name: "index_ideas_on_box_id", using: :btree

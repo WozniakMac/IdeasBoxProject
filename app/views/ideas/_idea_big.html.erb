@@ -1,7 +1,7 @@
 <!--  ONE CARD  -->
 <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone">
-  <header class="ideashare-idea ideashare-idea-header section__play-btn mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone mdl-color-text--white">
-    <img class="ids-image-card" src="/images/slide1.jpg" alt="">
+  <header class="ideashare-idea ideashare-idea-header section__play-btn mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone mdl-color-text--white <%=  idea.photo_file_name.nil? ? "ids-background-color" : "" %>">
+    <%= image_tag(idea.photo.url(:high), class: 'ids-image-card') unless idea.photo_file_name.nil? %>
   </header>
   <div class="mdl-card mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone ideashare-idea-content">
     <div class="mdl-card__supporting-text">

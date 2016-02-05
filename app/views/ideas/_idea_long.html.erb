@@ -11,7 +11,7 @@
         <p><%= idea.votes.where(rate: false).count %></p>
       </div>
     </div>
-    <img class="ids-image-card" src="/images/slide1.jpg" alt="">
+    <%= image_tag(idea.photo.url(:medium), class: 'ids-image-card') unless idea.photo_file_name.nil? %>
   </header>
   <div class="mdl-card mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone ideashare-idea-content">
     <div class="mdl-card__supporting-text">

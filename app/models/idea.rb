@@ -1,13 +1,13 @@
 class Idea < ActiveRecord::Base
-  include Rails.application.routes.url_helpers
-  include ActionView::Helpers::DateHelper
-  include ActionView::Helpers::TextHelper
-  include ApplicationHelper
+  has_attached_file :photo, styles: { high: "752x485>", medium: "368x237>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
+  validates_attachment_content_type :photo, content_type: /\Aimage\/.*\Z/
 
   belongs_to :box
   belongs_to :user
   has_many :comments
   has_many :votes
+
+  before_save :set_color
 
   paginates_per 5
 
@@ -24,4 +24,8 @@ class Idea < ActiveRecord::Base
 
   scope :popular, ->{fresh.where('like_counter > dislike_counter').order('dislike_counter - like_counter')}
 
+  private
+    def set_color
+      self.color ||= Random.new.rand(1..19)
+    end
 end

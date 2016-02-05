@@ -123,7 +123,6 @@ $color_persian_red_approx: #d13636;
   .ideashare-idea-header {
     //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
     transition: left 0.5s;
-    background-color: $white;
   }
   .ideashare-idea-content {
     transition: left 0.5s;

@@ -19,5 +19,6 @@ pl:
       idea:
         title: 'Pomysł'
         description: 'Opis'
+        photo: 'Zdjęcie'
       comment:
         comment: "Komentarz"

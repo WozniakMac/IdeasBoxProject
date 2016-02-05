@@ -60,12 +60,12 @@ class IdeasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def idea_params
-      params.require(:idea).permit(:title, :description)
+      params.require(:idea).permit(:title, :description, :photo)
     end
 
     def check_owner
       if !current_user.is_owner?(@idea)
-        format.html {redirect_to root_path, notice: I18n.t('permissions.denied') }
+        redirect_to root_path, notice: I18n.t('permissions.denied')
       end
     end
 end

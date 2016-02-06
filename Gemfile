@@ -12,6 +12,16 @@ gem 'friendly_id', '~> 5.1.0'
 gem 'paperclip', '~> 4.3'
 gem 'gravtastic'
 
+#oauth
+gem 'linkedin'
+gem 'omniauth'
+gem 'omniauth-oauth2'
+gem 'omniauth-facebook'
+gem 'omniauth-github'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-linkedin-oauth2'
+gem 'omniauth-twitter'
+
 # frontend
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0' # Use Uglifier as compressor for JavaScript assets

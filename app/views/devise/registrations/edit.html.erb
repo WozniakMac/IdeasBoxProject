@@ -36,6 +36,20 @@
                 <%= f.label :avatar, class: ''  %>
                 <%= f.file_field :avatar, class: '' %>
               </div>
+              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label ids-text-heigh">
+                <%= label_tag 'gender', t('user.sex'), class: '' %>
+                <div id="gender">
+                  <%= f.label :sex, '',value: 0, class: 'mdl-radio mdl-js-radio mdl-js-ripple-effect' do %>
+                      <%= f.radio_button :sex, 0, class: 'mdl-radio__button' %>
+                      <span class="mdl-radio__label"><%= t('user.men') %></span>
+                  <% end %>
+                  <%= f.label :sex, '',value: 1, class: 'mdl-radio mdl-js-radio mdl-js-ripple-effect' do %>
+                      <%= f.radio_button :sex, 1, class: 'mdl-radio__button' %>
+                      <span class="mdl-radio__label"><%= t('user.women') %></span>
+                  <% end %>
+                </div>
+              </div>
+
 
               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label ids-text-heigh">
                 <%= f.label :password, class: 'mdl-textfield__label'%>

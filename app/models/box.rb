@@ -12,8 +12,8 @@ class Box < ActiveRecord::Base
   belongs_to :user
   has_many :ideas
 
-  validates :name, length: { in: 4..20 }
-  validates :description, length: { in: 10..20000 }
+  validates :name, length: { in: 4..40 }
+  validates :description, length: { in: 10..5000 }
 
   paginates_per 5
   is_impressionable

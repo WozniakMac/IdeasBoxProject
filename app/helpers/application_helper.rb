@@ -58,4 +58,12 @@ module ApplicationHelper
     }
     Redcarpet::Markdown.new(renderer, extensions).render(text).html_safe
   end
+
+  def short_text(text, length)
+    if text.length < length
+      return text
+    else
+      return text[0..length] + '...'
+    end
+  end
 end

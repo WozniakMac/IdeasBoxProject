@@ -128,3 +128,7 @@ pl:
     day5: "Piątek"
     day6: "Sobota"
   field: "Pole"
+  user:
+    men: "Mężczyzna"
+    women: "Kobieta"
+    sex: "Płeć"

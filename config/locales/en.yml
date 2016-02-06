@@ -127,3 +127,5 @@ en:
     day5: "Friday"
     day6: "Saturday"
   field: "Field"
+  user:
+    sex: "Gender"

@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ideashare</title>
+  <title>Ideashare - <%= yield :title %></title>
 
   <!-- Add to homescreen for Chrome on Android -->
   <meta name="mobile-web-app-capable" content="yes">
@@ -53,11 +53,19 @@
     </div>
     <div class="mdl-ideashare-emptyspace header-width mdl-layout--large-screen-only mdl-layout__header-row">
     </div>
-    <div class="header-width its-tab-bar mdl-color--ideashare-dark">
+    <div class="header-width its-tab-bar mdl-color--ideashare-dark mdl-layout--large-screen-only">
       <%= yield :leftnav %>
       <%= yield :addbutton %>
     </div>
+
   </header>
+  <div class="mdl-layout__drawer mdl-layout--small-screen-only">
+    <span class="mdl-layout-title"><%= yield :title %></span>
+    <nav class="mdl-navigation">
+      <%= render "shared/navbar/top_left" %>
+      <%= yield :navbar_left %>
+    </nav>
+  </div>
   <main class="mdl-layout__content">
     <div class="mdl-layout__tab-panel is-active" id="content">
       <% if !notice.nil? %>

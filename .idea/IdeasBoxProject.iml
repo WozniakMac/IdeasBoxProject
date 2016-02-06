@@ -146,6 +146,7 @@
     <orderEntry type="library" scope="PROVIDED" name="debug_inspector (v0.0.2, RVM: ruby-2.2.2 [rails]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="devise (v3.4.1, RVM: ruby-2.2.2 [rails]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="draper (v1.4.0, RVM: ruby-2.2.2 [rails]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="envyable (v1.0.0, RVM: ruby-2.2.2 [rails]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="erubis (v2.7.0, RVM: ruby-2.2.2 [rails]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="execjs (v2.5.2, RVM: ruby-2.2.2 [rails]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="friendly_id (v5.1.0, RVM: ruby-2.2.2 [rails]) [gem]" level="application" />

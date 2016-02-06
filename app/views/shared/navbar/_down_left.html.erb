@@ -1,0 +1,7 @@
+<hr />
+<%= link_to(I18n.t('box.main').html_safe, @box, class: 'mdl-navigation__link'  ) %>
+<%= link_to(I18n.t('box.fresh').html_safe, box_fresh_path(@box), class: 'mdl-navigation__link' ) %>
+<%= link_to(I18n.t('box.popular').html_safe, box_popular_path(@box), class: 'mdl-navigation__link') %>
+<%= link_to(I18n.t('box.planned').html_safe, box_planned_path(@box), class: 'mdl-navigation__link' ) %>
+<%= link_to(I18n.t('box.inprogress').html_safe, box_inprogress_path(@box), class: 'mdl-navigation__link' ) %>
+<%= link_to(I18n.t('box.completed').html_safe, box_completed_path(@box), class: 'mdl-navigation__link' ) %>

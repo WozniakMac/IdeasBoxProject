@@ -15,7 +15,7 @@
   </header>
   <div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone ideashare-idea-content">
     <div class="mdl-card__actions">
-      <%= link_to(truncate(idea.title, length: 40), [idea.box, idea]) %>
+      <%= link_to(short_text(idea.title,35), [idea.box, idea]) %>
     </div>
   </div>
   <div class="ids-status"><%= t('box.'+idea.status) %></div>

@@ -39,6 +39,7 @@ group :development, :test do
   gem 'web-console', '~> 2.0' # Access an IRB console on exception pages or by using <%= console %> in views
 	gem 'spring'
   gem 'meta_request'
+  gem 'envyable'
 end
 
 group :development do

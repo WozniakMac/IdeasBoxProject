@@ -19,6 +19,7 @@ en:
       nothing: "There is nothing here yet. Be first and add idea :)"
       error: "Something goes wrong :("
     addnewidea: "New idea"
+    main: "Box"
   permissions:
     denied: "Permissions denied :("
   navbar:
@@ -129,3 +130,8 @@ en:
   field: "Field"
   user:
     sex: "Gender"
+  send_instrictions: "Send me reset password instructions"
+  change: "Change your password"
+  new_password: "New password"
+  confirm_password: "Confirm new password"
+  sign_in_with: "Sign in with"

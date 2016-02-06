@@ -4,8 +4,8 @@
   </header>
   <div class="mdl-card mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone ideashare-idea-content">
     <div class="mdl-card__supporting-text">
-      <h4><%= link_to(box.name, box) %></h4>
-      <%= box.description %>
+      <h4><%= link_to(short_text(box.name,30), box) %></h4>
+      <%= short_text(box.description,400) %>
     </div>
     <div class="mdl-card__actions">
       <a href="#" class="ideashare-link-action">

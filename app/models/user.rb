@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
   include Gravtastic
   gravtastic
 
-  validates :username, length: { in: 4..20 }
+  validates :username, length: { in: 4..100 }
   validates :username, exclusion: { in: %w(admin superuser) }
   validates :username, presence: true
   validates :username, uniqueness: true
@@ -52,12 +52,17 @@ class User < ActiveRecord::Base
       if registered_user
         return registered_user
       else
-        user = User.create(username: data["name"],
-                           provider:access_token.provider,
-                           email: data["email"],
-                           uid: access_token.uid ,
-                           password: Devise.friendly_token[0,20],
-        )
+        user = User.new
+        user.username = data["name"]
+        user.provider = access_token.provider
+        user.email = data["email"]
+        user.uid = access_token.uid
+        user.password = Devise.friendly_token[0,20]
+        unless user.valid?
+          user.make_username_valid
+        end
+        user.save
+        user
       end
     end
   end
@@ -72,13 +77,23 @@ class User < ActiveRecord::Base
       if registered_user
         return registered_user
       else
-        user = User.create(username: data["name"],
-                           provider:access_token.provider,
-                           email: data["email"],
-                           uid: access_token.uid ,
-                           password: Devise.friendly_token[0,20],
-        )
+        user = User.new
+        user.username = data["name"]
+        user.provider = access_token.provider
+        user.email = data["email"]
+        user.uid = access_token.uid
+        user.password = Devise.friendly_token[0,20]
+        unless user.valid?
+          user.make_username_valid
+        end
+        user.save
+        user
       end
     end
+  end
+
+  def make_username_valid
+    self.username = self.username.gsub(/[^a-zA-Z0-9]/, "")
+    self.username = self.username + Random.new.rand(1000..9999) if self.username.length < 4
   end
 end

@@ -126,6 +126,7 @@
     <orderEntry type="library" scope="PROVIDED" name="activemodel (v4.2.1, RVM: ruby-2.2.2 [rails]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="activerecord (v4.2.1, RVM: ruby-2.2.2 [rails]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="activesupport (v4.2.1, RVM: ruby-2.2.2 [rails]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="addressable (v2.4.0, RVM: ruby-2.2.2 [rails]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="arel (v6.0.0, RVM: ruby-2.2.2 [rails]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="autoprefixer-rails (v6.2.3, RVM: ruby-2.2.2 [rails]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bcrypt (v3.1.10, RVM: ruby-2.2.2 [rails]) [gem]" level="application" />
@@ -160,6 +161,7 @@
     <orderEntry type="library" scope="PROVIDED" name="json (v1.8.2, RVM: ruby-2.2.2 [rails]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="jwt (v1.5.1, RVM: ruby-2.2.2 [rails]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="kaminari (v0.16.3, RVM: ruby-2.2.2 [rails]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="koala (v2.2.0, RVM: ruby-2.2.2 [rails]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="loofah (v2.0.2, RVM: ruby-2.2.2 [rails]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mail (v2.6.3, RVM: ruby-2.2.2 [rails]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="material_design_lite-sass (v1.0.6.3, RVM: ruby-2.2.2 [rails]) [gem]" level="application" />

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
     root 'homepage#index'
-  devise_for :users
+  devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
   resources :boxes, only: [:index, :show, :edit, :update, :new, :create] do
     resources :ideas, only: [:show, :create, :new, :edit, :update] do
       resources :comments, only: [:create, :show, :new]

@@ -21,6 +21,7 @@ gem 'omniauth-github'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-linkedin-oauth2'
 gem 'omniauth-twitter'
+gem 'koala'
 
 # frontend
 gem 'sass-rails', '~> 5.0'

@@ -3,7 +3,9 @@
   <%= link_to(I18n.t('navbar.left.table'), table_ideas_path , class: 'mdl-navigation__link') %>
   <%= link_to(I18n.t('navbar.left.boxes'), boxes_path , class: 'mdl-navigation__link') %>
   <%= link_to(I18n.t('navbar.left.top'), top_path , class: 'mdl-navigation__link') %>
-  <%= link_to(I18n.t('navbar.left.ourbox'), box_path(Box.first) , class: 'mdl-navigation__link') unless Box.first.empty? %>
+  <% unless Box.first.empty? %>
+    <%= link_to(I18n.t('navbar.left.ourbox'), box_path(Box.first) , class: 'mdl-navigation__link') %>
+  <% end %>    
 </nav>
 <div class="mdl-layout-spacer"></div>
 <nav class="mdl-navigation mdl-ideashare-right-menu">

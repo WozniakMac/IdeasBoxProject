@@ -11,6 +11,7 @@ gem 'draper', '~> 1.3'
 gem 'friendly_id', '~> 5.1.0'
 gem 'paperclip', '~> 4.3'
 gem 'gravtastic'
+gem 'aws-sdk'
 
 #oauth
 gem 'linkedin'

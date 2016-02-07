@@ -7,6 +7,18 @@ GIT
       i18n (~> 0.6)
       railties (~> 4.0)
 
+GIT
+  remote: https://github.com/thoughtbot/paperclip
+  revision: 523bd46c768226893f23889079a7aa9c73b57d68
+  ref: 523bd46c768226893f23889079a7aa9c73b57d68
+  specs:
+    paperclip (4.3.1)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      cocaine (~> 0.5.5)
+      mime-types
+      mimemagic (= 0.3.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -184,12 +196,6 @@ GEM
       json (~> 1.3)
       omniauth-oauth (~> 1.1)
     orm_adapter (0.5.0)
-    paperclip (4.3.4)
-      activemodel (>= 3.2.0)
-      activesupport (>= 3.2.0)
-      cocaine (~> 0.5.5)
-      mime-types
-      mimemagic (= 0.3.0)
     pg (0.18.2)
     rack (1.6.1)
     rack-contrib (1.4.0)
@@ -293,7 +299,7 @@ DEPENDENCIES
   omniauth-linkedin-oauth2
   omniauth-oauth2
   omniauth-twitter
-  paperclip (~> 4.3)
+  paperclip!
   pg
   rails (= 4.2.1)
   rails-i18n!

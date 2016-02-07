@@ -4,16 +4,14 @@
 <% end %>
 
 <% content_for :title do %>
-    <%= t('idea.new') %>
+    <%= t('idea.edit_status') + " - #{@idea.title}" %>
 <% end %>
 
 <% content_for :content do %>
     <div class="mdl-layout__tab-panel is-active mdl-grid ids-content" id="content">
-      <div class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone ids-background-white">
+      <div class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone">
         <div class="ids-session">
-          <%= render 'form' %>
-          <hr />
-          <%= link_to t('box.create_new'), new_box_path ,class: 'mdl-button mdl-js-button' %>
+          <%= render 'form_status' %>
         </div>
       </div>
     </div>

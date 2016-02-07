@@ -36,16 +36,17 @@
     </div>
   </div>
   <div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone ideashare-idea-content ids-comments">
-    <div class="mdl-card__supporting-text">
+    <div class="mdl-card__supporting-text" id="comments">
       <%= render idea.comments.order('id desc') %>
       <%= render 'comments/form' %>
     </div>
   </div>
   <div class="ids-status"><%= t('box.'+idea.status) %></div>
-  <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn1-<%= idea.id %>">
+  <% random = Random.new.rand(("a".."z").to_a.size) %>
+  <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn1-<%= "#{idea.id}#{("a".."z").to_a[random]}" %>">
     <i class="material-icons <%=  !idea.photo_file_name.nil? ? "ids-font__grey" : "" %>">more_vert</i>
   </button>
-  <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn1-<%= idea.id %>">
+  <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn1-<%= "#{idea.id}#{("a".."z").to_a[random]}" %>">
     <%= render 'ideas/menu', idea: idea %>
   </ul>
 </section>

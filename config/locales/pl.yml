@@ -21,6 +21,7 @@ pl:
     addnewidea: "Dodaj nowy pomysł"
     ideas: "pomysłów"
     main: "Pudełko"
+    create_new: "Stwóż nowe podełko na pomysły"
   permissions:
     denied: 'Brak uprawnień :('
   navbar:
@@ -74,6 +75,7 @@ pl:
     created: "Pomysł został poprawnie dodany."
     updated: "Pomysł został poprawnie zaktualizowany."
     canedit: "Możesz edytować pomysł tylko 5 minut po stworzeniu."
+    edit_status: "Zmień status"
   comment:
     zero: '0 komentarzy'
     one: '1 komentarz'
@@ -138,3 +140,4 @@ pl:
   new_password: "Nowe hasło"
   confirm_password: "Potwierdź nowe hasło"
   sign_in_with: "Zaloguj sie z"
+  edit_status: "Zmień status"

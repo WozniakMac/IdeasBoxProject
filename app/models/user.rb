@@ -95,5 +95,8 @@ class User < ActiveRecord::Base
   def make_username_valid
     self.username = self.username.gsub(/[^a-zA-Z0-9]/, "")
     self.username = self.username + Random.new.rand(1000..9999) if self.username.length < 4
+    until User.where(:username => self.username).empty?
+      self.username = self.username + Random.new.rand(1..9)
+    end
   end
 end

@@ -19,10 +19,11 @@
     </div>
   </div>
   <div class="ids-status"><%= t('box.'+idea.status) %></div>
-  <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn-<%= idea.id %>">
+  <% random = Random.new.rand(("a".."z").to_a.size) %>
+  <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn-<%= "#{idea.id}#{("a".."z").to_a[random]}" %>">
     <i class="material-icons">more_vert</i>
   </button>
-  <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right ids-on-top" for="btn-<%= idea.id %>">
+  <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right ids-on-top" for="btn-<%= "#{idea.id}#{("a".."z").to_a[random]}" %>">
     <%= render 'ideas/menu', idea: idea %>
   </ul>
 </section>

@@ -1,7 +1,7 @@
 class IdeasController < ApplicationController
   before_action :authenticate_user!, only: [:create, :update, :edit, :new]
   before_action :set_box
-  before_action :set_idea, only: [:show, :edit, :update]
+  before_action :set_idea, only: [:show, :edit, :update, :edit_status, :update_status]
   before_action :check_owner, only: [:edit, :update]
 
 
@@ -49,6 +49,22 @@ class IdeasController < ApplicationController
     end
   end
 
+  def edit_status
+    unless current_user.is_owner?(@idea.box)
+      redirect_to root_path, notice: I18n.t('permissions.denied')
+    end
+  end
+
+  def update_status
+    respond_to do |format|
+      if current_user.is_owner?(@idea.box) and @idea.update(idea_status_params)
+        format.html { redirect_to [@box,@idea], notice: I18n.t('idea.updated') }
+      else
+        format.html { render :edit_status }
+      end
+    end
+  end
+
   private
     def set_box
       @box = Box.friendly.find(params[:box_id])
@@ -61,6 +77,10 @@ class IdeasController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def idea_params
       params.require(:idea).permit(:title, :description, :photo)
+    end
+
+    def idea_status_params
+      params.require(:idea).permit(:status)
     end
 
     def check_owner

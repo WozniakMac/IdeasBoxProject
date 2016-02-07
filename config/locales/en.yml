@@ -20,6 +20,7 @@ en:
       error: "Something goes wrong :("
     addnewidea: "New idea"
     main: "Box"
+    create_new: "Create new box"
   permissions:
     denied: "Permissions denied :("
   navbar:
@@ -73,6 +74,7 @@ en:
     created: "Idea was successfully created."
     updated: "Idea was successfully updated."
     canedit: "You can edit Idea only 5 mintes after create."
+    edit_status: "Chage status"
   comment:
     zero: '0 comments'
     one: '1 comment'
@@ -135,3 +137,4 @@ en:
   new_password: "New password"
   confirm_password: "Confirm new password"
   sign_in_with: "Sign in with"
+  edit_status: "Change status"

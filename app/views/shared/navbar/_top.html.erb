@@ -12,9 +12,6 @@
       <%= link_to(I18n.t('navbar.right.signup'), new_user_registration_path, class: 'mdl-navigation__link' )%>
   <% else %>
       <%= link_to(current_user,'#', class: 'mdl-navigation__link')%>
-      <a class="mdl-navigation__link" href=""><i class="material-icons">share</i></a>
-      <a class="mdl-navigation__link" href=""><i class="material-icons">favorite</i></a>
-      <a class="mdl-navigation__link" href=""><i class="material-icons">notifications</i></a>
       <a class="mdl-navigation__link" id="session-menu-button"><%= image_tag(current_user.get_avatar(:thumb), height: 40, width: 40, class: 'img-circle') %></a>
       <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
           for="session-menu-button">

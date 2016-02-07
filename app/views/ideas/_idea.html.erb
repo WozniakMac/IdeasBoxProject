@@ -31,20 +31,21 @@
           <%= idea.user.username %>
         </div>
       </a>
-      <a href="#" class="ideashare-link-action">
+      <%= link_to([@box, idea ,anchor: 'comments'], class: 'ideashare-link-action') do %>
         <div class="mdl-card__actions--icon">
           <i class="material-icons">comment</i>
         </div>
         <div class="mdl-card__actions--text">
           <%= t('comment', count: idea.comments.count) %>
         </div>
-      </a>
+      <% end %>
     </div>
   </div>
-  <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn1-<%= idea.id %>">
+  <% random = Random.new.rand(("a".."z").to_a.size) %>
+  <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn1-<%= "#{idea.id}#{("a".."z").to_a[random]}" %>">
     <i class="material-icons white">more_vert</i>
   </button>
-  <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn1-<%= idea.id %>">
+  <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn1-<%= "#{idea.id}#{("a".."z").to_a[random]}" %>">
     <%= render 'ideas/menu', idea: idea %>
   </ul>
 </section>

@@ -8,6 +8,11 @@ Rails.application.routes.draw do
       post 'like', to: 'votes#like', as: 'like'
       post 'dislike', to: 'votes#dislike', as: 'dislike'
       post 'unlike', to: 'votes#unlike', as: 'unlike'
+      member do
+        patch :update_status
+        put :update_status
+        get :edit_status
+      end
     end
     get 'fresh', to: 'boxes#fresh', as: 'fresh'
     get 'popular', to: 'boxes#popular', as: 'popular'

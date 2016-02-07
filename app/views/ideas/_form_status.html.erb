@@ -1,0 +1,16 @@
+<%= form_for([@box,@idea], url: update_status_box_idea_path) do |f| %>
+    <% if @idea.errors.any? %>
+        <% @idea.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+        <% end %>
+        </ul>
+        </div>
+    <% end %>
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label ids-text-heigh">
+      <%= f.label :status, class: 'mdl-textfield__label' %>
+      <%= f.select(:status, options_for_select(Idea.statuses.map { |k,v| [I18n.t(k), k] }, :selected => @idea.status), {}, { class: 'mdl-textfield__input' }) %>
+    </div>
+    <div class="action">
+      <%= f.submit I18n.t('save') ,class: 'mdl-button mdl-js-button mdl-button--raised' %>
+    </div>
+<% end %>

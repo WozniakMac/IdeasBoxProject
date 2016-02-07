@@ -20,14 +20,14 @@ module ApplicationHelper
         # (ignored by default)
         hard_wrap:       true,
         # hash for extra link options, for example 'nofollow'
-        link_attributes: { rel: 'nofollow' }
+        link_attributes: { rel: 'nofollow', target: "_blank" },
         # more
         # will remove <img> tags from output
-        # no_images: true
+        no_images: true,
         # will remove <a> tags from output
         # no_links: true
         # will remove <style> tags from output
-        # no_styles: true
+        no_styles: true
         # generate links for only safe protocols
         # safe_links_only: true
         # and more ... (prettify, with_toc_data, xhtml)

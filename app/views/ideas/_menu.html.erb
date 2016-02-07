@@ -1,7 +1,6 @@
 <% if !current_user.nil? and current_user.is_owner?(idea) %>
     <%= link_to(t('edit'), edit_box_idea_path(idea.box, idea),class: "mdl-menu__item") %>
 <% end %>
-<li class="mdl-menu__item">Zgłoś</li>
 <% if !current_user.nil? and current_user.is_owner?(idea.box) %>
     <%= link_to(t('edit_status'), edit_status_box_idea_path(idea.box, idea),class: "mdl-menu__item") %>
 <% end %>

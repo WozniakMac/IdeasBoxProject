@@ -48,7 +48,7 @@
       <%= yield :navbartop %>
     </div>
     <div class="mdl-ideashare-sitename-little mdl-color--ideashare-grey-font header-width mdl-layout--large-screen-only mdl-layout__header-row">
-      <h6>Ideashare</h6>
+      <h6><%= yield_or :main_title, 'Ideashare' %></h6>
     </div>
     <div class="header-width mdl-main-title mdl-layout--large-screen-only mdl-layout__header-row">
       <h3><%= yield :title %></h3>

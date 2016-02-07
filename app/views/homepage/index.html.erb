@@ -6,17 +6,23 @@
     Ideashare
 <% end %>
 
+<% content_for :main_title do %>
+    <span></span>
+<% end %>
+
 <% content_for :content do %>
     <div class="mdl-layout__tab-panel is-active mdl-grid ids-content" id="content">
       <section class="section--center mdl-grid">
         <section class="section--center mdl-grid mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone">
+          <section class="mdl-grid mdl-grid--no-spacing mdl-shadow--2dp mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--12-col-phone">
+          </section>
           <section class="mdl-grid mdl-grid--no-spacing mdl-shadow--2dp mdl-cell--3-col-desktop mdl-cell--4-col-tablet mdl-cell--12-col-phone">
             <header class="ideashare-idea ideashare-idea-header section__play-btn mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone%>">
               <%= image_tag('1.png', class: 'ids-image-card') %>
             </header>
             <div class="mdl-card mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone ideashare-idea-content">
-              <h3>1. Stwórz pudełko</h3>
               <div class="mdl-card__supporting-text">
+                <h3>1. Stwórz pudełko</h3>
                 Służy ono do kolekcjonowania pomysłów i feedbacków.
               </div>
             </div>
@@ -26,8 +32,8 @@
               <%= image_tag('2.png', class: 'ids-image-card') %>
             </header>
             <div class="mdl-card mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone ideashare-idea-content">
-              <h3>2. Udostępnij</h3>
               <div class="mdl-card__supporting-text">
+                <h3>2. Udostępnij</h3>
                 Każde pudełko ma swój indywidualny adres. Przekaż link do swojego pudełka do jak największej liczby osób.
               </div>
             </div>
@@ -37,9 +43,9 @@
               <%= image_tag('3.png', class: 'ids-image-card') %>
             </header>
             <div class="mdl-card mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone ideashare-idea-content">
-              <h3>3. Zbieraj</h3>
               <div class="mdl-card__supporting-text">
-                Poddaj pomysły głosowaniu i komentowaniu. Bierz udział w dyskusjach.
+                <h3>3. Głosuj</h3>
+                Dodaj pomysły, głosuj i komentuj. Bierz udział w dyskusjach.
               </div>
             </div>
           </section>
@@ -48,12 +54,18 @@
               <%= image_tag('4.png', class: 'ids-image-card') %>
             </header>
             <div class="mdl-card mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone ideashare-idea-content">
-              <h3>4. Realizuj</h3>
               <div class="mdl-card__supporting-text">
+                <h3>4. Twórz</h3>
                 Ulepsz swój projekt realizując najlepsze pomysły.
               </div>
             </div>
           </section>
+          <div class="ids-home-text mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone ideashare-idea-content">
+            <div class="mdl-card__supporting-text">
+              <h5>Ideashare jest to aplikacja, umożliwiająca w prosty sposób stworzenie własnego pudełka na pomysły. Naszym celem jest polepszenie współpracy z użytkownikami w trakcie realizacji projektów.</h5>
+              <h5>Dajemy wam w ręcę narzędzie do kolekcjonowania pomysłów, głosowania i komentowania. Mamy nadzieje, że czas spędzony w naszej aplikacji będzie przyjemny :)</h5>
+            </div>
+          </div>
         </section>
       </section>
     </div>

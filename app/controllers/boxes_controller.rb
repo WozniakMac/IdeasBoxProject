@@ -16,7 +16,7 @@ class BoxesController < ApplicationController
 
   def show
     @idea_new = @box.ideas.fresh.order(created_at: :desc).first
-    @idea_popular = @box.ideas.popular.first
+    @idea_popular = @box.ideas.popular.where('ideas.id != ?', @idea_new.id).first unless @idea_new.nil?
     @idea_planned = @box.ideas.planned.order(:updated_at).first
     @idea_inprogress = @box.ideas.in_progress.order(:updated_at).first
     impressionist(@box, "show")

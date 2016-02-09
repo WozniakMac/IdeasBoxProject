@@ -1,13 +1,13 @@
 <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
   <header class="ideashare-idea ideashare-idea-header section__play-btn mdl-cell mdl-cell--2-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color-text--white ids-background-color">
-    <div class="ideashare-idea-buttons" id="buttons-<%= idea.id %>">
+    <div class="ideashare-idea-buttons buttons-<%= idea.id %>">
       <div class="like idea-button">
-        <%= link_to '<i class="material-icons ripple-effect" data-ripple-color="#aed136" data-ripple-limit=".section--center">thumb_up</i>'.html_safe, box_idea_like_path(idea.box,idea), method: :post, remote: true %>
+        <%= link_to '<i class="material-icons ripple-effect" data-ripple-color="#aed136" data-ripple-limit=".section--center">thumb_up</i>'.html_safe, box_idea_like_path(idea.box,idea), class: idea_button_class(idea,:liked), method: :post, remote: true %>
         <p><%= idea.votes.where(rate: true).count %></p>
       </div>
       <div class="empty idea-button"></div>
       <div class="dislike idea-button">
-        <%= link_to '<i class="material-icons ripple-effect" data-ripple-color="#d13636" data-ripple-limit=".section--center">thumb_down</i>'.html_safe, box_idea_dislike_path(idea.box,idea), method: :post, remote: true %>
+        <%= link_to '<i class="material-icons ripple-effect" data-ripple-color="#d13636" data-ripple-limit=".section--center">thumb_down</i>'.html_safe, box_idea_dislike_path(idea.box,idea), class: idea_button_class(idea,:disliked), method: :post, remote: true %>
         <p><%= idea.votes.where(rate: false).count %></p>
       </div>
     </div>

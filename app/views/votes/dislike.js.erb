@@ -1,12 +1,12 @@
 function setCounters() {
-    var idea = $('#buttons-<%= @idea.id %>');
-    var likeButton = idea.find('.like');
+  $('.buttons-<%= @idea.id %>').each(function() {
+    var likeButton = $(this).find('.like');
     likeButton.find('p').text('<%= @idea.like_counter %>');
-    likeButton.find('a').removeAttr('disabled');
-    var dislikeButton = idea.find('.dislike');
+    likeButton.find('a').removeClass('ids-active');
+    var dislikeButton = $(this).find('.dislike');
     dislikeButton.find('p').text('<%= @idea.dislike_counter %>');
-    dislikeButton.find('a').attr('disabled','disabled');
-    dislikeButton.removeAttr('disabled');
+    dislikeButton.find('a').addClass('ids-active')
+  });;
 }
 
 setCounters();

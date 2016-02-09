@@ -8,14 +8,14 @@
       <h4 class="ids-margin-right-90"><%= idea.title %></h4>
       <%= markdown idea.description %>
     </div>
-    <div class="ideashare-idea-buttons" id="buttons-<%= idea.id %>">
+    <div class="ideashare-idea-buttons buttons-<%= idea.id %>">
       <div class="like idea-button">
-        <%= link_to '<i class="material-icons ripple-effect" data-ripple-color="#aed136" data-ripple-limit=".section--center">thumb_up</i>'.html_safe, box_idea_like_path(idea.box,idea), method: :post, remote: true %>
+        <%= link_to '<i class="material-icons ripple-effect" data-ripple-color="#aed136" data-ripple-limit=".section--center">thumb_up</i>'.html_safe, box_idea_like_path(idea.box,idea), class: idea_button_class(idea,:liked), method: :post, remote: true %>
         <p><%= idea.votes.where(rate: true).count %></p>
       </div>
       <div class="empty idea-button"></div>
       <div class="dislike idea-button">
-        <%= link_to '<i class="material-icons ripple-effect" data-ripple-color="#d13636" data-ripple-limit=".section--center">thumb_down</i>'.html_safe, box_idea_dislike_path(idea.box,idea), method: :post, remote: true %>
+        <%= link_to '<i class="material-icons ripple-effect" data-ripple-color="#d13636" data-ripple-limit=".section--center">thumb_down</i>'.html_safe, box_idea_dislike_path(idea.box,idea), class: idea_button_class(idea,:disliked), method: :post, remote: true %>
         <p><%= idea.votes.where(rate: false).count %></p>
       </div>
     </div>

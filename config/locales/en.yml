@@ -138,3 +138,5 @@ en:
   confirm_password: "Confirm new password"
   sign_in_with: "Sign in with"
   edit_status: "Change status"
+  password:
+    change: "Change my password"

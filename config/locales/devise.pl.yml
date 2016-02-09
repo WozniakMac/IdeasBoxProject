@@ -25,7 +25,7 @@ pl:
         subject: "Instrukcja odblokowania konta"
     omniauth_callbacks:
       failure: "Logowanie przez konto %{kind} zakończyło się błędem: \"%{reason}\"."
-      success: "Zalogowałeś się pomyślnie przez konto %{kind}."
+      success: "Zalogowałeś się pomyślnie przez konto %{kind}. Na twój e-mail został wysłany link do wygenerowania hasła."
     passwords:
       no_token: "Dostęp do tej strony jest możliwy jedynie poprzez użycie prawidłowego adresu z emaila z instrukcjami o resecie hasłą. Jeżeli właśnie skorzystałeś z tego adresu, sprawdź czy użyty adres jest zgodny z tym w emailu."
       send_instructions: "Za chwilę otrzymasz emaila z instrukcją jak zresetować hasło."

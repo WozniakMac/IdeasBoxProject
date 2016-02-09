@@ -62,6 +62,7 @@ class User < ActiveRecord::Base
           user.make_username_valid
         end
         user.save
+        user.send_reset_password_instructions
         user
       end
     end
@@ -87,6 +88,7 @@ class User < ActiveRecord::Base
           user.make_username_valid
         end
         user.save
+        user.send_reset_password_instructions
         user
       end
     end

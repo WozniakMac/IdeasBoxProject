@@ -1,0 +1,68 @@
+<% content_for :css do %>
+    <%= stylesheet_link_tag    'more', media: 'all' %>
+<% end %>
+
+<% content_for :js do %>
+
+<% end %>
+
+<% content_for :title do %>
+    O nas
+<% end %>
+
+<% content_for :titleup do %>
+    - O nas
+<% end %>
+
+<% content_for :main_title do %>
+    Ideashare
+<% end %>
+
+<% content_for :content do %>
+    <div class="mdl-layout__tab-panel is-active mdl-grid ids-content" id="content">
+      <section class="section--center mdl-grid">
+        <div>
+          <h2>Pudełko na pomysły</h2>
+          <p class="more-text">
+            Jest to takie miejsce w internecie w którym użytkownicy mogą Tobie <b>zgłaszać sugestie, pomysły i skargi</b>.
+            Dzięki możliwości <b>głosowania</b> możesz w prosty sposób ocenić, które z nich są najważniesze i które trzeba
+            zrealizować najszybciej.
+          </p>
+          <p class="more-text">
+            Właśnie tym się zajmujemy. Jeżeli chcesz stworzyć właśne pudełko na pomysły kliknij na zielony <b>plus</b> w prawym
+            górnym rogu ekranu.
+          </p>
+          <p class="more-text">
+            Jeżeli chcesz zobaczyć jak wygląda takie pudełko na pomysły zerknij
+            <% unless Box.first.nil? %>
+                <%= link_to('tutaj.', box_path(Box.first)) %>
+            <% end %>
+          </p>
+        </div>
+        <div>
+        <h2>Gdy coś sprzedajesz</h2>
+          <p class="more-text">
+            Konkurencja na rynkach produktów i usług jest tak duża, że samo stworzenie jakiegoś produktu bądź usługi i
+            oczekiwanie, że się sprzeda już nie wystarcza. Małe i duże firmy coraz bardziej starają się <b>zaangażować</b>
+            w proces tworzenia samych <b>użytkowników</b>. Daje im to możliwość <b>szybkiej reakcji</b> na ich potrzeby.
+          </p>
+        </div>
+        <div>
+          <h2>Gdy coś tworzysz</h2>
+          <p class="more-text">
+            Dokladnie to samo, co w przypadku przedsiębiorst, dzieje się w wśród twórców. Muzycy, youtuberzy, blogerzy, programiści.
+            Wszyscy starają się czytać <b>komenarze, e-maile i na nie reagować</b>. Chcą odkryć to czego naprawdę chcą użytkownicy.
+            Dzięki temu mogą stać się lepsi i bardziej konkurencyjni na rynku.
+          </p>
+        </div>
+      </section>
+    </div>
+<% end %>
+
+<% content_for :addbutton do %>
+    <%= render "shared/navbar/button" %>
+<% end %>
+
+<% content_for :navbartop do %>
+    <%= render "shared/navbar/top" %>
+<% end %>

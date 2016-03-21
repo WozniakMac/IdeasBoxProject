@@ -33,6 +33,7 @@ en:
       table: "Table"
       top: "Top"
       home: "Home"
+      about: "About"
     right:
       createbox: "Create box"
       manageboxes: "Manage boxes"

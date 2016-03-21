@@ -34,6 +34,7 @@ pl:
       table: "Tablica"
       top: "Top"
       home: "Główna"
+      about: "O nas"
     right:
       createbox: 'Stwórz'
       manageboxes: 'Zarządzaj'

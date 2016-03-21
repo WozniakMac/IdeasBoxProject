@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="description" content="Aplikacja webowa ułatwiająca kontakt z użytkownikami poprzez zbieranie ich pomysłów.">
+  <meta name="description" content="Jedyna w swoim rodzaju platworma do kontaktu z użytkownikami.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ideashare - <%= yield :title %></title>
+  <title>Ideashare <%= yield :titleup %></title>
 
   <!-- Add to homescreen for Chrome on Android -->
   <meta name="mobile-web-app-capable" content="yes">
@@ -53,7 +53,7 @@
 
 
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-  <header class="mdl-layout__header mdl-layout__header--scroll mdl-color--ideashare-dark">
+  <header class="ids-header mdl-layout__header mdl-layout__header--scroll mdl-color--ideashare-dark">
     <div class="header-width mdl-ideashare-top-menu mdl-layout--large-screen-only mdl-layout__header-row">
       <%= yield :navbartop %>
     </div>
@@ -61,11 +61,11 @@
       <h6><%= yield_or :main_title, 'Ideashare' %></h6>
     </div>
     <div class="header-width mdl-main-title mdl-layout--large-screen-only mdl-layout__header-row">
-      <h3><%= yield :title %></h3>
+      <h3 class="ids-main-title"><%= yield :title %></h3>
     </div>
     <div class="mdl-ideashare-emptyspace header-width mdl-layout--large-screen-only mdl-layout__header-row">
     </div>
-    <div class="header-width its-tab-bar mdl-color--ideashare-dark mdl-layout--large-screen-only">
+    <div class="header-width its-tab-bar mdl-layout--large-screen-only">
       <%= yield :leftnav %>
       <%= yield :addbutton %>
     </div>

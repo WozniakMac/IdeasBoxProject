@@ -5,7 +5,6 @@ $black_12: rgba(0, 0, 0, 0.12);
 $white: #fff;
 $color_atlantis_approx: #aed136;
 $color_lima_approx: #73ad21;
-$color_lima_approx-dark: #52841f;
 $color_persian_red_approx: #d13636;
 
 .mdl-ideashare-base {
@@ -84,18 +83,11 @@ $color_persian_red_approx: #d13636;
     z-index: 99;
   }
   .mdl-color--ideashare-dark {
-    background-color: rgba(49, 52, 60, 0.0);
+    background-color: rgba(49, 52, 60, 1);
   }
+
   .mdl-color--ideashare-green {
     background-color: $color_atlantis_approx;
-    color: $white;
-  }
-  .mdl-color--ideashare-green--dark {
-    background-color: $color_lima_approx;
-    color: $white;
-  }
-  .mdl-color--ideashare-green--dark:hover {
-    background-color: $color_lima_approx-dark;
     color: $white;
   }
   .ids-image-card {
@@ -167,44 +159,6 @@ $color_persian_red_approx: #d13636;
   margin-top: 20px;
 }
 
-body {
-  background: image-url('background.png') no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-
-.ids-header{
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-}
-
-.ids-main-title{
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-}
-
-.ids-main-title {
-  margin-right: auto;
-  margin-left: auto;
-  margin-top: 100px!important;
-  font-size: 5em;
-}
-
-.credit {
-  position: absolute;
-  right: 10px;
-  bottom: 10px;
-}
-
-.ids-homepage-text {
-  margin-right: auto;
-  margin-left: auto;
-  color: #ffffff;
-  text-align: center;
+.more-text{
+  font-size: 20px;
 }
